@@ -11,6 +11,7 @@ using MaterialSkin.Controls;
 using MaterialSkin.Properties;
 using MaterialSkin.Animations;
 using System.Data.SqlClient;
+using FB.Controladores;
 
 namespace FB
 {
@@ -36,27 +37,14 @@ namespace FB
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            
+            
             try
             {
-                SqlConnection con = new SqlConnection("server=LAPTOP-6N13TOH0\\SQLEXPRESS;database=dboFastBike;integrated security=true");
-                con.Open();
-                string query = "select * from tblCredenciales where (emailUsuario='" + txtEmail.Text + "' or celular='" +txtEmail.Text + "') and contraseña='" + txtPassword.Text + "'";
-                SqlCommand consulta = new SqlCommand(query, con);
-               
 
-                SqlDataReader lista = consulta.ExecuteReader();
-                DataTable info = new DataTable();
-                info.Load(lista);
-                dataGridView1.DataSource = info;
-                if (info.Rows.Count == 1)
-                {
-                    MessageBox.Show("Ingreso exitoso");
-                }
-                else
-                {
-                    MessageBox.Show("No ha ingresado correctamente sus datos");
-                }
+               Controladores.clsControladorUsuarios peticionIngreso = new Controladores.clsControladorUsuarios(txtEmail.Text, txtPassword.Text);
+                peticionIngreso.controladorLogin(dataGridView1);
+                
                 
             }
             catch (Exception err)
