@@ -28,7 +28,6 @@ namespace FB.Modelo
         private string ciudadActual;
 
         private string credencialIngreso;
-
         public int NumDocumentoIdentidad { get => numDocumentoIdentidad; set => numDocumentoIdentidad = value; }
         public string PrimerNombreUsuario { get => primerNombreUsuario; set => primerNombreUsuario = value; }
         public string SegundoNombreUsuario { get => segundoNombreUsuario; set => segundoNombreUsuario = value; }
