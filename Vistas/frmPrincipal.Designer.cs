@@ -32,7 +32,7 @@ namespace FB.Vistas
             this.lblIngreso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOfrecerServicio = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -73,20 +73,21 @@ namespace FB.Vistas
             this.btnConfirmar.Text = "Quiero pedir un servicio";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnOfrecerServicio
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(437, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 75);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Quiero ofrecer el servicio";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnOfrecerServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnOfrecerServicio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnOfrecerServicio.FlatAppearance.BorderSize = 0;
+            this.btnOfrecerServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOfrecerServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfrecerServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOfrecerServicio.Location = new System.Drawing.Point(437, 193);
+            this.btnOfrecerServicio.Name = "btnOfrecerServicio";
+            this.btnOfrecerServicio.Size = new System.Drawing.Size(222, 75);
+            this.btnOfrecerServicio.TabIndex = 49;
+            this.btnOfrecerServicio.Text = "Quiero ofrecer el servicio";
+            this.btnOfrecerServicio.UseVisualStyleBackColor = false;
+            this.btnOfrecerServicio.Click += new System.EventHandler(this.btnOfrecerServicio_Click);
             // 
             // button2
             // 
@@ -110,7 +111,7 @@ namespace FB.Vistas
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOfrecerServicio);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIngreso);
@@ -127,7 +128,7 @@ namespace FB.Vistas
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOfrecerServicio;
         private System.Windows.Forms.Button button2;
     }
 }

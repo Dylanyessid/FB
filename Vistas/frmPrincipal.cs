@@ -21,5 +21,10 @@ namespace FB.Vistas
         {
 
         }
+
+        private void btnOfrecerServicio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
