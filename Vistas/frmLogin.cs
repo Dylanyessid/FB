@@ -12,6 +12,7 @@ using MaterialSkin.Properties;
 using MaterialSkin.Animations;
 using System.Data.SqlClient;
 using FB.Controladores;
+using FB.Vistas;
 
 namespace FB
 {
@@ -43,7 +44,16 @@ namespace FB
             {
 
                Controladores.clsControladorUsuarios peticionIngreso = new Controladores.clsControladorUsuarios(txtEmail.Text, txtPassword.Text);
-                peticionIngreso.controladorLogin(dataGridView1);
+                if (peticionIngreso.controladorLogin())
+                {
+                   frmPrincipal menu = new frmPrincipal();
+                   menu.Show();
+                   this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales Inválidas, verifica tu datos ingresados");
+                }
                 
                 
             }

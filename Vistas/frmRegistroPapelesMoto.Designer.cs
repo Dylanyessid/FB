@@ -209,7 +209,7 @@ namespace FB
             // 
             this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox1.LeadingIcon = null;
             this.materialTextBox1.Location = new System.Drawing.Point(49, 52);
             this.materialTextBox1.MaxLength = 50;
@@ -260,7 +260,7 @@ namespace FB
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
             this.Name = "frmRegistroPapelesMoto";
-            this.Text = "frmRegistroConductores";
+            this.Text = "58";
             this.ResumeLayout(false);
             this.PerformLayout();
 

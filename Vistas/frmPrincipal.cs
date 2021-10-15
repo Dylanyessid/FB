@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FB
+namespace FB.Vistas
 {
-    public partial class frmMain : Form
+    public partial class frmPrincipal : Form
     {
-        public frmMain()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frmPrincipal_Load(object sender, EventArgs e)
         {
 
         }

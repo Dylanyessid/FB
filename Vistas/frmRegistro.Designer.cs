@@ -31,172 +31,179 @@ namespace FB
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistro));
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtPrimerNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtSegundoNombre = new MaterialSkin.Controls.MaterialTextBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.rdoHombre = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rdoMujer = new MaterialSkin.Controls.MaterialRadioButton();
+            this.txtPrimerApellido = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtSegundoApellido = new MaterialSkin.Controls.MaterialTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtDocumentoIdentidad = new MaterialSkin.Controls.MaterialTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtCelular = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.txtPais = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtEstado = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCuidad = new MaterialSkin.Controls.MaterialTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 39);
+            this.label1.Size = new System.Drawing.Size(181, 31);
             this.label1.TabIndex = 8;
             this.label1.Text = "Primer Nombe";
             // 
-            // txtEmail
+            // txtPrimerNombre
             // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Depth = 0;
-            this.txtEmail.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtEmail.LeadingIcon = null;
-            this.txtEmail.Location = new System.Drawing.Point(41, 144);
-            this.txtEmail.MaxLength = 50;
-            this.txtEmail.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtEmail.Multiline = false;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(225, 50);
-            this.txtEmail.TabIndex = 9;
-            this.txtEmail.Text = "";
-            this.txtEmail.TrailingIcon = null;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrimerNombre.Depth = 0;
+            this.txtPrimerNombre.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrimerNombre.LeadingIcon = null;
+            this.txtPrimerNombre.Location = new System.Drawing.Point(41, 136);
+            this.txtPrimerNombre.MaxLength = 50;
+            this.txtPrimerNombre.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPrimerNombre.Multiline = false;
+            this.txtPrimerNombre.Name = "txtPrimerNombre";
+            this.txtPrimerNombre.Size = new System.Drawing.Size(225, 50);
+            this.txtPrimerNombre.TabIndex = 9;
+            this.txtPrimerNombre.Text = "";
+            this.txtPrimerNombre.TrailingIcon = null;
+            this.txtPrimerNombre.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(393, 102);
+            this.label2.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(336, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 39);
+            this.label2.Size = new System.Drawing.Size(214, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Segundo Nombre";
             // 
-            // materialTextBox1
+            // txtSegundoNombre
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(401, 144);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(225, 50);
-            this.materialTextBox1.TabIndex = 11;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSegundoNombre.Depth = 0;
+            this.txtSegundoNombre.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSegundoNombre.LeadingIcon = null;
+            this.txtSegundoNombre.Location = new System.Drawing.Point(325, 144);
+            this.txtSegundoNombre.MaxLength = 50;
+            this.txtSegundoNombre.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtSegundoNombre.Multiline = false;
+            this.txtSegundoNombre.Name = "txtSegundoNombre";
+            this.txtSegundoNombre.Size = new System.Drawing.Size(225, 50);
+            this.txtSegundoNombre.TabIndex = 11;
+            this.txtSegundoNombre.Text = "";
+            this.txtSegundoNombre.TrailingIcon = null;
             // 
-            // dateTimePicker1
+            // dtpFechaNacimiento
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(58, 360);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(196, 20);
-            this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtpFechaNacimiento.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(66, 354);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(196, 20);
+            this.dtpFechaNacimiento.TabIndex = 12;
+            this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(51, 314);
+            this.label3.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(52, 314);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 39);
+            this.label3.Size = new System.Drawing.Size(251, 31);
             this.label3.TabIndex = 13;
             this.label3.Text = "Fecha de Nacimiento";
             // 
-            // materialRadioButton1
+            // rdoHombre
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Location = new System.Drawing.Point(412, 360);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(91, 37);
-            this.materialRadioButton1.TabIndex = 14;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "Hombre";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.rdoHombre.AutoSize = true;
+            this.rdoHombre.Depth = 0;
+            this.rdoHombre.Location = new System.Drawing.Point(342, 354);
+            this.rdoHombre.Margin = new System.Windows.Forms.Padding(0);
+            this.rdoHombre.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rdoHombre.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rdoHombre.Name = "rdoHombre";
+            this.rdoHombre.Ripple = true;
+            this.rdoHombre.Size = new System.Drawing.Size(91, 37);
+            this.rdoHombre.TabIndex = 14;
+            this.rdoHombre.TabStop = true;
+            this.rdoHombre.Text = "Hombre";
+            this.rdoHombre.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton2
+            // rdoMujer
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Location = new System.Drawing.Point(522, 360);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(75, 37);
-            this.materialRadioButton2.TabIndex = 15;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Mujer";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.rdoMujer.AutoSize = true;
+            this.rdoMujer.Depth = 0;
+            this.rdoMujer.Location = new System.Drawing.Point(445, 354);
+            this.rdoMujer.Margin = new System.Windows.Forms.Padding(0);
+            this.rdoMujer.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rdoMujer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rdoMujer.Name = "rdoMujer";
+            this.rdoMujer.Ripple = true;
+            this.rdoMujer.Size = new System.Drawing.Size(75, 37);
+            this.rdoMujer.TabIndex = 15;
+            this.rdoMujer.TabStop = true;
+            this.rdoMujer.Text = "Mujer";
+            this.rdoMujer.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox2
+            // txtPrimerApellido
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(41, 249);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(225, 50);
-            this.materialTextBox2.TabIndex = 16;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
+            this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrimerApellido.Depth = 0;
+            this.txtPrimerApellido.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrimerApellido.LeadingIcon = null;
+            this.txtPrimerApellido.Location = new System.Drawing.Point(41, 249);
+            this.txtPrimerApellido.MaxLength = 50;
+            this.txtPrimerApellido.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPrimerApellido.Multiline = false;
+            this.txtPrimerApellido.Name = "txtPrimerApellido";
+            this.txtPrimerApellido.Size = new System.Drawing.Size(225, 50);
+            this.txtPrimerApellido.TabIndex = 16;
+            this.txtPrimerApellido.Text = "";
+            this.txtPrimerApellido.TrailingIcon = null;
             // 
-            // materialTextBox3
+            // txtSegundoApellido
             // 
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox3.LeadingIcon = null;
-            this.materialTextBox3.Location = new System.Drawing.Point(401, 249);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(225, 50);
-            this.materialTextBox3.TabIndex = 17;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.TrailingIcon = null;
+            this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSegundoApellido.Depth = 0;
+            this.txtSegundoApellido.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSegundoApellido.LeadingIcon = null;
+            this.txtSegundoApellido.Location = new System.Drawing.Point(325, 249);
+            this.txtSegundoApellido.MaxLength = 50;
+            this.txtSegundoApellido.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtSegundoApellido.Multiline = false;
+            this.txtSegundoApellido.Name = "txtSegundoApellido";
+            this.txtSegundoApellido.Size = new System.Drawing.Size(225, 50);
+            this.txtSegundoApellido.TabIndex = 17;
+            this.txtSegundoApellido.Text = "";
+            this.txtSegundoApellido.TrailingIcon = null;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(36, 207);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 39);
+            this.label4.Size = new System.Drawing.Size(192, 31);
             this.label4.TabIndex = 18;
             this.label4.Text = "Primer Apellido";
             // 
@@ -204,10 +211,10 @@ namespace FB
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(394, 207);
+            this.label5.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(334, 207);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(259, 39);
+            this.label5.Size = new System.Drawing.Size(216, 31);
             this.label5.TabIndex = 19;
             this.label5.Text = "Segundo Apellido";
             // 
@@ -215,10 +222,10 @@ namespace FB
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(405, 314);
+            this.label6.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(336, 314);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 39);
+            this.label6.Size = new System.Drawing.Size(69, 31);
             this.label6.TabIndex = 20;
             this.label6.Text = "Sexo";
             // 
@@ -226,72 +233,164 @@ namespace FB
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(51, 394);
+            this.label7.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(60, 386);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(188, 78);
+            this.label7.Size = new System.Drawing.Size(157, 62);
             this.label7.TabIndex = 21;
             this.label7.Text = "Documento \r\nde Identidad";
             // 
-            // materialTextBox4
+            // txtDocumentoIdentidad
             // 
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(58, 476);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(225, 50);
-            this.materialTextBox4.TabIndex = 22;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.TrailingIcon = null;
+            this.txtDocumentoIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDocumentoIdentidad.Depth = 0;
+            this.txtDocumentoIdentidad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDocumentoIdentidad.LeadingIcon = null;
+            this.txtDocumentoIdentidad.Location = new System.Drawing.Point(37, 451);
+            this.txtDocumentoIdentidad.MaxLength = 50;
+            this.txtDocumentoIdentidad.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDocumentoIdentidad.Multiline = false;
+            this.txtDocumentoIdentidad.Name = "txtDocumentoIdentidad";
+            this.txtDocumentoIdentidad.Size = new System.Drawing.Size(225, 50);
+            this.txtDocumentoIdentidad.TabIndex = 22;
+            this.txtDocumentoIdentidad.Text = "";
+            this.txtDocumentoIdentidad.TrailingIcon = null;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(405, 433);
+            this.label8.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(343, 402);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(265, 39);
+            this.label8.Size = new System.Drawing.Size(221, 31);
             this.label8.TabIndex = 23;
             this.label8.Text = "Número de celular";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // materialTextBox5
+            // txtCelular
             // 
-            this.materialTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox5.Depth = 0;
-            this.materialTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox5.LeadingIcon = null;
-            this.materialTextBox5.Location = new System.Drawing.Point(412, 476);
-            this.materialTextBox5.MaxLength = 50;
-            this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox5.Multiline = false;
-            this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(225, 50);
-            this.materialTextBox5.TabIndex = 24;
-            this.materialTextBox5.Text = "";
-            this.materialTextBox5.TrailingIcon = null;
+            this.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCelular.Depth = 0;
+            this.txtCelular.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCelular.LeadingIcon = null;
+            this.txtCelular.Location = new System.Drawing.Point(349, 451);
+            this.txtCelular.MaxLength = 50;
+            this.txtCelular.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCelular.Multiline = false;
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(225, 50);
+            this.txtCelular.TabIndex = 24;
+            this.txtCelular.Text = "";
+            this.txtCelular.TrailingIcon = null;
             // 
-            // button1
+            // btnSiguiente
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(511, 567);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 37);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Siguiente";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSiguiente.Location = new System.Drawing.Point(349, 516);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(165, 52);
+            this.btnSiguiente.TabIndex = 27;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // txtPais
+            // 
+            this.txtPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPais.Depth = 0;
+            this.txtPais.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPais.LeadingIcon = null;
+            this.txtPais.Location = new System.Drawing.Point(651, 144);
+            this.txtPais.MaxLength = 50;
+            this.txtPais.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPais.Multiline = false;
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(150, 50);
+            this.txtPais.TabIndex = 28;
+            this.txtPais.Text = "";
+            this.txtPais.TrailingIcon = null;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEstado.Depth = 0;
+            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEstado.LeadingIcon = null;
+            this.txtEstado.Location = new System.Drawing.Point(651, 263);
+            this.txtEstado.MaxLength = 50;
+            this.txtEstado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtEstado.Multiline = false;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(165, 50);
+            this.txtEstado.TabIndex = 29;
+            this.txtEstado.Text = "";
+            this.txtEstado.TrailingIcon = null;
+            // 
+            // txtCuidad
+            // 
+            this.txtCuidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCuidad.Depth = 0;
+            this.txtCuidad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCuidad.LeadingIcon = null;
+            this.txtCuidad.Location = new System.Drawing.Point(651, 394);
+            this.txtCuidad.MaxLength = 50;
+            this.txtCuidad.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCuidad.Multiline = false;
+            this.txtCuidad.Name = "txtCuidad";
+            this.txtCuidad.Size = new System.Drawing.Size(165, 50);
+            this.txtCuidad.TabIndex = 30;
+            this.txtCuidad.Text = "";
+            this.txtCuidad.TrailingIcon = null;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(698, 113);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 31);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Pais";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(686, 220);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(94, 31);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Estado";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(686, 343);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 31);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Ciudad";
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(604, 113);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(13, 388);
+            this.materialDivider1.TabIndex = 34;
+            this.materialDivider1.Text = "materialDivider1";
             // 
             // frmRegistro
             // 
@@ -300,28 +399,35 @@ namespace FB
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(711, 616);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.materialTextBox5);
+            this.ClientSize = new System.Drawing.Size(848, 580);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtCuidad);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.txtPais);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.materialTextBox4);
+            this.Controls.Add(this.txtDocumentoIdentidad);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.materialTextBox3);
-            this.Controls.Add(this.materialTextBox2);
-            this.Controls.Add(this.materialRadioButton2);
-            this.Controls.Add(this.materialRadioButton1);
+            this.Controls.Add(this.txtSegundoApellido);
+            this.Controls.Add(this.txtPrimerApellido);
+            this.Controls.Add(this.rdoMujer);
+            this.Controls.Add(this.rdoHombre);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.dtpFechaNacimiento);
+            this.Controls.Add(this.txtSegundoNombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPrimerNombre);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Name = "frmRegistro";
-            this.Text = "frmRegistrocs";
+            this.Text = "6";
             this.Load += new System.EventHandler(this.frmRegistrocs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,22 +437,29 @@ namespace FB
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialTextBox txtEmail;
+        private MaterialSkin.Controls.MaterialTextBox txtPrimerNombre;
         private System.Windows.Forms.Label label2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private MaterialSkin.Controls.MaterialTextBox txtSegundoNombre;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Label label3;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private MaterialSkin.Controls.MaterialRadioButton rdoHombre;
+        private MaterialSkin.Controls.MaterialRadioButton rdoMujer;
+        private MaterialSkin.Controls.MaterialTextBox txtPrimerApellido;
+        private MaterialSkin.Controls.MaterialTextBox txtSegundoApellido;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
+        private MaterialSkin.Controls.MaterialTextBox txtDocumentoIdentidad;
         private System.Windows.Forms.Label label8;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
-        private System.Windows.Forms.Button button1;
+        private MaterialSkin.Controls.MaterialTextBox txtCelular;
+        private System.Windows.Forms.Button btnSiguiente;
+        private MaterialSkin.Controls.MaterialTextBox txtPais;
+        private MaterialSkin.Controls.MaterialTextBox txtEstado;
+        private MaterialSkin.Controls.MaterialTextBox txtCuidad;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FB.Controladores;
+using FB.Vistas;
 
 namespace FB
 {
@@ -37,11 +39,42 @@ namespace FB
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            frmMain principal = new frmMain();
-            principal.Show();
-            this.Close();
+            string sexo;
+            if (rdoHombre.Checked)
+            {
+                sexo = rdoHombre.Text;
+            }
+            else
+            {
+                sexo = rdoMujer.Text;
+            }
+            
+
+            clsControladorUsuarios controlador = new clsControladorUsuarios(
+                Convert.ToInt32(txtDocumentoIdentidad.Text),
+                txtPrimerNombre.Text,
+                txtSegundoNombre.Text,
+                txtPrimerApellido.Text,
+                txtSegundoApellido.Text,
+                dtpFechaNacimiento.Value,
+                sexo,
+                txtPais.Text,
+                txtEstado.Text,
+                txtCuidad.Text
+                ) ;
+
+            if (controlador.ejecutarRegistrarUsuario())
+            {
+                frmRegistroCredenciales credenciales = new frmRegistroCredenciales(Convert.ToInt32(txtDocumentoIdentidad.Text));
+                credenciales.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("ERROR!");
+            }
         }
     }
 }
