@@ -24,6 +24,11 @@ namespace FB.Vistas
 
         private void btnOfrecerServicio_Click(object sender, EventArgs e)
         {
+            frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
+            this.Hide();
+            ubicacion.ShowDialog();
+            this.Show();
+            
 
         }
     }

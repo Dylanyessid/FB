@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Controladores\clsControladorUsuarios.cs" />
     <Compile Include="Modelo\clsConexion.cs" />
+    <Compile Include="Modelo\clsSesion.cs" />
     <Compile Include="Modelo\clsUsuario.cs" />
     <Compile Include="Vistas\frmCambiarUbicacion.cs">
       <SubType>Form</SubType>
