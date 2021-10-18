@@ -13,7 +13,9 @@ namespace FB.Modelo
 {
     class clsUsuario
     {
+        
         private SqlConnection usersConnect;
+
         private int numDocumentoIdentidad;
         private string primerNombreUsuario;
         private string segundoNombreUsuario;
@@ -163,7 +165,10 @@ namespace FB.Modelo
             SqlDataReader lista = consulta.ExecuteReader();
             DataTable info = new DataTable();
             info.Load(lista);
+            clsSesion.DocumentoSesion = Convert.ToInt32(info.Rows[0]["numDocumentoIdentidad"]);
 
+            
+            //MessageBox.Show(info.Rows[0]["numDocumentoIdentidad"].ToString());
             return info;
 
         }

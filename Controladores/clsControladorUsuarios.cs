@@ -11,6 +11,7 @@ namespace FB.Controladores
 {
     class clsControladorUsuarios
     {
+        
         private clsUsuario usuario;
 
         //Constructor para registrar
@@ -41,7 +42,9 @@ namespace FB.Controladores
             
             if(info.Rows.Count == 1)
             {
+                MessageBox.Show(clsSesion.DocumentoSesion.ToString());
                 return true;
+                
             }
             else
             {

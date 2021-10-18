@@ -80,6 +80,7 @@ namespace FB.Vistas
             this.btnConfirmar.TabIndex = 47;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCambiarUbicacion
             // 

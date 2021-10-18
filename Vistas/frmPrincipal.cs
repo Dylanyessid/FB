@@ -31,5 +31,10 @@ namespace FB.Vistas
             
 
         }
+
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

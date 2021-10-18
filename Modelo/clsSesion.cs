@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace FB.Modelo
 {
-    class clsSesion
+    static class clsSesion
     {
+        //private static string emailSesion;
+        private static int documentoSesion;
+        public static int DocumentoSesion { get => documentoSesion; set => documentoSesion = value; }
     }
+
+   
 }

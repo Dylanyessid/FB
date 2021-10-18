@@ -44,5 +44,17 @@ namespace FB.Vistas
                 lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual?";
             }
         }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (Nuevo)
+            {
+
+            }
+            else
+            {
+                //Aqui va la consulta de los conductores en la misma ubicación...
+            }
+        }
     }
 }

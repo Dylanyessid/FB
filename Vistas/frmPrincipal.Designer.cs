@@ -117,6 +117,7 @@ namespace FB.Vistas
             this.Controls.Add(this.lblIngreso);
             this.Name = "frmPrincipal";
             this.Text = "frmPrincipal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
