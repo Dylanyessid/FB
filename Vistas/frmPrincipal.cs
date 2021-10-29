@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FB.Modelo;
+using FB.Controladores;
 
 namespace FB.Vistas
 {
@@ -20,21 +22,45 @@ namespace FB.Vistas
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
 
+            lblNombre.Text = $"{clsSesion.PrimerNombre} {clsSesion.PrimerApellido}";
         }
 
         private void btnOfrecerServicio_Click(object sender, EventArgs e)
         {
-            frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
-            this.Hide();
-            ubicacion.ShowDialog();
-            this.Show();
+            clsControladorUsuarios usuario = new clsControladorUsuarios(clsSesion.DocumentoSesion);
+
+
+            if (usuario.ejecutarVerificarConductor())
+            {
+                clsSesion.OfreciendoServicio = true;
+                frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
+                this.Hide();
+                ubicacion.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                frmRegistroMoto formRegistroMoto = new frmRegistroMoto();
+                formRegistroMoto.ShowDialog();
+            }
             
+
+            
+
 
         }
 
         private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
+            this.Hide();
+            ubicacion.ShowDialog();
+            this.Show();
         }
     }
 }

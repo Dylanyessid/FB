@@ -88,6 +88,12 @@ namespace FB.Modelo
             usersConnect = clsConexion.dbConnect();
         }
 
+        public clsUsuario(int documento)
+        {
+            NumDocumentoIdentidad = documento;
+            usersConnect = clsConexion.dbConnect();
+        }
+
         public void obtenerUsuarioUnico()
         {
 
@@ -114,7 +120,7 @@ namespace FB.Modelo
             {
                 if (consulta.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Si :D");
+                   
                     return true;
                 }
             }
@@ -132,7 +138,6 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
             consulta.CommandText = "insert into tblCredenciales values (@documento, @email, @password, @celular)";
-
             consulta.Parameters.Add("documento", SqlDbType.Int).Value = numDocumentoIdentidad;
             consulta.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
             consulta.Parameters.Add("@password", SqlDbType.VarChar).Value = contraseña;
@@ -142,7 +147,7 @@ namespace FB.Modelo
             {
                 if (consulta.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Credenciales :D");
+                   
                     return true;
                 }
             }
@@ -163,14 +168,54 @@ namespace FB.Modelo
             consulta.CommandText = "select * from tblCredenciales where (emailUsuario=@credencial or celular=@credencial) and contraseña=@contraseña";
 
             SqlDataReader lista = consulta.ExecuteReader();
-            DataTable info = new DataTable();
-            info.Load(lista);
-            clsSesion.DocumentoSesion = Convert.ToInt32(info.Rows[0]["numDocumentoIdentidad"]);
+            DataTable infoLogin = new DataTable();
+            infoLogin.Load(lista);
 
-            
+            if(infoLogin.Rows.Count > 0)
+            {
+
+                clsSesion.DocumentoSesion = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
+
+                consulta.Parameters.Add("@documento", SqlDbType.Int).Value = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
+                consulta.CommandText = "select * from tblUsuarios where numDocumentoIdentidad=@documento";
+                SqlDataReader consultaInfoUsuario = consulta.ExecuteReader();
+                DataTable infoUsuario = new DataTable();
+                infoUsuario.Load(consultaInfoUsuario);
+
+                
+                
+                 clsSesion.PrimerNombre = infoUsuario.Rows[0]["primerNombreUsuario"].ToString();
+                 clsSesion.PrimerApellido =infoUsuario.Rows[0]["primerApellidoUsuario"].ToString();
+                 clsSesion.Pais = infoUsuario.Rows[0]["paisActual"].ToString();
+                 clsSesion.Estado = infoUsuario.Rows[0]["estadoActual"].ToString();
+                 clsSesion.Ciudad = infoUsuario.Rows[0]["ciudadActual"].ToString();
+
+            }
+
             //MessageBox.Show(info.Rows[0]["numDocumentoIdentidad"].ToString());
-            return info;
+            return infoLogin;
 
+        }
+
+        public bool comprobarUsuarioConductor()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            consulta.Parameters.Add("@documento", SqlDbType.Int).Value = NumDocumentoIdentidad;
+            consulta.CommandText = "select * from tblConductores where numDocumentoIdentidad=@documento";
+
+            SqlDataReader lista = consulta.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(lista);
+
+            if(dt.Rows.Count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

@@ -12,17 +12,17 @@ namespace FB.Modelo
     {
         private static SqlConnection dbConnection;
 
-        private static string host = "192.168.1.65";
+        private static string host = "desarrollo-kevin.database.windows.net";
         private static string database = "dboFastBike";
         private static string security = "integrated security=false";
-        private static string user = "Usuario";
-        private static string password = "1904";
+        private static string user = "Dylan";
+        private static string password = "jhguy8/5jj*";
 
         public static SqlConnection dbConnect()
         {
             if(dbConnection == null)
             {
-                dbConnection = new SqlConnection($"user id={user};password ={password};server={host};database={database};{security}");
+                dbConnection = new SqlConnection($"server={host};database={database};{security};user={user};password={password}");
                 //dbConnection = new SqlConnection("server=LAPTOP-6N13TOH0\\SQLEXPRESS;database=dboFastBike;integrated security=true");
                 try
                 {

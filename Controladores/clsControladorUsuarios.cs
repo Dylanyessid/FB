@@ -34,6 +34,10 @@ namespace FB.Controladores
         {
             usuario = new clsUsuario(documento,email,password,celular);
         }
+        public clsControladorUsuarios(int documento)
+        {
+            usuario = new clsUsuario(documento);
+        }
 
         public bool controladorLogin()
         {
@@ -42,7 +46,7 @@ namespace FB.Controladores
             
             if(info.Rows.Count == 1)
             {
-                MessageBox.Show(clsSesion.DocumentoSesion.ToString());
+                
                 return true;
                 
             }
@@ -67,6 +71,18 @@ namespace FB.Controladores
         public bool ejecutarRegistrarCredenciales()
         {
             if (usuario.registrarCredenciales())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ejecutarVerificarConductor()
+        {
+            if (usuario.comprobarUsuarioConductor())
             {
                 return true;
             }

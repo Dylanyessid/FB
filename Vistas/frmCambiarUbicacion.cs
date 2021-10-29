@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FB.Modelo;
 
 namespace FB.Vistas
 {
@@ -43,18 +44,42 @@ namespace FB.Vistas
             {
                 lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual?";
             }
+            if (clsSesion.OfreciendoServicio)
+            {
+                lblRecogida.Visible = false;
+                txtRecogida.Enabled = false;
+                txtRecogida.Visible = false;
+                lblDestino.Visible = false;
+                txtDestino.Enabled = false;
+                txtDestino.Visible = false;
+                btnCambiarUbicacion.Enabled = true;
+                btnCambiarUbicacion.Visible = true;
+
+                lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual?";
+
+            }
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (Nuevo)
             {
+                frmPrincipal principal = new frmPrincipal();
+                this.Hide();
 
+                //Falta guardar ubicacion
+                principal.ShowDialog();
+                
             }
             else
             {
                 //Aqui va la consulta de los conductores en la misma ubicación...
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

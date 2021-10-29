@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FB.Controladores;
 
 namespace FB
 {
@@ -30,6 +31,37 @@ namespace FB
             cmbColor.Items.Add("Beige");
             cmbColor.Items.Add("Gris");
             cmbColor.Items.Add("Rosa");
+            cmbColor.Items.Add("Cian");
+            cmbColor.Items.Add("Magenta");
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                clsControladorMotos moto = new clsControladorMotos(txtPlaca.Text, txtMarca.Text, txtModelo.Text, txtLinea.Text, cmbColor.Text, Convert.ToInt32(txtCilindraje.Text),txtChasis.Text, txtMotor.Text);
+                if (moto.ejecutarIngresarDetallesMoto())
+                {
+                    MessageBox.Show("Ingreso Exito");
+                    frmRegistroPapelesMoto formularioPapeles = new frmRegistroPapelesMoto();
+                    this.Hide();
+                    formularioPapeles.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo algún problema");
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private void frmRegistroMoto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FB.Controladores;
+using FB.Modelo;
 
 namespace FB.Vistas
 {
@@ -31,10 +32,16 @@ namespace FB.Vistas
 
             if (credencialesUsuario.ejecutarRegistrarCredenciales())
             {
+                clsSesion.DocumentoSesion = Documento;
                 frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(true);
                 ubicacion.Show();
                 this.Hide();
             }
+        }
+
+        private void frmRegistroCredenciales_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

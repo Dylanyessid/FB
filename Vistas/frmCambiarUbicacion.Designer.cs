@@ -43,6 +43,7 @@ namespace FB.Vistas
             this.lblRecogida = new System.Windows.Forms.Label();
             this.txtDestino = new MaterialSkin.Controls.MaterialTextBox();
             this.lblDestino = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -232,12 +233,29 @@ namespace FB.Vistas
             this.lblDestino.TabIndex = 59;
             this.lblDestino.Text = "Dirección de destino";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnVolver.Location = new System.Drawing.Point(18, 386);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(146, 63);
+            this.btnVolver.TabIndex = 60;
+            this.btnVolver.Text = "Volver al menú";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmCambiarUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(821, 444);
+            this.ClientSize = new System.Drawing.Size(821, 452);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblDestino);
             this.Controls.Add(this.txtDestino);
             this.Controls.Add(this.lblRecogida);
@@ -276,5 +294,6 @@ namespace FB.Vistas
         private System.Windows.Forms.Label lblRecogida;
         private MaterialSkin.Controls.MaterialTextBox txtDestino;
         private System.Windows.Forms.Label lblDestino;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -181,6 +181,7 @@ namespace FB.Vistas
             this.Controls.Add(this.label7);
             this.Name = "frmRegistroCredenciales";
             this.Text = "frmRegistroCredenciales";
+            this.Load += new System.EventHandler(this.frmRegistroCredenciales_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

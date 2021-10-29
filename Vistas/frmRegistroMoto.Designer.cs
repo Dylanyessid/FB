@@ -29,41 +29,41 @@ namespace FB
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtPlaca = new MaterialSkin.Controls.MaterialTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtMarca = new MaterialSkin.Controls.MaterialTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtLinea = new MaterialSkin.Controls.MaterialTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtModelo = new MaterialSkin.Controls.MaterialTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbColor = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCilindraje = new MaterialSkin.Controls.MaterialTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox7 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtChasis = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtMotor = new MaterialSkin.Controls.MaterialTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // materialTextBox1
+            // txtPlaca
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(12, 152);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(213, 50);
-            this.materialTextBox1.TabIndex = 42;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.txtPlaca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlaca.Depth = 0;
+            this.txtPlaca.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPlaca.LeadingIcon = null;
+            this.txtPlaca.Location = new System.Drawing.Point(12, 152);
+            this.txtPlaca.MaxLength = 50;
+            this.txtPlaca.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPlaca.Multiline = false;
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(213, 50);
+            this.txtPlaca.TabIndex = 42;
+            this.txtPlaca.Text = "";
+            this.txtPlaca.TrailingIcon = null;
             // 
             // label7
             // 
@@ -87,21 +87,21 @@ namespace FB
             this.label1.TabIndex = 44;
             this.label1.Text = "Marca de Moto";
             // 
-            // materialTextBox2
+            // txtMarca
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(293, 152);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(213, 50);
-            this.materialTextBox2.TabIndex = 45;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
+            this.txtMarca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMarca.Depth = 0;
+            this.txtMarca.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMarca.LeadingIcon = null;
+            this.txtMarca.Location = new System.Drawing.Point(293, 152);
+            this.txtMarca.MaxLength = 50;
+            this.txtMarca.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMarca.Multiline = false;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(213, 50);
+            this.txtMarca.TabIndex = 45;
+            this.txtMarca.Text = "";
+            this.txtMarca.TrailingIcon = null;
             // 
             // label2
             // 
@@ -114,21 +114,21 @@ namespace FB
             this.label2.TabIndex = 46;
             this.label2.Text = "Modelo de Moto";
             // 
-            // materialTextBox3
+            // txtLinea
             // 
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox3.LeadingIcon = null;
-            this.materialTextBox3.Location = new System.Drawing.Point(12, 249);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(213, 50);
-            this.materialTextBox3.TabIndex = 47;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.TrailingIcon = null;
+            this.txtLinea.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLinea.Depth = 0;
+            this.txtLinea.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLinea.LeadingIcon = null;
+            this.txtLinea.Location = new System.Drawing.Point(12, 249);
+            this.txtLinea.MaxLength = 50;
+            this.txtLinea.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtLinea.Multiline = false;
+            this.txtLinea.Name = "txtLinea";
+            this.txtLinea.Size = new System.Drawing.Size(213, 50);
+            this.txtLinea.TabIndex = 47;
+            this.txtLinea.Text = "";
+            this.txtLinea.TrailingIcon = null;
             // 
             // label3
             // 
@@ -141,21 +141,21 @@ namespace FB
             this.label3.TabIndex = 48;
             this.label3.Text = "Línea de Moto";
             // 
-            // materialTextBox4
+            // txtModelo
             // 
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox4.LeadingIcon = null;
-            this.materialTextBox4.Location = new System.Drawing.Point(581, 152);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(213, 50);
-            this.materialTextBox4.TabIndex = 49;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.TrailingIcon = null;
+            this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModelo.Depth = 0;
+            this.txtModelo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtModelo.LeadingIcon = null;
+            this.txtModelo.Location = new System.Drawing.Point(581, 152);
+            this.txtModelo.MaxLength = 50;
+            this.txtModelo.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtModelo.Multiline = false;
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(213, 50);
+            this.txtModelo.TabIndex = 49;
+            this.txtModelo.Text = "";
+            this.txtModelo.TrailingIcon = null;
             // 
             // label4
             // 
@@ -190,21 +190,21 @@ namespace FB
             this.cmbColor.StartIndex = 0;
             this.cmbColor.TabIndex = 51;
             // 
-            // materialTextBox5
+            // txtCilindraje
             // 
-            this.materialTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox5.Depth = 0;
-            this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox5.LeadingIcon = null;
-            this.materialTextBox5.Location = new System.Drawing.Point(596, 247);
-            this.materialTextBox5.MaxLength = 50;
-            this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox5.Multiline = false;
-            this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(147, 50);
-            this.materialTextBox5.TabIndex = 52;
-            this.materialTextBox5.Text = "";
-            this.materialTextBox5.TrailingIcon = null;
+            this.txtCilindraje.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCilindraje.Depth = 0;
+            this.txtCilindraje.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCilindraje.LeadingIcon = null;
+            this.txtCilindraje.Location = new System.Drawing.Point(596, 247);
+            this.txtCilindraje.MaxLength = 50;
+            this.txtCilindraje.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCilindraje.Multiline = false;
+            this.txtCilindraje.Name = "txtCilindraje";
+            this.txtCilindraje.Size = new System.Drawing.Size(147, 50);
+            this.txtCilindraje.TabIndex = 52;
+            this.txtCilindraje.Text = "";
+            this.txtCilindraje.TrailingIcon = null;
             // 
             // label5
             // 
@@ -217,37 +217,37 @@ namespace FB
             this.label5.TabIndex = 53;
             this.label5.Text = "Cilindraje";
             // 
-            // materialTextBox6
+            // txtChasis
             // 
-            this.materialTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox6.Depth = 0;
-            this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox6.LeadingIcon = null;
-            this.materialTextBox6.Location = new System.Drawing.Point(88, 351);
-            this.materialTextBox6.MaxLength = 50;
-            this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox6.Multiline = false;
-            this.materialTextBox6.Name = "materialTextBox6";
-            this.materialTextBox6.Size = new System.Drawing.Size(279, 50);
-            this.materialTextBox6.TabIndex = 54;
-            this.materialTextBox6.Text = "";
-            this.materialTextBox6.TrailingIcon = null;
+            this.txtChasis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtChasis.Depth = 0;
+            this.txtChasis.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtChasis.LeadingIcon = null;
+            this.txtChasis.Location = new System.Drawing.Point(88, 351);
+            this.txtChasis.MaxLength = 50;
+            this.txtChasis.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtChasis.Multiline = false;
+            this.txtChasis.Name = "txtChasis";
+            this.txtChasis.Size = new System.Drawing.Size(279, 50);
+            this.txtChasis.TabIndex = 54;
+            this.txtChasis.Text = "";
+            this.txtChasis.TrailingIcon = null;
             // 
-            // materialTextBox7
+            // txtMotor
             // 
-            this.materialTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox7.Depth = 0;
-            this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox7.LeadingIcon = null;
-            this.materialTextBox7.Location = new System.Drawing.Point(415, 351);
-            this.materialTextBox7.MaxLength = 50;
-            this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox7.Multiline = false;
-            this.materialTextBox7.Name = "materialTextBox7";
-            this.materialTextBox7.Size = new System.Drawing.Size(259, 50);
-            this.materialTextBox7.TabIndex = 55;
-            this.materialTextBox7.Text = "";
-            this.materialTextBox7.TrailingIcon = null;
+            this.txtMotor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMotor.Depth = 0;
+            this.txtMotor.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMotor.LeadingIcon = null;
+            this.txtMotor.Location = new System.Drawing.Point(415, 351);
+            this.txtMotor.MaxLength = 50;
+            this.txtMotor.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMotor.Multiline = false;
+            this.txtMotor.Name = "txtMotor";
+            this.txtMotor.Size = new System.Drawing.Size(259, 50);
+            this.txtMotor.TabIndex = 55;
+            this.txtMotor.Text = "";
+            this.txtMotor.TrailingIcon = null;
             // 
             // label6
             // 
@@ -271,20 +271,21 @@ namespace FB
             this.label8.TabIndex = 57;
             this.label8.Text = "Número de Motor";
             // 
-            // button1
+            // btnSiguiente
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(662, 417);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 47);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "Siguiente";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSiguiente.Location = new System.Drawing.Point(662, 417);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(126, 47);
+            this.btnSiguiente.TabIndex = 58;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // label9
             // 
@@ -305,25 +306,26 @@ namespace FB
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 473);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.materialTextBox7);
-            this.Controls.Add(this.materialTextBox6);
+            this.Controls.Add(this.txtMotor);
+            this.Controls.Add(this.txtChasis);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.materialTextBox5);
+            this.Controls.Add(this.txtCilindraje);
             this.Controls.Add(this.cmbColor);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.materialTextBox4);
+            this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.materialTextBox3);
+            this.Controls.Add(this.txtLinea);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.materialTextBox2);
+            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txtPlaca);
             this.Name = "frmRegistroMoto";
             this.Text = "frmRegistroMoto";
+            this.Load += new System.EventHandler(this.frmRegistroMoto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,23 +333,23 @@ namespace FB
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txtPlaca;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox txtMarca;
         private System.Windows.Forms.Label label2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private MaterialSkin.Controls.MaterialTextBox txtLinea;
         private System.Windows.Forms.Label label3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
+        private MaterialSkin.Controls.MaterialTextBox txtModelo;
         private System.Windows.Forms.Label label4;
         private MaterialSkin.Controls.MaterialComboBox cmbColor;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
+        private MaterialSkin.Controls.MaterialTextBox txtCilindraje;
         private System.Windows.Forms.Label label5;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
+        private MaterialSkin.Controls.MaterialTextBox txtChasis;
+        private MaterialSkin.Controls.MaterialTextBox txtMotor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Label label9;
     }
 }

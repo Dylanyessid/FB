@@ -49,8 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\clsControladorConductores.cs" />
+    <Compile Include="Controladores\clsControladorMotos.cs" />
     <Compile Include="Controladores\clsControladorUsuarios.cs" />
     <Compile Include="Modelo\clsConexion.cs" />
+    <Compile Include="Modelo\clsConductor.cs" />
+    <Compile Include="Modelo\clsMoto.cs" />
     <Compile Include="Modelo\clsSesion.cs" />
     <Compile Include="Modelo\clsUsuario.cs" />
     <Compile Include="Vistas\frmCambiarUbicacion.cs">
@@ -65,11 +69,17 @@
     <Compile Include="Vistas\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Form2.cs">
+    <Compile Include="Vistas\frmConductoresDisponibles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Vistas\frmConductoresDisponibles.Designer.cs">
+      <DependentUpon>frmConductoresDisponibles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\frmMetodoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmMetodoPago.Designer.cs">
+      <DependentUpon>frmMetodoPago.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -103,14 +113,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\frmReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmReporte.Designer.cs">
+      <DependentUpon>frmReporte.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vistas\frmCambiarUbicacion.resx">
       <DependentUpon>frmCambiarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\frmConductoresDisponibles.resx">
+      <DependentUpon>frmConductoresDisponibles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\frmMetodoPago.resx">
+      <DependentUpon>frmMetodoPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -136,6 +155,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\frmReporte.resx">
+      <DependentUpon>frmReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

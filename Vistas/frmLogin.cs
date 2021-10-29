@@ -46,6 +46,8 @@ namespace FB
                Controladores.clsControladorUsuarios peticionIngreso = new Controladores.clsControladorUsuarios(txtEmail.Text, txtPassword.Text);
                 if (peticionIngreso.controladorLogin())
                 {
+
+
                    frmPrincipal menu = new frmPrincipal();
                    menu.Show();
                    this.Hide();
