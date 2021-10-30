@@ -22,8 +22,8 @@ namespace FB.Modelo
         {
             if(dbConnection == null)
             {
-                dbConnection = new SqlConnection($"server={host};database={database};{security};user={user};password={password}");
-                //dbConnection = new SqlConnection("server=LAPTOP-6N13TOH0\\SQLEXPRESS;database=dboFastBike;integrated security=true");
+                //dbConnection = new SqlConnection($"server={host};database={database};{security};user={user};password={password}");
+                dbConnection = new SqlConnection("server=LAPTOP-6N13TOH0\\SQLEXPRESS;database=dboFastBike;integrated security=true");
                 try
                 {
                     dbConnection.Open();

@@ -11,20 +11,25 @@ namespace FB.Controladores
 {
     class clsControladorMotos
     {
-        private clsMoto usuario;
+        private clsMoto moto;
 
         public clsControladorMotos(string placa, string marcaMoto, string modeloMoto, string lineaMoto, string color, int cilindraje, string numChasis, string numMotor)
         {
-            usuario = new clsMoto(placa, marcaMoto, modeloMoto, lineaMoto, color, cilindraje, numChasis, numMotor);
+            moto = new clsMoto(placa, marcaMoto, modeloMoto, lineaMoto, color, cilindraje, numChasis, numMotor);
         }
-        public clsControladorMotos(int numeroMatricula, char motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
+        public clsControladorMotos(int numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
         {
-            usuario = new clsMoto(numeroMatricula, motoPropia, inicioSOAT, finSOAT, inicioTecnomecanica, finTecnomecanica);
+            moto = new clsMoto(numeroMatricula, motoPropia, inicioSOAT, finSOAT, inicioTecnomecanica, finTecnomecanica);
+        }
+
+        public clsControladorMotos(int numDocumento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string celular)
+        {
+            moto = new clsMoto(numDocumento, primerNombre, segundoNombre, primerApellido, segundoApellido, celular);
         }
 
         public bool ejecutarIngresarDetallesMoto()
         {
-           if(usuario.registrarDetallesMoto())
+           if(moto.registrarDetallesMoto())
             {
                 return true;
             }
@@ -36,7 +41,7 @@ namespace FB.Controladores
 
         public bool ejecutarRegistrarPapeles()
         {
-            if (usuario.registrarPapelesMoto())
+            if (moto.registrarPapelesMoto())
             {
                 return true;
             }
@@ -49,7 +54,7 @@ namespace FB.Controladores
         public bool ejecutarRegistrarPropietario()
         {
             
-            if (usuario.registrarPropietarioMoto())
+            if (moto.registrarPropietarioMoto())
             {
                 return true;
             }

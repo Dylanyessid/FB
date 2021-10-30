@@ -12,6 +12,10 @@ namespace FB.Modelo
         private static int documentoSesion;
         private static string primerNombre;
         private static string primerApellido;
+        private static string segundoNombre;
+        private static string segundoApellido;
+        private static string celular;
+
         private static string pais;
         private static string estado;
         private static string ciudad;
@@ -26,6 +30,9 @@ namespace FB.Modelo
         public static string Ciudad { get => ciudad; set => ciudad = value; }
         public static bool OfreciendoServicio { get => ofreciendoServicio; set => ofreciendoServicio = value; }
         public static string PlacaMoto { get => placaMoto; set => placaMoto = value; }
+        public static string SegundoNombre { get => segundoNombre; set => segundoNombre = value; }
+        public static string SegundoApellido { get => segundoApellido; set => segundoApellido = value; }
+        public static string Celular { get => celular; set => celular = value; }
     }
 
    

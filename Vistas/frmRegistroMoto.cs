@@ -43,7 +43,7 @@ namespace FB
                 if (moto.ejecutarIngresarDetallesMoto())
                 {
                     MessageBox.Show("Ingreso Exito");
-                    frmRegistroPapelesMoto formularioPapeles = new frmRegistroPapelesMoto();
+                    frmRegistroPapelesMoto formularioPapeles = new frmRegistroPapelesMoto(txtPlaca.Text); ;
                     this.Hide();
                     formularioPapeles.ShowDialog();
                     this.Close();

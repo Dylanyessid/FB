@@ -16,7 +16,7 @@ namespace FB.Modelo
 
         private int numeroMatricula;
         private string placaMoto;
-        private char motoPropia;
+        private bool motoPropia;
         private DateTime inicioSOAT;
         private DateTime finSOAT;
         private DateTime inicioTecnomecanica;
@@ -39,7 +39,7 @@ namespace FB.Modelo
 
         public int NumeroMatricula { get => numeroMatricula; set => numeroMatricula = value; }
         public string PlacaMoto { get => placaMoto; set => placaMoto = value; }
-        public char MotoPropia { get => motoPropia; set => motoPropia = value; }
+        public bool MotoPropia { get => motoPropia; set => motoPropia = value; }
         public DateTime InicioSOAT { get => inicioSOAT; set => inicioSOAT = value; }
         public DateTime FinSOAT { get => finSOAT; set => finSOAT = value; }
         public DateTime InicioTecnomecanica { get => inicioTecnomecanica; set => inicioTecnomecanica = value; }
@@ -58,7 +58,7 @@ namespace FB.Modelo
         public string SegundoApellido { get => segundoApellido; set => segundoApellido = value; }
         public string Celular { get => celular; set => celular = value; }
 
-        public clsMoto(int numeroMatricula, char motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
+        public clsMoto(int numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
         {
             NumeroMatricula = numeroMatricula;
             MotoPropia = motoPropia;
@@ -131,10 +131,10 @@ namespace FB.Modelo
             consulta.Parameters.Add("@numMatricula", SqlDbType.Int).Value = NumeroMatricula;
             consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = clsSesion.PlacaMoto;
             consulta.Parameters.Add("@propio", SqlDbType.Bit).Value = MotoPropia;
-            consulta.Parameters.Add("@inicioSOAT", SqlDbType.VarChar).Value = LineaMoto;
-            consulta.Parameters.Add("@finSOAT", SqlDbType.VarChar).Value = Color;
-            consulta.Parameters.Add("@inicioTecno", SqlDbType.Int).Value = Cilindraje;
-            consulta.Parameters.Add("@finTecno", SqlDbType.VarChar).Value = NumChasis;
+            consulta.Parameters.Add("@inicioSOAT", SqlDbType.Date).Value = InicioSOAT;
+            consulta.Parameters.Add("@finSOAT", SqlDbType.Date).Value = FinSOAT;
+            consulta.Parameters.Add("@inicioTecno", SqlDbType.Date).Value = InicioTecnomecanica;
+            consulta.Parameters.Add("@finTecno", SqlDbType.Date).Value = FinTecnomecanica;
             
             try
             {
@@ -161,21 +161,20 @@ namespace FB.Modelo
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
-            consulta.CommandText = "insert into tblPapelesMoto values (@numMatricula, @placa, @propio," +
-                "@inicioSOAT, @finSOAT, @inicioTecno, @finTecno)";
-            consulta.Parameters.Add("@numDocPropietario", SqlDbType.Int).Value = ;
+            consulta.CommandText = "insert into tblPropietariosMoto values (@numDocPropietario, @placa, @primerNombre," +
+                "@segundoNombre, @primerApellido, @segundoApellido, @celular)";
+            consulta.Parameters.Add("@numDocPropietario", SqlDbType.Int).Value = numDocumento;
             consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = clsSesion.PlacaMoto;
-            consulta.Parameters.Add("@propio", SqlDbType.Bit).Value = MotoPropia;
-            consulta.Parameters.Add("@inicioSOAT", SqlDbType.VarChar).Value = LineaMoto;
-            consulta.Parameters.Add("@finSOAT", SqlDbType.VarChar).Value = Color;
-            consulta.Parameters.Add("@inicioTecno", SqlDbType.Int).Value = Cilindraje;
-            consulta.Parameters.Add("@finTecno", SqlDbType.VarChar).Value = NumChasis;
+            consulta.Parameters.Add("@primerNombre", SqlDbType.VarChar).Value = PrimerNombre;
+            consulta.Parameters.Add("@segundoNombre", SqlDbType.VarChar).Value = SegundoNombre;
+            consulta.Parameters.Add("@primerApellido", SqlDbType.VarChar).Value = PrimerApellido;
+            consulta.Parameters.Add("@segundoApellido", SqlDbType.VarChar).Value = SegundoApellido;
+            consulta.Parameters.Add("@celular", SqlDbType.VarChar).Value = Celular;
 
             try
             {
                 if (consulta.ExecuteNonQuery() == 1)
                 {
-
                     return true;
                 }
                 else
@@ -188,7 +187,6 @@ namespace FB.Modelo
                 MessageBox.Show(err.Message);
                 return false;
             }
-            return false;
         }
     }
 }

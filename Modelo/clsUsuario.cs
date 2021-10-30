@@ -175,6 +175,7 @@ namespace FB.Modelo
             {
 
                 clsSesion.DocumentoSesion = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
+                clsSesion.Celular = infoLogin.Rows[0]["celular"].ToString();
 
                 consulta.Parameters.Add("@documento", SqlDbType.Int).Value = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
                 consulta.CommandText = "select * from tblUsuarios where numDocumentoIdentidad=@documento";
@@ -185,8 +186,12 @@ namespace FB.Modelo
                 
                 
                  clsSesion.PrimerNombre = infoUsuario.Rows[0]["primerNombreUsuario"].ToString();
-                 clsSesion.PrimerApellido =infoUsuario.Rows[0]["primerApellidoUsuario"].ToString();
-                 clsSesion.Pais = infoUsuario.Rows[0]["paisActual"].ToString();
+                 clsSesion.SegundoNombre = infoUsuario.Rows[0]["segundoNombreUsuario"].ToString();
+                clsSesion.PrimerApellido =infoUsuario.Rows[0]["primerApellidoUsuario"].ToString();
+                
+                clsSesion.SegundoApellido = infoUsuario.Rows[0]["segundoApellidoUsuario"].ToString();
+                
+                clsSesion.Pais = infoUsuario.Rows[0]["paisActual"].ToString();
                  clsSesion.Estado = infoUsuario.Rows[0]["estadoActual"].ToString();
                  clsSesion.Ciudad = infoUsuario.Rows[0]["ciudadActual"].ToString();
 

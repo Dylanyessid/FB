@@ -8,14 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FB.Controladores;
+using FB.Modelo;
 
 namespace FB
 {
     public partial class frmRegistroPapelesMoto : Form
     {
-        public frmRegistroPapelesMoto()
+        string placaMoto;
+        public frmRegistroPapelesMoto(string placa)
         {
-            
+            placaMoto = placa;
             InitializeComponent();
         }
 
@@ -92,14 +94,27 @@ namespace FB
             if (rdbPropia.Checked)
             {
                 propia = '1';
-                clsControladorMotos controladorMoto = new clsControladorMotos(Convert.ToInt32(txtMatricula.Text), propia, dtpInicioSOAT.Value, dtpFinSOAT.Value, dtpFinTecno.Value, dtpFinTecno.Value);
-
+                clsControladorMotos controladorMotoPropietario = new clsControladorMotos(clsSesion.DocumentoSesion, clsSesion.PrimerNombre, clsSesion.SegundoNombre, clsSesion.PrimerApellido, clsSesion.SegundoApellido, clsSesion.Celular);
+                controladorMotoPropietario.ejecutarRegistrarPropietario();
+                clsControladorMotos controladorMotoPapeles = new clsControladorMotos(Convert.ToInt32(txtMatricula.Text), true, dtpInicioSOAT.Value, dtpFinSOAT.Value, dtpInicioTecno.Value, dtpFinTecno.Value);
+                if (controladorMotoPapeles.ejecutarRegistrarPapeles())
+                {
+                    MessageBox.Show("Se ha registrado como conductor con Éxito!");
+                    this.Close();
+                }
             }
             else if (rdbNoPropia.Checked)
             {
                 propia = '0';
-                clsControladorMotos controladorMoto = new clsControladorMotos(Convert.ToInt32(txtMatricula.Text), propia, dtpInicioSOAT.Value, dtpFinSOAT.Value, dtpFinTecno.Value, dtpFinTecno.Value);
+                clsControladorMotos controladorMotoPropietario = new clsControladorMotos(Convert.ToInt32(txtDocumento.Text), txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCelular.Text);
+                controladorMotoPropietario.ejecutarRegistrarPropietario();
+                clsControladorMotos controladorMotoPapeles = new clsControladorMotos(Convert.ToInt32(txtMatricula.Text), false, dtpInicioSOAT.Value, dtpFinSOAT.Value, dtpInicioTecno.Value, dtpFinTecno.Value);
+                if (controladorMotoPapeles.ejecutarRegistrarPapeles())
+                {
+                    MessageBox.Show("Se ha registrado como conductor con Éxito!");
+                    this.Close();
 
+                }
             }
 
 
