@@ -17,12 +17,12 @@ namespace FB.Controladores
         {
             moto = new clsMoto(placa, marcaMoto, modeloMoto, lineaMoto, color, cilindraje, numChasis, numMotor);
         }
-        public clsControladorMotos(int numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
+        public clsControladorMotos(string numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
         {
             moto = new clsMoto(numeroMatricula, motoPropia, inicioSOAT, finSOAT, inicioTecnomecanica, finTecnomecanica);
         }
 
-        public clsControladorMotos(int numDocumento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string celular)
+        public clsControladorMotos(string numDocumento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string celular)
         {
             moto = new clsMoto(numDocumento, primerNombre, segundoNombre, primerApellido, segundoApellido, celular);
         }

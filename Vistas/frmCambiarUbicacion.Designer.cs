@@ -79,7 +79,7 @@ namespace FB.Vistas
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(222, 75);
             this.btnConfirmar.TabIndex = 47;
-            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.Text = "Pedir Transporte";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -95,8 +95,9 @@ namespace FB.Vistas
             this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
             this.btnCambiarUbicacion.Size = new System.Drawing.Size(222, 75);
             this.btnCambiarUbicacion.TabIndex = 48;
-            this.btnCambiarUbicacion.Text = "Cambiar ubicacion";
+            this.btnCambiarUbicacion.Text = "Cambiar ubicación";
             this.btnCambiarUbicacion.UseVisualStyleBackColor = false;
+            this.btnCambiarUbicacion.Click += new System.EventHandler(this.btnCambiarUbicacion_Click);
             // 
             // txtPais
             // 
@@ -113,6 +114,7 @@ namespace FB.Vistas
             this.txtPais.TabIndex = 49;
             this.txtPais.Text = "";
             this.txtPais.TrailingIcon = null;
+            this.txtPais.TextChanged += new System.EventHandler(this.txtPais_TextChanged);
             // 
             // txtEstado
             // 

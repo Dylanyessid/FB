@@ -16,7 +16,7 @@ namespace FB.Modelo
         
         private SqlConnection usersConnect;
 
-        private int numDocumentoIdentidad;
+        private string numDocumentoIdentidad;
         private string primerNombreUsuario;
         private string segundoNombreUsuario;
         private string primerApellidoUsuario;
@@ -33,7 +33,14 @@ namespace FB.Modelo
         private string rol;
         private string estadoCuenta;
         private string credencialIngreso;
-        public int NumDocumentoIdentidad { get => numDocumentoIdentidad; set => numDocumentoIdentidad = value; }
+
+        private string direccionRecogida;
+        private string direccionDestion;
+        private decimal precioSolicitado;
+       
+
+
+        public string NumDocumentoIdentidad { get => numDocumentoIdentidad; set => numDocumentoIdentidad = value; }
         public string PrimerNombreUsuario { get => primerNombreUsuario; set => primerNombreUsuario = value; }
         public string SegundoNombreUsuario { get => segundoNombreUsuario; set => segundoNombreUsuario = value; }
         public string PrimerApellidoUsuario { get => primerApellidoUsuario; set => primerApellidoUsuario = value; }
@@ -50,8 +57,10 @@ namespace FB.Modelo
         public decimal Saldo { get => saldo; set => saldo = value; }
         public string Rol { get => rol; set => rol = value; }
         public string EstadoCuenta { get => estadoCuenta; set => estadoCuenta = value; }
+        public string DireccionRecogida { get => direccionRecogida; set => direccionRecogida = value; }
+        public string DireccionDestion { get => direccionDestion; set => direccionDestion = value; }
+        public decimal PrecioSolicitado { get => precioSolicitado; set => precioSolicitado = value; }
 
-        
         public clsUsuario (string email_o_celular, string contraseña)
         {
             CredencialIngreso = email_o_celular;
@@ -61,7 +70,7 @@ namespace FB.Modelo
         }
 
         //Toca revisar este constructor
-        public clsUsuario(int numDocumentoIdentidad, string primerNombreUsuario, string segundoNombreUsuario, string primerApellidoUsuario, string segundoApellidoUsuario, DateTime fechNacimientoUsuario, string sexo, string paisActual, string estadoActual, string ciudadActual)
+        public clsUsuario(string numDocumentoIdentidad, string primerNombreUsuario, string segundoNombreUsuario, string primerApellidoUsuario, string segundoApellidoUsuario, DateTime fechNacimientoUsuario, string sexo, string paisActual, string estadoActual, string ciudadActual)
         {
             NumDocumentoIdentidad = numDocumentoIdentidad;
             PrimerNombreUsuario = primerNombreUsuario;
@@ -78,8 +87,14 @@ namespace FB.Modelo
             EstadoCuenta = estadoCuenta;
             usersConnect = clsConexion.dbConnect();
         }
-
-        public clsUsuario(int documento, string email, string password, string celular)
+        public clsUsuario(string pais, string estado, string ciudad)
+        {
+            EstadoActual = estado;
+            PaisActual = pais;
+            CiudadActual = ciudad;
+            usersConnect = clsConexion.dbConnect();
+        }
+        public clsUsuario(string documento, string email, string password, string celular)
         {
             NumDocumentoIdentidad = documento;
             Email = email;
@@ -88,9 +103,17 @@ namespace FB.Modelo
             usersConnect = clsConexion.dbConnect();
         }
 
-        public clsUsuario(int documento)
+        public clsUsuario(string documento)
         {
             NumDocumentoIdentidad = documento;
+            usersConnect = clsConexion.dbConnect();
+        }
+
+        public clsUsuario(string direccionRecogida, string direccionDestion, decimal precioSolicitado)
+        {
+            DireccionRecogida = direccionRecogida;
+            DireccionDestion = direccionDestion;
+            PrecioSolicitado = precioSolicitado;
             usersConnect = clsConexion.dbConnect();
         }
 
@@ -120,7 +143,14 @@ namespace FB.Modelo
             {
                 if (consulta.ExecuteNonQuery() == 1)
                 {
-                   
+                    clsSesion.PrimerNombre = PrimerNombreUsuario;
+                    clsSesion.SegundoNombre = SegundoNombreUsuario;
+                    clsSesion.PrimerApellido = PrimerApellidoUsuario;
+                    clsSesion.SegundoApellido = SegundoApellidoUsuario;
+                    clsSesion.Pais = paisActual;
+                    clsSesion.Estado = EstadoActual;
+                    clsSesion.Ciudad = CiudadActual;
+
                     return true;
                 }
             }
@@ -142,12 +172,13 @@ namespace FB.Modelo
             consulta.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
             consulta.Parameters.Add("@password", SqlDbType.VarChar).Value = contraseña;
             consulta.Parameters.Add("@celular", SqlDbType.VarChar).Value = celular;
-
+            
             try
             {
                 if (consulta.ExecuteNonQuery() == 1)
                 {
-                   
+                    clsSesion.DocumentoSesion = numDocumentoIdentidad;
+                    clsSesion.Celular = celular;
                     return true;
                 }
             }
@@ -174,7 +205,7 @@ namespace FB.Modelo
             if(infoLogin.Rows.Count > 0)
             {
 
-                clsSesion.DocumentoSesion = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
+                clsSesion.DocumentoSesion = infoLogin.Rows[0]["numDocumentoIdentidad"].ToString();
                 clsSesion.Celular = infoLogin.Rows[0]["celular"].ToString();
 
                 consulta.Parameters.Add("@documento", SqlDbType.Int).Value = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
@@ -202,16 +233,19 @@ namespace FB.Modelo
 
         }
 
+        //Intentar subconsulta
         public bool comprobarUsuarioConductor()
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
-            consulta.Parameters.Add("@documento", SqlDbType.Int).Value = NumDocumentoIdentidad;
+            consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = NumDocumentoIdentidad;
             consulta.CommandText = "select * from tblConductores where numDocumentoIdentidad=@documento";
 
             SqlDataReader lista = consulta.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(lista);
+
+            
 
             if(dt.Rows.Count == 1)
             {
@@ -222,6 +256,42 @@ namespace FB.Modelo
                 return false;
             }
         }
+
+       public bool actualizarUbicacionUsuario()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = clsSesion.DocumentoSesion;
+            consulta.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = CiudadActual;
+            consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = EstadoActual;
+            consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = PaisActual;
+
+            consulta.CommandText = "UPDATE tblUsuarios SET ciudadActual=@ciudad, estadoActual=@estado, paisActual=@pais where numDocumentoIdentidad=@documento";
+            
+            try
+            {
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    clsSesion.Estado = EstadoActual;
+                    clsSesion.Pais = PaisActual;
+                    clsSesion.Ciudad = CiudadActual;
+                    MessageBox.Show("Ubicaión Actualizada correctamente");
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+        }
+
+       
+
 
     }
 }

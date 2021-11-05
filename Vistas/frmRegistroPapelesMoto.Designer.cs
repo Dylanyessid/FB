@@ -55,12 +55,16 @@ namespace FB
             this.txtSegundoNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.lblSegundoNombre = new System.Windows.Forms.Label();
             this.lblSegundoApellido = new System.Windows.Forms.Label();
+            this.dtpInicioLicencia = new System.Windows.Forms.DateTimePicker();
+            this.dtpFinLicencia = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpInicioSOAT
             // 
             this.dtpInicioSOAT.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInicioSOAT.Location = new System.Drawing.Point(147, 39);
+            this.dtpInicioSOAT.Location = new System.Drawing.Point(55, 49);
             this.dtpInicioSOAT.Name = "dtpInicioSOAT";
             this.dtpInicioSOAT.Size = new System.Drawing.Size(193, 20);
             this.dtpInicioSOAT.TabIndex = 23;
@@ -97,7 +101,7 @@ namespace FB
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(151, 9);
+            this.label4.Location = new System.Drawing.Point(56, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(168, 27);
             this.label4.TabIndex = 31;
@@ -108,7 +112,7 @@ namespace FB
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(402, 9);
+            this.label5.Location = new System.Drawing.Point(286, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 27);
             this.label5.TabIndex = 32;
@@ -117,7 +121,7 @@ namespace FB
             // dtpFinSOAT
             // 
             this.dtpFinSOAT.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFinSOAT.Location = new System.Drawing.Point(407, 39);
+            this.dtpFinSOAT.Location = new System.Drawing.Point(280, 49);
             this.dtpFinSOAT.Name = "dtpFinSOAT";
             this.dtpFinSOAT.Size = new System.Drawing.Size(192, 20);
             this.dtpFinSOAT.TabIndex = 33;
@@ -128,7 +132,7 @@ namespace FB
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(151, 72);
+            this.label6.Location = new System.Drawing.Point(50, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 54);
             this.label6.TabIndex = 34;
@@ -139,7 +143,7 @@ namespace FB
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(402, 72);
+            this.label8.Location = new System.Drawing.Point(295, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(177, 54);
             this.label8.TabIndex = 35;
@@ -148,7 +152,7 @@ namespace FB
             // dtpInicioTecno
             // 
             this.dtpInicioTecno.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInicioTecno.Location = new System.Drawing.Point(147, 129);
+            this.dtpInicioTecno.Location = new System.Drawing.Point(55, 129);
             this.dtpInicioTecno.Name = "dtpInicioTecno";
             this.dtpInicioTecno.Size = new System.Drawing.Size(193, 20);
             this.dtpInicioTecno.TabIndex = 36;
@@ -156,7 +160,7 @@ namespace FB
             // dtpFinTecno
             // 
             this.dtpFinTecno.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFinTecno.Location = new System.Drawing.Point(407, 129);
+            this.dtpFinTecno.Location = new System.Drawing.Point(280, 129);
             this.dtpFinTecno.Name = "dtpFinTecno";
             this.dtpFinTecno.Size = new System.Drawing.Size(192, 20);
             this.dtpFinTecno.TabIndex = 37;
@@ -383,6 +387,46 @@ namespace FB
             this.lblSegundoApellido.TabIndex = 54;
             this.lblSegundoApellido.Text = "Segundo Apellido \r\nPropietario";
             // 
+            // dtpInicioLicencia
+            // 
+            this.dtpInicioLicencia.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicioLicencia.Location = new System.Drawing.Point(511, 49);
+            this.dtpInicioLicencia.Name = "dtpInicioLicencia";
+            this.dtpInicioLicencia.Size = new System.Drawing.Size(192, 20);
+            this.dtpInicioLicencia.TabIndex = 56;
+            this.dtpInicioLicencia.Value = new System.DateTime(2021, 9, 27, 0, 0, 0, 0);
+            // 
+            // dtpFinLicencia
+            // 
+            this.dtpFinLicencia.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinLicencia.Location = new System.Drawing.Point(511, 129);
+            this.dtpFinLicencia.Name = "dtpFinLicencia";
+            this.dtpFinLicencia.Size = new System.Drawing.Size(192, 20);
+            this.dtpFinLicencia.TabIndex = 57;
+            this.dtpFinLicencia.Value = new System.DateTime(2021, 9, 27, 0, 0, 0, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(527, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 27);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Fin de Licencia";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(516, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(198, 27);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Inicio de Licencia";
+            // 
             // frmRegistroPapelesMoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +434,10 @@ namespace FB
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(785, 570);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dtpFinLicencia);
+            this.Controls.Add(this.dtpInicioLicencia);
             this.Controls.Add(this.rdbNoPropia);
             this.Controls.Add(this.rdbPropia);
             this.Controls.Add(this.lblSegundoApellido);
@@ -451,5 +499,9 @@ namespace FB
         private MaterialSkin.Controls.MaterialTextBox txtSegundoNombre;
         private System.Windows.Forms.Label lblSegundoNombre;
         private System.Windows.Forms.Label lblSegundoApellido;
+        private System.Windows.Forms.DateTimePicker dtpInicioLicencia;
+        private System.Windows.Forms.DateTimePicker dtpFinLicencia;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
     }
 }

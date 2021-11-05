@@ -21,12 +21,8 @@ namespace FB
         public Form1()
         {
             InitializeComponent();
-            txtPassword.Font = new System.Drawing.Font(
-                      "Roboto",
-                      32F,
-                      System.Drawing.FontStyle.Regular,
-                      System.Drawing.GraphicsUnit.Point,
-                      ((byte)(0)));
+            
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -69,6 +65,11 @@ namespace FB
         {
             frmRegistro registro = new frmRegistro();
             registro.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

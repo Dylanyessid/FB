@@ -60,14 +60,18 @@ namespace FB
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.BulletIndent = 2;
             this.txtPassword.Depth = 0;
-            this.txtPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Hint = "*";
+            this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtPassword.LeadingIcon = null;
             this.txtPassword.Location = new System.Drawing.Point(53, 379);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Password = true;
             this.txtPassword.Size = new System.Drawing.Size(590, 50);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "";
@@ -170,6 +174,7 @@ namespace FB
             this.Controls.Add(this.txtEmail);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

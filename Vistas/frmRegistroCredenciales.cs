@@ -14,8 +14,8 @@ namespace FB.Vistas
 {
     public partial class frmRegistroCredenciales : Form
     {
-        private int Documento;
-        public frmRegistroCredenciales(int numDocumento)
+        private string Documento;
+        public frmRegistroCredenciales(string numDocumento)
         {
             this.Documento = numDocumento;
             InitializeComponent();
@@ -33,8 +33,8 @@ namespace FB.Vistas
             if (credencialesUsuario.ejecutarRegistrarCredenciales())
             {
                 clsSesion.DocumentoSesion = Documento;
-                frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(true);
-                ubicacion.Show();
+                frmPrincipal menu = new frmPrincipal();
+                menu.Show();
                 this.Hide();
             }
         }

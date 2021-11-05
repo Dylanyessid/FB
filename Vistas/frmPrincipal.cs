@@ -57,6 +57,7 @@ namespace FB.Vistas
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            clsSesion.OfreciendoServicio = false;
             frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
             this.Hide();
             ubicacion.ShowDialog();

@@ -14,7 +14,7 @@ namespace FB.Modelo
     {
         private SqlConnection usersConnect = clsConexion.dbConnect();
 
-        private int numeroMatricula;
+        private string numeroMatricula;
         private string placaMoto;
         private bool motoPropia;
         private DateTime inicioSOAT;
@@ -30,14 +30,14 @@ namespace FB.Modelo
         private string numChasis;
         private string numMotor;
 
-        private int numDocumento;
+        private string numDocumento;
         private string primerNombre;
         private string segundoNombre;
         private string primerApellido;
         private string segundoApellido;
         private string celular;
 
-        public int NumeroMatricula { get => numeroMatricula; set => numeroMatricula = value; }
+        public string NumeroMatricula { get => numeroMatricula; set => numeroMatricula = value; }
         public string PlacaMoto { get => placaMoto; set => placaMoto = value; }
         public bool MotoPropia { get => motoPropia; set => motoPropia = value; }
         public DateTime InicioSOAT { get => inicioSOAT; set => inicioSOAT = value; }
@@ -51,14 +51,14 @@ namespace FB.Modelo
         public int Cilindraje { get => cilindraje; set => cilindraje = value; }
         public string NumChasis { get => numChasis; set => numChasis = value; }
         public string NumMotor { get => numMotor; set => numMotor = value; }
-        public int NumDocumento { get => numDocumento; set => numDocumento = value; }
+        public string NumDocumento { get => numDocumento; set => numDocumento = value; }
         public string PrimerNombre { get => primerNombre; set => primerNombre = value; }
         public string SegundoNombre { get => segundoNombre; set => segundoNombre = value; }
         public string PrimerApellido { get => primerApellido; set => primerApellido = value; }
         public string SegundoApellido { get => segundoApellido; set => segundoApellido = value; }
         public string Celular { get => celular; set => celular = value; }
 
-        public clsMoto(int numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
+        public clsMoto(string numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica)
         {
             NumeroMatricula = numeroMatricula;
             MotoPropia = motoPropia;
@@ -79,7 +79,7 @@ namespace FB.Modelo
             NumChasis = numChasis;
             NumMotor = numMotor;
         }
-        public clsMoto(int numDocumento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string celular)
+        public clsMoto(string numDocumento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string celular)
         {
             NumDocumento = numDocumento;
             PrimerNombre = primerNombre;
@@ -128,7 +128,7 @@ namespace FB.Modelo
             consulta.Connection = usersConnect;
             consulta.CommandText = "insert into tblPapelesMoto values (@numMatricula, @placa, @propio," +
                 "@inicioSOAT, @finSOAT, @inicioTecno, @finTecno)";
-            consulta.Parameters.Add("@numMatricula", SqlDbType.Int).Value = NumeroMatricula;
+            consulta.Parameters.Add("@numMatricula", SqlDbType.VarChar).Value = NumeroMatricula;
             consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = clsSesion.PlacaMoto;
             consulta.Parameters.Add("@propio", SqlDbType.Bit).Value = MotoPropia;
             consulta.Parameters.Add("@inicioSOAT", SqlDbType.Date).Value = InicioSOAT;

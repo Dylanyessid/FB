@@ -51,11 +51,13 @@
   <ItemGroup>
     <Compile Include="Controladores\clsControladorConductores.cs" />
     <Compile Include="Controladores\clsControladorMotos.cs" />
+    <Compile Include="Controladores\clsControladorSolicitud.cs" />
     <Compile Include="Controladores\clsControladorUsuarios.cs" />
     <Compile Include="Modelo\clsConexion.cs" />
     <Compile Include="Modelo\clsConductor.cs" />
     <Compile Include="Modelo\clsMoto.cs" />
     <Compile Include="Modelo\clsSesion.cs" />
+    <Compile Include="Modelo\clsSolicitud.cs" />
     <Compile Include="Modelo\clsUsuario.cs" />
     <Compile Include="Vistas\frmCambiarUbicacion.cs">
       <SubType>Form</SubType>
@@ -119,6 +121,12 @@
     <Compile Include="Vistas\frmReporte.Designer.cs">
       <DependentUpon>frmReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\frmSolicitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmSolicitantes.Designer.cs">
+      <DependentUpon>frmSolicitantes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vistas\frmCambiarUbicacion.resx">
       <DependentUpon>frmCambiarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\frmReporte.resx">
       <DependentUpon>frmReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\frmSolicitantes.resx">
+      <DependentUpon>frmSolicitantes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

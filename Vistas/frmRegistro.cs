@@ -17,6 +17,7 @@ namespace FB
         public frmRegistro()
         {
             InitializeComponent();
+            
         }
 
         private void frmRegistrocs_Load(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace FB
             
 
             clsControladorUsuarios controlador = new clsControladorUsuarios(
-                Convert.ToInt32(txtDocumentoIdentidad.Text),
+                txtDocumentoIdentidad.Text,
                 txtPrimerNombre.Text,
                 txtSegundoNombre.Text,
                 txtPrimerApellido.Text,
@@ -67,7 +68,7 @@ namespace FB
 
             if (controlador.ejecutarRegistrarUsuario())
             {
-                frmRegistroCredenciales credenciales = new frmRegistroCredenciales(Convert.ToInt32(txtDocumentoIdentidad.Text));
+                frmRegistroCredenciales credenciales = new frmRegistroCredenciales((txtDocumentoIdentidad.Text));
                 credenciales.Show();
                 this.Hide();
             }

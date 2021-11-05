@@ -15,7 +15,7 @@ namespace FB.Controladores
         private clsUsuario usuario;
 
         //Constructor para registrar
-        public clsControladorUsuarios(int numDocumentoIdentidad, string primerNombreUsuario, string segundoNombreUsuario, 
+        public clsControladorUsuarios(string numDocumentoIdentidad, string primerNombreUsuario, string segundoNombreUsuario, 
             string primerApellidoUsuario, string segundoApellidoUsuario, DateTime fechNacimientoUsuario, string sexo, 
             string paisActual, string estadoActual, string ciudadActual)
         {
@@ -30,13 +30,18 @@ namespace FB.Controladores
         }
 
         //Constructor para agregar las credenciales
-        public clsControladorUsuarios(int documento, string email, string password, string celular)
+        public clsControladorUsuarios(string documento, string email, string password, string celular)
         {
             usuario = new clsUsuario(documento,email,password,celular);
         }
-        public clsControladorUsuarios(int documento)
+        public clsControladorUsuarios(string documento)
         {
             usuario = new clsUsuario(documento);
+        }
+
+        public clsControladorUsuarios(string pais, string estado, string ciudad)
+        {
+            usuario = new clsUsuario(pais, estado, ciudad);
         }
 
         public bool controladorLogin()
@@ -83,6 +88,19 @@ namespace FB.Controladores
         public bool ejecutarVerificarConductor()
         {
             if (usuario.comprobarUsuarioConductor())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public bool ejecutarCambiarUbicacion()
+        {
+            if (usuario.actualizarUbicacionUsuario())
             {
                 return true;
             }
