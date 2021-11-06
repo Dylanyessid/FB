@@ -128,7 +128,7 @@ namespace FB.Vistas
                 if (btnConfirmar.Text == "Ponerse en Servicio")
                 {
                     clsControladorConductores conductor = new clsControladorConductores();
-                    MessageBox.Show("DEBERIA");
+                    
                     if (conductor.ejecutarPrestarServicio())
                     {
                         frmSolicitantes solicitantesForm = new frmSolicitantes();

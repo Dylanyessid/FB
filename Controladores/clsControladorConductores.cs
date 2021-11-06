@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using FB.Modelo;
 
 namespace FB.Controladores
@@ -17,6 +18,10 @@ namespace FB.Controladores
         public clsControladorConductores()
         {
             conductor = new clsConductor();
+        }
+        public clsControladorConductores(int idSol)
+        {
+            conductor = new clsConductor(idSol);
         }
 
         public bool ejecutarRegistrarConductor()
@@ -46,6 +51,22 @@ namespace FB.Controladores
         public bool ejecutarDejarServicio()
         {
             if (conductor.dejarServicio())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public DataTable ejecutarConductoresActivos()
+        {
+            return conductor.conductoresActivos();
+        }
+        public bool ejecutarCambiarEstado()
+        {
+            if(conductor.cambiarSolicitudConductor())
             {
                 return true;
             }

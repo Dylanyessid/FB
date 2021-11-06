@@ -43,6 +43,10 @@ namespace FB.Controladores
         {
             usuario = new clsUsuario(pais, estado, ciudad);
         }
+        public clsControladorUsuarios()
+        {
+            usuario = new clsUsuario();
+        }
 
         public bool controladorLogin()
         {
@@ -108,6 +112,11 @@ namespace FB.Controladores
             {
                 return false;
             }
+        }
+
+        public DataTable ejecutarUsuariosSolicitando()
+        {
+            return usuario.usuariosSolicitando();
         }
     }
 }

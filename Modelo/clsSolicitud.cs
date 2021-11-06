@@ -12,6 +12,7 @@ namespace FB.Modelo
 {
     class clsSolicitud
     {
+        private int idSolicitud;
         private string documento;
         private DateTime fecha;
         private string pais;
@@ -36,6 +37,11 @@ namespace FB.Modelo
             Fecha = fecha;
         }
 
+        public clsSolicitud(int idSol)
+        {
+            IdSolicitud = idSol;
+        }
+
         public string Documento { get => documento; set => documento = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public string Pais { get => pais; set => pais = value; }
@@ -44,8 +50,7 @@ namespace FB.Modelo
         public decimal PrecioSolicitado { get => precioSolicitado; set => precioSolicitado = value; }
         public string Recogida { get => recogida; set => recogida = value; }
         public string Destino { get => destino; set => destino = value; }
-
-        
+        public int IdSolicitud { get => idSolicitud; set => idSolicitud = value; }
 
         public bool crearSolicitud()
         {
@@ -103,5 +108,32 @@ namespace FB.Modelo
             return false;
 
         }
+
+        public bool atender()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Aceptada' where idSolicitud=@idSol";
+
+            try
+            {
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
+
+        }
+
+        
     }
 }

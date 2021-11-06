@@ -21,6 +21,10 @@ namespace FB.Controladores
         {
             solicitud = new clsSolicitud(clsSesion.FechaUltimaSolicitud);
         }
+        public clsControladorSolicitud(int idSol)
+        {
+            solicitud = new clsSolicitud(idSol);
+        }
 
         public bool ejecutarCrearSolicitud()
         {
@@ -37,6 +41,18 @@ namespace FB.Controladores
         public bool ejecutarCancelarSolicitud()
         {
             if (solicitud.cancelarSolicitud())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ejecutarAtenderSolicitud()
+        {
+            if (solicitud.atender())
             {
                 return true;
             }

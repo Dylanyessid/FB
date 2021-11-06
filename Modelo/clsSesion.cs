@@ -24,7 +24,6 @@ namespace FB.Modelo
 
         private static string direccionRecogida;
         private static string direccionDestino;
-
         private static DateTime fechaUltimaSolicitud;
         
 

@@ -43,6 +43,11 @@ namespace FB.Modelo
             
         }
 
+        public clsConductor(int solicitudActual)
+        {
+            SolicitudActual = solicitudActual;
+        }
+
         public bool registrarConductor()
         {
             SqlCommand consulta = new SqlCommand();
@@ -120,6 +125,57 @@ namespace FB.Modelo
                 MessageBox.Show(err.Message);
                 return false;
             }
+        }
+
+        public DataTable conductoresActivos()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            consulta.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = clsSesion.Ciudad;
+            consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = clsSesion.Estado;
+            consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = clsSesion.Pais;
+            consulta.CommandText = "select * from conductoresActivos where ciudadActual=@ciudad and estadoActual=@estado and paisActual=@pais order by calificacionPromedio DESC";
+
+            SqlDataReader listaConductoresActivos = consulta.ExecuteReader();
+            DataTable infoConductoresActivos = new DataTable();
+            infoConductoresActivos.Load(listaConductoresActivos);
+
+            return infoConductoresActivos;
+        }
+
+       public bool cambiarSolicitudConductor()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            if (SolicitudActual > 0)
+            {
+                consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = SolicitudActual;
+
+            }
+            else
+            {
+                consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = null;
+            }
+            consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = clsSesion.DocumentoSesion;
+            consulta.CommandText = "UPDATE tblConductores SET solicitudActual=@idSol where numDocumentoIdentidad=@documento";
+
+            try
+            {
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
         }
     }
 }

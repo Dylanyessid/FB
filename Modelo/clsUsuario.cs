@@ -14,7 +14,7 @@ namespace FB.Modelo
     class clsUsuario
     {
         
-        private SqlConnection usersConnect;
+        private SqlConnection usersConnect = clsConexion.dbConnect();
 
         private string numDocumentoIdentidad;
         private string primerNombreUsuario;
@@ -37,7 +37,7 @@ namespace FB.Modelo
         private string direccionRecogida;
         private string direccionDestion;
         private decimal precioSolicitado;
-       
+        
 
 
         public string NumDocumentoIdentidad { get => numDocumentoIdentidad; set => numDocumentoIdentidad = value; }
@@ -67,6 +67,11 @@ namespace FB.Modelo
             Contraseña = contraseña;
             
             usersConnect = clsConexion.dbConnect();
+        }
+
+        public clsUsuario()
+        {
+
         }
 
         //Toca revisar este constructor
@@ -288,6 +293,23 @@ namespace FB.Modelo
                 MessageBox.Show(err.Message);
                 return false;
             }
+        }
+
+        public DataTable usuariosSolicitando()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            consulta.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = clsSesion.Ciudad;
+            consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = clsSesion.Estado;
+            consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = clsSesion.Pais;
+            consulta.CommandText = "select idSolicitud, numDocumentoSolicitante, primerNombreUsuario,primerApellidoUsuario, direccionRecogida, direccionDestino, precioSolicitado from usuariosSolicitando where ciudadActual=@ciudad and estadoActual=@estado and paisActual=@pais";
+
+            SqlDataReader listaUsuariosSolicitando = consulta.ExecuteReader();
+            DataTable infoUsuariosSolicitando = new DataTable();
+            infoUsuariosSolicitando.Load(listaUsuariosSolicitando);
+
+            return infoUsuariosSolicitando;
+            
         }
 
        
