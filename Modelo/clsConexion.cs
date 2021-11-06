@@ -16,14 +16,14 @@ namespace FB.Modelo
         private static string database = "dboFastBike";
         private static string security = "integrated security=false";
         private static string user = "Dylan";
-        private static string password = "jhguy8/5jj*";
+        private static string password = "#Cavesandcliffspart2";
 
         public static SqlConnection dbConnect()
         {
             if(dbConnection == null)
             {
-                //dbConnection = new SqlConnection($"server={host};database={database};{security};user={user};password={password}");
-                dbConnection = new SqlConnection("server=LAPTOP-6N13TOH0\\SQLEXPRESS;database=dboFastBike;integrated security=true");
+                dbConnection = new SqlConnection($"server={host};database={database};{security};user={user};password={password}");
+                //dbConnection = new SqlConnection("server=LAPTOP-6N13TOH0\\SQLEXPRESS;database=dboFastBike;integrated security=true");
                 try
                 {
                     dbConnection.Open();

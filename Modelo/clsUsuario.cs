@@ -132,7 +132,7 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
             consulta.CommandText = "insert into tblUsuarios values (@documento, @primerNom, @segundoNom, " +
-                "@primerApe, @segundoApe, @fechaNacimiento, @sexo, @pais, @estado, @ciudad, '0' , 'Usuario', 'Activo')";
+                "@primerApe, @segundoApe, @fechaNacimiento, @sexo, @pais, @estado, @ciudad, 'Usuario', 'Activo')";
             consulta.Parameters.Add("@documento", SqlDbType.Int).Value = numDocumentoIdentidad;
             consulta.Parameters.Add("@primerNom", SqlDbType.VarChar).Value = primerNombreUsuario;
             consulta.Parameters.Add("@segundoNom", SqlDbType.VarChar).Value = segundoNombreUsuario;
