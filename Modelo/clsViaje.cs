@@ -8,5 +8,6 @@ namespace FB.Modelo
 {
     class clsViaje
     {
+
     }
 }

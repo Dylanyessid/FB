@@ -48,11 +48,12 @@ namespace FB.Modelo
             SolicitudActual = solicitudActual;
         }
 
+        //Metodo para registrar conductor por primera vez
         public bool registrarConductor()
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
-            consulta.CommandText = "insert into tblConductores values (@placa, @numDocumento, 0, 0, @licenciaDesde, @licenciaHasta, null)";
+            consulta.CommandText = "insert into tblConductores values (@placa, @numDocumento, 0, 0,0, @licenciaDesde, @licenciaHasta, null)";
             consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = clsSesion.PlacaMoto;
             consulta.Parameters.Add("@numDocumento", SqlDbType.VarChar).Value = NumDocumentoIdentidad;
             consulta.Parameters.Add("@licenciaDesde", SqlDbType.Date).Value = LicenciaDesde;
@@ -76,7 +77,7 @@ namespace FB.Modelo
                 return false;
             }
         }
-
+        //Metodo para indicar que se quiere prestar servicio
         public bool prestarServicio()
         {
             SqlCommand consulta = new SqlCommand();
@@ -102,6 +103,8 @@ namespace FB.Modelo
             }
 
         }
+
+        //Metodo para dejar de prestar servicio
         public bool dejarServicio()
         {
             SqlCommand consulta = new SqlCommand();
@@ -127,6 +130,7 @@ namespace FB.Modelo
             }
         }
 
+        //Metodo para mostrar los conductores activos
         public DataTable conductoresActivos()
         {
             SqlCommand consulta = new SqlCommand();
@@ -143,7 +147,8 @@ namespace FB.Modelo
             return infoConductoresActivos;
         }
 
-       public bool cambiarSolicitudConductor()
+        //Metodo para establecer si un conductor está o no en una solicitud
+        public bool cambiarSolicitudConductor()
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
