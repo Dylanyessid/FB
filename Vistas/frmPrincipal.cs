@@ -14,15 +14,36 @@ namespace FB.Vistas
 {
     public partial class frmPrincipal : Form
     {
+        private clsControladorMetodoPago metodoPago;
         public frmPrincipal()
         {
             InitializeComponent();
         }
-
+        void obtenerMetodosPago()
+        {
+            metodoPago = new clsControladorMetodoPago(clsSesion.DocumentoSesion);
+            DataTable dtMetodosPago = metodoPago.ejecutarConsultarMetodosPago();
+            if (dtMetodosPago.Rows.Count == 0)
+            {
+                lblAviso.Visible = true;
+                cmbMetodosPago.Visible = false;
+                btnEditarMetodoPago.Visible = false;
+                btnEliminarMetodoPago.Visible = false;
+            }
+            else
+            {
+                lblAviso.Visible = false;
+                foreach (DataRow metodoPago in dtMetodosPago.Rows)
+                {
+                    cmbMetodosPago.Items.Add("Tarjeta de: " + metodoPago["tipoTarjeta"] + "  ||  " + metodoPago["concepto"]);
+                }
+            }
+            lblNombre.Text = $"{clsSesion.PrimerNombre} {clsSesion.PrimerApellido}";
+        }
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
-            lblNombre.Text = $"{clsSesion.PrimerNombre} {clsSesion.PrimerApellido}";
+            obtenerMetodosPago();
+           
         }
 
         private void btnOfrecerServicio_Click(object sender, EventArgs e)
@@ -63,6 +84,19 @@ namespace FB.Vistas
             this.Hide();
             ubicacion.ShowDialog();
             this.Show();
+            
+        }
+
+        private void btnAgregatMetodoPago_Click(object sender, EventArgs e)
+        {
+            frmMetodoPago formMetodoPago = new frmMetodoPago();
+            this.Hide();
+            formMetodoPago.ShowDialog();
+            this.Controls.Clear();
+            this.InitializeComponent();
+            obtenerMetodosPago();
+            this.Show();
+;
             
         }
     }

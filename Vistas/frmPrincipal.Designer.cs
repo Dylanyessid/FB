@@ -35,6 +35,20 @@ namespace FB.Vistas
             this.btnOfrecerServicio = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.tabPrincipal = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabOpcionesCuenta = new System.Windows.Forms.TabPage();
+            this.tabMetodosPago = new System.Windows.Forms.TabPage();
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.btnEliminarMetodoPago = new System.Windows.Forms.Button();
+            this.btnEditarMetodoPago = new System.Windows.Forms.Button();
+            this.cmbMetodosPago = new System.Windows.Forms.ComboBox();
+            this.btnAgregatMetodoPago = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPrincipal.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabMetodosPago.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIngreso
@@ -42,7 +56,7 @@ namespace FB.Vistas
             this.lblIngreso.AutoSize = true;
             this.lblIngreso.BackColor = System.Drawing.Color.Transparent;
             this.lblIngreso.Font = new System.Drawing.Font("Red Hat Display Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngreso.Location = new System.Drawing.Point(228, 32);
+            this.lblIngreso.Location = new System.Drawing.Point(232, 3);
             this.lblIngreso.Name = "lblIngreso";
             this.lblIngreso.Size = new System.Drawing.Size(210, 85);
             this.lblIngreso.TabIndex = 7;
@@ -53,7 +67,7 @@ namespace FB.Vistas
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(192, 132);
+            this.label1.Location = new System.Drawing.Point(195, 173);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(288, 39);
             this.label1.TabIndex = 8;
@@ -67,7 +81,7 @@ namespace FB.Vistas
             this.btnPedirServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPedirServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedirServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPedirServicio.Location = new System.Drawing.Point(62, 187);
+            this.btnPedirServicio.Location = new System.Drawing.Point(86, 236);
             this.btnPedirServicio.Name = "btnPedirServicio";
             this.btnPedirServicio.Size = new System.Drawing.Size(222, 75);
             this.btnPedirServicio.TabIndex = 48;
@@ -83,7 +97,7 @@ namespace FB.Vistas
             this.btnOfrecerServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOfrecerServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfrecerServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOfrecerServicio.Location = new System.Drawing.Point(324, 187);
+            this.btnOfrecerServicio.Location = new System.Drawing.Point(327, 236);
             this.btnOfrecerServicio.Name = "btnOfrecerServicio";
             this.btnOfrecerServicio.Size = new System.Drawing.Size(222, 75);
             this.btnOfrecerServicio.TabIndex = 49;
@@ -99,7 +113,7 @@ namespace FB.Vistas
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(647, 77);
+            this.button2.Location = new System.Drawing.Point(609, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 75);
             this.button2.TabIndex = 50;
@@ -116,22 +130,169 @@ namespace FB.Vistas
             this.lblNombre.Size = new System.Drawing.Size(0, 35);
             this.lblNombre.TabIndex = 51;
             // 
+            // tabPrincipal
+            // 
+            this.tabPrincipal.Controls.Add(this.tabPage1);
+            this.tabPrincipal.Controls.Add(this.tabOpcionesCuenta);
+            this.tabPrincipal.Controls.Add(this.tabMetodosPago);
+            this.tabPrincipal.Controls.Add(this.tabPage2);
+            this.tabPrincipal.Location = new System.Drawing.Point(12, 4);
+            this.tabPrincipal.Name = "tabPrincipal";
+            this.tabPrincipal.SelectedIndex = 0;
+            this.tabPrincipal.Size = new System.Drawing.Size(798, 373);
+            this.tabPrincipal.TabIndex = 52;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.lblIngreso);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.btnPedirServicio);
+            this.tabPage1.Controls.Add(this.btnOfrecerServicio);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(790, 347);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Menú ";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabOpcionesCuenta
+            // 
+            this.tabOpcionesCuenta.Location = new System.Drawing.Point(4, 22);
+            this.tabOpcionesCuenta.Name = "tabOpcionesCuenta";
+            this.tabOpcionesCuenta.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOpcionesCuenta.Size = new System.Drawing.Size(790, 347);
+            this.tabOpcionesCuenta.TabIndex = 1;
+            this.tabOpcionesCuenta.Text = "Opciones de Cuenta";
+            this.tabOpcionesCuenta.UseVisualStyleBackColor = true;
+            // 
+            // tabMetodosPago
+            // 
+            this.tabMetodosPago.AutoScroll = true;
+            this.tabMetodosPago.Controls.Add(this.lblAviso);
+            this.tabMetodosPago.Controls.Add(this.btnEliminarMetodoPago);
+            this.tabMetodosPago.Controls.Add(this.btnEditarMetodoPago);
+            this.tabMetodosPago.Controls.Add(this.cmbMetodosPago);
+            this.tabMetodosPago.Controls.Add(this.btnAgregatMetodoPago);
+            this.tabMetodosPago.Controls.Add(this.label2);
+            this.tabMetodosPago.Location = new System.Drawing.Point(4, 22);
+            this.tabMetodosPago.Name = "tabMetodosPago";
+            this.tabMetodosPago.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMetodosPago.Size = new System.Drawing.Size(790, 347);
+            this.tabMetodosPago.TabIndex = 2;
+            this.tabMetodosPago.Text = "Métodos de Pago";
+            this.tabMetodosPago.UseVisualStyleBackColor = true;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.Transparent;
+            this.lblAviso.Font = new System.Drawing.Font("Red Hat Text", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAviso.Location = new System.Drawing.Point(128, 122);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(548, 94);
+            this.lblAviso.TabIndex = 55;
+            this.lblAviso.Text = "No tienes actualmente ningún \r\nmétodo de pago agregado.\r\n";
+            // 
+            // btnEliminarMetodoPago
+            // 
+            this.btnEliminarMetodoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnEliminarMetodoPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnEliminarMetodoPago.FlatAppearance.BorderSize = 0;
+            this.btnEliminarMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarMetodoPago.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarMetodoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminarMetodoPago.Location = new System.Drawing.Point(511, 235);
+            this.btnEliminarMetodoPago.Name = "btnEliminarMetodoPago";
+            this.btnEliminarMetodoPago.Size = new System.Drawing.Size(198, 96);
+            this.btnEliminarMetodoPago.TabIndex = 54;
+            this.btnEliminarMetodoPago.Text = "Eliminar Método de Pago Seleccionado";
+            this.btnEliminarMetodoPago.UseVisualStyleBackColor = false;
+            // 
+            // btnEditarMetodoPago
+            // 
+            this.btnEditarMetodoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnEditarMetodoPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnEditarMetodoPago.FlatAppearance.BorderSize = 0;
+            this.btnEditarMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarMetodoPago.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarMetodoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditarMetodoPago.Location = new System.Drawing.Point(307, 235);
+            this.btnEditarMetodoPago.Name = "btnEditarMetodoPago";
+            this.btnEditarMetodoPago.Size = new System.Drawing.Size(198, 96);
+            this.btnEditarMetodoPago.TabIndex = 53;
+            this.btnEditarMetodoPago.Text = "Editar Método de Pago Seleccionado";
+            this.btnEditarMetodoPago.UseVisualStyleBackColor = false;
+            // 
+            // cmbMetodosPago
+            // 
+            this.cmbMetodosPago.DropDownHeight = 120;
+            this.cmbMetodosPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMetodosPago.FormattingEnabled = true;
+            this.cmbMetodosPago.IntegralHeight = false;
+            this.cmbMetodosPago.ItemHeight = 13;
+            this.cmbMetodosPago.Location = new System.Drawing.Point(236, 98);
+            this.cmbMetodosPago.Name = "cmbMetodosPago";
+            this.cmbMetodosPago.Size = new System.Drawing.Size(336, 21);
+            this.cmbMetodosPago.Sorted = true;
+            this.cmbMetodosPago.TabIndex = 52;
+            // 
+            // btnAgregatMetodoPago
+            // 
+            this.btnAgregatMetodoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnAgregatMetodoPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnAgregatMetodoPago.FlatAppearance.BorderSize = 0;
+            this.btnAgregatMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregatMetodoPago.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregatMetodoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAgregatMetodoPago.Location = new System.Drawing.Point(111, 235);
+            this.btnAgregatMetodoPago.Name = "btnAgregatMetodoPago";
+            this.btnAgregatMetodoPago.Size = new System.Drawing.Size(190, 96);
+            this.btnAgregatMetodoPago.TabIndex = 51;
+            this.btnAgregatMetodoPago.Text = "Agregar Método de Pago";
+            this.btnAgregatMetodoPago.UseVisualStyleBackColor = false;
+            this.btnAgregatMetodoPago.Click += new System.EventHandler(this.btnAgregatMetodoPago_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Red Hat Text", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(166, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(438, 64);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Métodos de Pago";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(790, 347);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Historial de Viajes";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 364);
+            this.ClientSize = new System.Drawing.Size(822, 389);
+            this.Controls.Add(this.tabPrincipal);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnOfrecerServicio);
-            this.Controls.Add(this.btnPedirServicio);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblIngreso);
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.tabPrincipal.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabMetodosPago.ResumeLayout(false);
+            this.tabMetodosPago.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +306,16 @@ namespace FB.Vistas
         private System.Windows.Forms.Button btnOfrecerServicio;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TabControl tabPrincipal;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabOpcionesCuenta;
+        private System.Windows.Forms.TabPage tabMetodosPago;
+        private System.Windows.Forms.Button btnAgregatMetodoPago;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbMetodosPago;
+        private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.Button btnEliminarMetodoPago;
+        private System.Windows.Forms.Button btnEditarMetodoPago;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

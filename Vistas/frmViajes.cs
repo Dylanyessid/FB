@@ -37,5 +37,10 @@ namespace FB.Vistas
                 lblTituloRecogida.Text = "Dirección de tu recogida:";
             }
         }
+
+        private void btnReportarRecogida_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

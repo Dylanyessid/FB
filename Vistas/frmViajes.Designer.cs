@@ -40,6 +40,7 @@ namespace FB.Vistas
             this.label3 = new System.Windows.Forms.Label();
             this.btnReportarRecogida = new System.Windows.Forms.Button();
             this.btnTerminarViaje = new System.Windows.Forms.Button();
+            this.lblEstadoViaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSiguiente
@@ -159,6 +160,7 @@ namespace FB.Vistas
             this.btnReportarRecogida.TabIndex = 52;
             this.btnReportarRecogida.Text = "Ya recogí al cliente.";
             this.btnReportarRecogida.UseVisualStyleBackColor = false;
+            this.btnReportarRecogida.Click += new System.EventHandler(this.btnReportarRecogida_Click);
             // 
             // btnTerminarViaje
             // 
@@ -175,12 +177,24 @@ namespace FB.Vistas
             this.btnTerminarViaje.Text = "Ya llegué al destino.";
             this.btnTerminarViaje.UseVisualStyleBackColor = false;
             // 
+            // lblEstadoViaje
+            // 
+            this.lblEstadoViaje.AutoSize = true;
+            this.lblEstadoViaje.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstadoViaje.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoViaje.Location = new System.Drawing.Point(368, 192);
+            this.lblEstadoViaje.Name = "lblEstadoViaje";
+            this.lblEstadoViaje.Size = new System.Drawing.Size(18, 27);
+            this.lblEstadoViaje.TabIndex = 54;
+            this.lblEstadoViaje.Text = ".";
+            // 
             // frmViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 369);
+            this.Controls.Add(this.lblEstadoViaje);
             this.Controls.Add(this.btnTerminarViaje);
             this.Controls.Add(this.btnReportarRecogida);
             this.Controls.Add(this.label3);
@@ -213,5 +227,6 @@ namespace FB.Vistas
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnReportarRecogida;
         private System.Windows.Forms.Button btnTerminarViaje;
+        private System.Windows.Forms.Label lblEstadoViaje;
     }
 }
