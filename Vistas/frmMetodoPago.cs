@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FB.Controladores;
+using System.Security.Cryptography;
 
 
 namespace FB.Vistas
@@ -34,15 +35,26 @@ namespace FB.Vistas
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            string fechaVencimiento = $"{txtMesVencimiento.Text}/{txtAnoVencimiento.Text}";
+             string key = "jwey89e09ewhfo24";
+
+            FB.secret.Encrypt encrypt = new FB.secret.Encrypt();
+            string numTajeta = encrypt.encrypt(txtTarjeta.Text, key);
+            string fechaVencimiento = encrypt.encrypt($"{txtMesVencimiento.Text}/{txtAnoVencimiento.Text}", key);
+            string tipoTarjeta = encrypt.encrypt(cmbTipoTarjeta.Text,key);
+            string concepto = encrypt.encrypt(cmbConcepto.Text, key);
+            string codigoSeguridad = encrypt.encrypt(txtCodigoSeguridad.Text, key);
+            string codigoPostal = encrypt.encrypt(txtCodigoPostal.Text, key);
+
+            
+
             try
             {
-                metodoPago = new clsControladorMetodoPago(FB.Modelo.clsSesion.DocumentoSesion,txtTarjeta.Text, fechaVencimiento, cmbTipoTarjeta.Text,cmbConcepto.Text,txtCodigoSeguridad.Text,txtCodigoPostal.Text);
+                metodoPago = new clsControladorMetodoPago(FB.Modelo.clsSesion.DocumentoSesion,numTajeta, fechaVencimiento, tipoTarjeta,concepto,codigoSeguridad,codigoPostal);
                 metodoPago.ejecutarAgregarMetodoPago();           
             }
-            catch
+            catch (Exception err)
             {
-
+                MessageBox.Show(err.Message);
             }
         }
 

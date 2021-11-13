@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using FB.Modelo;
 using FB.Controladores;
 using FB.Vistas;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace FB.Vistas
 {
@@ -19,16 +24,85 @@ namespace FB.Vistas
 
         public bool Nuevo { get => nuevo; set => nuevo = value; }
 
+        string directorioPaises;
+        string archivoPaises;
+        DataSet paises;
+        DataTable dtPaises;
+        string paisSelecionado;
+
+        string directorioEstados;
+        string archivoEstados;
+        DataSet estados;
+        DataTable dtEstados;
+        string estadoSeleccionado;
+
+        string directorioCiudades;
+        string archivoCiudades;
+        DataSet ciudades;
+        DataTable dtCiudades;
+        string ciudadSeleccionada;
+
+
         public frmCambiarUbicacion(bool nuevo)
         {
             InitializeComponent();
             Nuevo = nuevo;
 
-            
+
+        }
+
+        void actualizarComboboxEstados()
+        {
+            bool isNumeric = int.TryParse(paisSelecionado, out _);
+            if (isNumeric)
+            {
+
+
+
+                for (int i = 0; i < dtEstados.Rows.Count; i++)
+                {
+                    if (dtEstados.Rows[i]["id_country"].ToString() == paisSelecionado)
+                    {
+                        MessageBox.Show(dtEstados.Rows[i]["name"].ToString());
+                    }
+                }
+
+                DataView dvEstados = new DataView(dtEstados);
+                //dvEstados.RowFilter = "id_country=" +paisSelecionado+ "";
+
+
+                cmbEstado.DataSource = dvEstados;
+                cmbEstado.ValueMember = dvEstados.Table.Columns[0].ToString();
+                cmbEstado.DisplayMember = dvEstados.Table.Columns[2].ToString();
+
+            }
         }
 
         private void frmCambiarUbicacion_Load(object sender, EventArgs e)
         {
+
+            //Paises
+            directorioPaises = (Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\Importados\countries.json")));
+            archivoPaises = File.ReadAllText(directorioPaises);
+            paises = JsonConvert.DeserializeObject<DataSet>(archivoPaises);
+            dtPaises = paises.Tables["countries"];
+
+            cmbPais.DataSource = dtPaises;
+            cmbPais.ValueMember = dtPaises.Columns[1].ToString();
+            cmbPais.DisplayMember = dtPaises.Columns[1].ToString();
+
+            //Estados
+            directorioEstados = (Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\Importados\states.json")));
+            archivoEstados = File.ReadAllText(directorioEstados);
+            estados = JsonConvert.DeserializeObject<DataSet>(archivoEstados);
+            dtEstados = estados.Tables["states"];
+
+            //Ciudades
+             directorioCiudades = (Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\Importados\cities.json")));
+             archivoCiudades = File.ReadAllText(directorioCiudades);
+            ciudades = JsonConvert.DeserializeObject<DataSet>(archivoCiudades);
+             dtCiudades = ciudades.Tables["cities"];
+
             if (Nuevo)
             {
                 lblRecogida.Visible = false;
@@ -39,7 +113,7 @@ namespace FB.Vistas
                 txtDestino.Visible = false;
                 btnCambiarUbicacion.Enabled = false;
                 btnCambiarUbicacion.Visible = false;
-               
+
                 lblTitulo.Text = "Escoge tu ubicación actual, por favor";
             }
             else if (!Nuevo && !clsSesion.OfreciendoServicio)
@@ -52,18 +126,21 @@ namespace FB.Vistas
                 txtDestino.Visible = true;
                 btnCambiarUbicacion.Enabled = true;
                 btnCambiarUbicacion.Visible = true;
-                lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual?, Si es así, pulse en 'Pedir transporte' ";
-                txtCiudad.Enabled = false;
-                txtEstado.Enabled = false;
-                txtPais.Enabled = false;
-                txtPais.Text = clsSesion.Pais;
-                txtCiudad.Text = clsSesion.Ciudad;
-                txtEstado.Text = clsSesion.Estado;
+                lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual? \r\n Si es así, pulse en 'PEDIR TRANSPORTE' ";
+                lblUbicacion.Text = $"Última ubicación:\r\nPaís:{clsSesion.Pais}. Estado:{clsSesion.Estado}. Ciudad: {clsSesion.Ciudad}";
+
+                cmbCiudad.Enabled = false;
+                cmbEstado.Enabled = false;
+                cmbPais.Enabled = false;
+                cmbPais.Text = clsSesion.Pais;
+                cmbCiudad.Text = clsSesion.Ciudad;
+                cmbEstado.Text = clsSesion.Estado;
             }
             else if (!Nuevo && clsSesion.OfreciendoServicio)
             {
-                lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual?, Si es así, pulse en 'Ponerse en Servicio' ";
+                lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual? \r\n Si es así, pulse en 'PEDIR TRANSPORTE'";
                 btnConfirmar.Text = "Ponerse en Servicio";
+                lblUbicacion.Text = $"Última ubicación:\r\nPaís: {clsSesion.Pais}. Estado: {clsSesion.Estado}. Ciudad: {clsSesion.Ciudad}";
                 lblRecogida.Visible = false;
                 txtRecogida.Enabled = false;
                 txtRecogida.Visible = false;
@@ -72,15 +149,90 @@ namespace FB.Vistas
                 txtDestino.Visible = false;
                 btnCambiarUbicacion.Enabled = true;
                 btnCambiarUbicacion.Visible = true;
-                txtCiudad.Enabled = false;
-                txtEstado.Enabled = false;
-                txtPais.Enabled = false;
-                txtPais.Text = clsSesion.Pais;
-                txtCiudad.Text = clsSesion.Ciudad;
-                txtEstado.Text = clsSesion.Estado;
+                cmbCiudad.Enabled = false;
+                cmbEstado.Enabled = false;
+                cmbPais.Enabled = false;
+                cmbPais.Text = clsSesion.Pais;
+                cmbCiudad.Text = clsSesion.Ciudad;
+                cmbEstado.Text = clsSesion.Estado;
             }
+            foreach (DataRow row in dtPaises.Rows)
+            {
+                if (row["name"].ToString() == clsSesion.Pais)
+                {
+                    paisSelecionado = row["id"].ToString();
+                    break;
+                }
+            }
+
+
+            DataTable dtEstadosPais = new DataTable();
+            DataColumn dc = new DataColumn("id_country", typeof(String));
+            dtEstadosPais.Columns.Add(dc);
+            dc = new DataColumn("name", typeof(String));
+            dtEstadosPais.Columns.Add(dc);
+            dc = new DataColumn("id", typeof(String));
+            dtEstadosPais.Columns.Add(dc);
+
+            foreach (DataRow row in dtEstados.Rows)
+            {
+                if (row["id_country"].ToString() == paisSelecionado)
+                {
+                    DataRow estado = dtEstadosPais.NewRow();
+
+
+                    estado["id_country"] = row["id_country"].ToString();
+                    estado["name"] = row["name"].ToString();
+                    estado["id"] = row["id"].ToString();
+
+                    dtEstadosPais.Rows.Add(estado);
+                }
+                if(row["name"].ToString() == clsSesion.Estado)
+                {
+                    estadoSeleccionado = row["id"].ToString();
+                }
+            }
+
             
+
+            cmbEstado.DataSource = dtEstadosPais;
+            cmbEstado.ValueMember = dtEstadosPais.Columns[2].ToString();
+            cmbEstado.DisplayMember = dtEstadosPais.Columns[1].ToString();
+            cmbEstado.SelectedValue = estadoSeleccionado;
+
+            //Preparar Combobox Ciudad
+            DataTable dtCiudadEstado = new DataTable();
+            DataColumn dcCiudad = new DataColumn("idC", typeof(String));
+            dtCiudadEstado.Columns.Add(dcCiudad);
+            dcCiudad = new DataColumn("id_state", typeof(String));
+            dtCiudadEstado.Columns.Add(dcCiudad);
+            dcCiudad = new DataColumn("nameC", typeof(String));
+            dtCiudadEstado.Columns.Add(dcCiudad);
+            foreach (DataRow row in dtCiudades.Rows)
+            {
+                if (row["id_state"].ToString() == estadoSeleccionado)
+                {
+                    DataRow ciudad = dtCiudadEstado.NewRow();
+
+
+                    ciudad["id_state"] = row["id_state"].ToString();
+                    ciudad["nameC"] = row["name"].ToString();
+                    ciudad["idC"] = row["id"].ToString();
+
+                    dtCiudadEstado.Rows.Add(ciudad);
+                }
+                if (row["name"].ToString() == clsSesion.Ciudad)
+                {
+                    ciudadSeleccionada = row["id"].ToString();
+                }
+            }
+
+            cmbCiudad.DataSource = dtCiudadEstado;
+            cmbCiudad.ValueMember = dtCiudadEstado.Columns[0].ToString();
+            cmbCiudad.DisplayMember = dtCiudadEstado.Columns[2].ToString();
+            cmbCiudad.SelectedValue = ciudadSeleccionada;
         }
+    
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -102,14 +254,15 @@ namespace FB.Vistas
                 }
                 else if (btnConfirmar.Text == "Guardar cambios de ubicación")
                 {
-                    clsControladorUsuarios usuario = new clsControladorUsuarios(txtPais.Text, txtEstado.Text, txtCiudad.Text);
+                    clsControladorUsuarios usuario = new clsControladorUsuarios(cmbPais.Text, cmbEstado.Text, cmbCiudad.Text);
                     usuario.ejecutarCambiarUbicacion();
-                    txtCiudad.Text = clsSesion.Ciudad;
-                    txtEstado.Text = clsSesion.Estado;
-                    txtPais.Text = clsSesion.Pais;
-                    txtCiudad.Enabled = false;
-                    txtEstado.Enabled = false;
-                    txtPais.Enabled = false;
+                    cmbCiudad.Text = clsSesion.Ciudad;
+                    cmbEstado.Text = clsSesion.Estado;
+                    cmbPais.Text = clsSesion.Pais;
+                    cmbCiudad.Enabled = false;
+                    cmbEstado.Enabled = false;
+                    cmbPais.Enabled = false;
+                    lblUbicacion.Text = $"Última ubicación:\r\nPaís:{clsSesion.Pais}. Estado:{clsSesion.Estado}. Ciudad: {clsSesion.Ciudad}";
 
                     if (!clsSesion.OfreciendoServicio)
                     {
@@ -142,14 +295,17 @@ namespace FB.Vistas
                 }
                 else if (btnConfirmar.Text == "Guardar cambios de ubicación")
                 {
-                    clsControladorUsuarios usuario = new clsControladorUsuarios(txtPais.Text, txtEstado.Text, txtCiudad.Text);
+                    clsControladorUsuarios usuario = new clsControladorUsuarios(cmbPais.Text, cmbEstado.Text, cmbCiudad.Text);
                     usuario.ejecutarCambiarUbicacion();
-                    txtCiudad.Text = clsSesion.Ciudad;
-                    txtEstado.Text = clsSesion.Estado;
-                    txtPais.Text = clsSesion.Pais;
-                    txtCiudad.Enabled = false;
-                    txtEstado.Enabled = false;
-                    txtPais.Enabled = false;
+                    
+                    cmbCiudad.Text = clsSesion.Ciudad;
+                    cmbEstado.Text = clsSesion.Estado;
+                    cmbPais.Text = clsSesion.Pais;
+                    cmbCiudad.Enabled = false;
+                    cmbEstado.Enabled = false;
+                    cmbPais.Enabled = false;
+
+
                 }
             }
         }
@@ -159,7 +315,7 @@ namespace FB.Vistas
             this.Close();
         }
 
-        private void txtPais_TextChanged(object sender, EventArgs e)
+        private void cmbPais_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -168,12 +324,12 @@ namespace FB.Vistas
         {
             if(btnCambiarUbicacion.Text == "Descartar Cambios")
             {
-                txtEstado.Text = clsSesion.Estado;
-                txtCiudad.Text = clsSesion.Ciudad;
-                txtPais.Text = clsSesion.Pais;
-                txtPais.Enabled = false;
-                txtEstado.Enabled = false;
-                txtCiudad.Enabled = false;
+                cmbEstado.Text = clsSesion.Estado;
+                cmbCiudad.Text = clsSesion.Ciudad;
+                cmbPais.Text = clsSesion.Pais;
+                cmbPais.Enabled = false;
+                cmbEstado.Enabled = false;
+                cmbCiudad.Enabled = false;
                 if (!clsSesion.OfreciendoServicio)
                 {
                     btnConfirmar.Text = "Pedir Transporte";
@@ -187,13 +343,140 @@ namespace FB.Vistas
             }
             else if(btnCambiarUbicacion.Text == "Cambiar ubicación")
             {
-                txtPais.Enabled = true;
-                txtEstado.Enabled = true;
-                txtCiudad.Enabled = true;
+                cmbPais.Enabled = true;
+                cmbEstado.Enabled = true;
+                cmbCiudad.Enabled = true;
                 btnConfirmar.Text = "Guardar cambios de ubicación";
                 btnCambiarUbicacion.Text = "Descartar Cambios";
             }
            
+
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dtCiudades != null)
+                {
+                    foreach (DataRow estado in dtEstados.Rows)
+                    {
+                        if (cmbEstado.Text == estado["name"].ToString())
+                        {
+                            estadoSeleccionado = estado["id"].ToString();
+                            break;
+                        }
+                    }
+                    DataTable dtCiudadEstado = new DataTable();
+                    DataColumn dcCiudad = new DataColumn("idC", typeof(String));
+                    dtCiudadEstado.Columns.Add(dcCiudad);
+                    dcCiudad = new DataColumn("id_state", typeof(String));
+                    dtCiudadEstado.Columns.Add(dcCiudad);
+                    dcCiudad = new DataColumn("nameC", typeof(String));
+                    dtCiudadEstado.Columns.Add(dcCiudad);
+                    foreach (DataRow row in dtCiudades.Rows)
+                    {
+                        if (row["id_state"].ToString() == estadoSeleccionado)
+                        {
+                            DataRow ciudad = dtCiudadEstado.NewRow();
+
+
+                            ciudad["id_state"] = row["id_state"].ToString();
+                            ciudad["nameC"] = row["name"].ToString();
+                            ciudad["idC"] = row["id"].ToString();
+
+                            dtCiudadEstado.Rows.Add(ciudad);
+                        }
+                        if (row["name"].ToString() == clsSesion.Ciudad)
+                        {
+                            ciudadSeleccionada = row["id"].ToString();
+                        }
+                    }
+
+                    cmbCiudad.DataSource = dtCiudadEstado;
+                    cmbCiudad.ValueMember = dtCiudadEstado.Columns[0].ToString();
+                    cmbCiudad.DisplayMember = dtCiudadEstado.Columns[2].ToString();
+                    cmbCiudad.SelectedValue = ciudadSeleccionada;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private void cmbPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if(dtEstados != null)
+                {
+                    foreach (DataRow pais in dtPaises.Rows)
+                    {
+                        if (cmbPais.Text == pais["name"].ToString())
+                        {
+                            paisSelecionado = pais["id"].ToString();
+                            break;
+                        }
+                    }
+
+                   
+
+                    DataTable dtEstadosPais = new DataTable();
+                    DataColumn dc = new DataColumn("id_country", typeof(String));
+                    dtEstadosPais.Columns.Add(dc);
+                    dc = new DataColumn("name", typeof(String));
+                    dtEstadosPais.Columns.Add(dc);
+                    dc = new DataColumn("id", typeof(String));
+                    dtEstadosPais.Columns.Add(dc);
+
+                    foreach (DataRow row in dtEstados.Rows)
+                    {
+                        if (row["id_country"].ToString() == paisSelecionado)
+                        {
+                            DataRow estado = dtEstadosPais.NewRow();
+
+
+                            estado["id_country"] = row["id_country"].ToString();
+                            estado["name"] = row["name"].ToString();
+                            estado["id"] = row["id"].ToString();
+
+                            dtEstadosPais.Rows.Add(estado);
+                        }
+                        if (row["name"].ToString() == clsSesion.Estado)
+                        {
+                            estadoSeleccionado = row["id"].ToString();
+                        }
+                    }
+
+
+
+                    cmbEstado.DataSource = dtEstadosPais;
+                    cmbEstado.ValueMember = dtEstadosPais.Columns[2].ToString();
+                    cmbEstado.DisplayMember = dtEstadosPais.Columns[1].ToString();
+                    cmbEstado.SelectedValue = estadoSeleccionado;
+
+                }
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+
+
+        }
+
+        private void cmbPais_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //Estados
+            //System.Threading.Thread.Sleep(1500);
+
+
+           
+
 
         }
     }

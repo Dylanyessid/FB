@@ -84,7 +84,7 @@ namespace FB.Vistas
             this.txtTarjeta.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTarjeta.LeadingIcon = null;
             this.txtTarjeta.Location = new System.Drawing.Point(12, 106);
-            this.txtTarjeta.MaxLength = 30;
+            this.txtTarjeta.MaxLength = 20;
             this.txtTarjeta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTarjeta.Multiline = false;
             this.txtTarjeta.Name = "txtTarjeta";
@@ -222,7 +222,7 @@ namespace FB.Vistas
             // 
             this.txtAnoVencimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAnoVencimiento.Depth = 0;
-            this.txtAnoVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAnoVencimiento.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtAnoVencimiento.LeadingIcon = null;
             this.txtAnoVencimiento.Location = new System.Drawing.Point(159, 325);
             this.txtAnoVencimiento.MaxLength = 2;

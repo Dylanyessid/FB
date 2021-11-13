@@ -33,9 +33,6 @@ namespace FB.Vistas
             this.lblUbicacion = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCambiarUbicacion = new System.Windows.Forms.Button();
-            this.txtPais = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtEstado = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtCiudad = new MaterialSkin.Controls.MaterialTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,28 +41,32 @@ namespace FB.Vistas
             this.txtDestino = new MaterialSkin.Controls.MaterialTextBox();
             this.lblDestino = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.cmbPais = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmbEstado = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmbCiudad = new MaterialSkin.Controls.MaterialComboBox();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(170, 24);
+            this.lblTitulo.Font = new System.Drawing.Font("Red Hat Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(161, 12);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(0, 39);
+            this.lblTitulo.Size = new System.Drawing.Size(0, 31);
             this.lblTitulo.TabIndex = 11;
             // 
             // lblUbicacion
             // 
             this.lblUbicacion.AutoSize = true;
             this.lblUbicacion.BackColor = System.Drawing.Color.Transparent;
-            this.lblUbicacion.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUbicacion.Location = new System.Drawing.Point(304, 63);
+            this.lblUbicacion.Font = new System.Drawing.Font("Red Hat Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUbicacion.Location = new System.Drawing.Point(7, 105);
             this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(182, 39);
+            this.lblUbicacion.Size = new System.Drawing.Size(154, 31);
             this.lblUbicacion.TabIndex = 12;
             this.lblUbicacion.Text = "UBICACION";
+            this.lblUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnConfirmar
             // 
@@ -75,9 +76,9 @@ namespace FB.Vistas
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmar.Location = new System.Drawing.Point(587, 314);
+            this.btnConfirmar.Location = new System.Drawing.Point(661, 342);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(222, 75);
+            this.btnConfirmar.Size = new System.Drawing.Size(187, 114);
             this.btnConfirmar.TabIndex = 47;
             this.btnConfirmar.Text = "Pedir Transporte";
             this.btnConfirmar.UseVisualStyleBackColor = false;
@@ -91,71 +92,22 @@ namespace FB.Vistas
             this.btnCambiarUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarUbicacion.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarUbicacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCambiarUbicacion.Location = new System.Drawing.Point(587, 227);
+            this.btnCambiarUbicacion.Location = new System.Drawing.Point(661, 224);
             this.btnCambiarUbicacion.Name = "btnCambiarUbicacion";
-            this.btnCambiarUbicacion.Size = new System.Drawing.Size(222, 75);
+            this.btnCambiarUbicacion.Size = new System.Drawing.Size(187, 112);
             this.btnCambiarUbicacion.TabIndex = 48;
             this.btnCambiarUbicacion.Text = "Cambiar ubicación";
             this.btnCambiarUbicacion.UseVisualStyleBackColor = false;
             this.btnCambiarUbicacion.Click += new System.EventHandler(this.btnCambiarUbicacion_Click);
             // 
-            // txtPais
-            // 
-            this.txtPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPais.Depth = 0;
-            this.txtPais.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPais.LeadingIcon = null;
-            this.txtPais.Location = new System.Drawing.Point(33, 156);
-            this.txtPais.MaxLength = 50;
-            this.txtPais.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPais.Multiline = false;
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(205, 50);
-            this.txtPais.TabIndex = 49;
-            this.txtPais.Text = "";
-            this.txtPais.TrailingIcon = null;
-            this.txtPais.TextChanged += new System.EventHandler(this.txtPais_TextChanged);
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.Depth = 0;
-            this.txtEstado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtEstado.LeadingIcon = null;
-            this.txtEstado.Location = new System.Drawing.Point(281, 156);
-            this.txtEstado.MaxLength = 50;
-            this.txtEstado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtEstado.Multiline = false;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(205, 50);
-            this.txtEstado.TabIndex = 50;
-            this.txtEstado.Text = "";
-            this.txtEstado.TrailingIcon = null;
-            // 
-            // txtCiudad
-            // 
-            this.txtCiudad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCiudad.Depth = 0;
-            this.txtCiudad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCiudad.LeadingIcon = null;
-            this.txtCiudad.Location = new System.Drawing.Point(537, 156);
-            this.txtCiudad.MaxLength = 50;
-            this.txtCiudad.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCiudad.Multiline = false;
-            this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(205, 50);
-            this.txtCiudad.TabIndex = 51;
-            this.txtCiudad.Text = "";
-            this.txtCiudad.TrailingIcon = null;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(117, 122);
+            this.label3.Font = new System.Drawing.Font("Red Hat Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(66, 208);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 31);
+            this.label3.Size = new System.Drawing.Size(53, 27);
             this.label3.TabIndex = 52;
             this.label3.Text = "Pais";
             // 
@@ -163,10 +115,10 @@ namespace FB.Vistas
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(259, 122);
+            this.label4.Font = new System.Drawing.Font("Red Hat Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(191, 207);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(273, 31);
+            this.label4.Size = new System.Drawing.Size(241, 27);
             this.label4.TabIndex = 53;
             this.label4.Text = "Estado/Departamento";
             // 
@@ -174,10 +126,10 @@ namespace FB.Vistas
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(598, 122);
+            this.label5.Font = new System.Drawing.Font("Red Hat Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(505, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 31);
+            this.label5.Size = new System.Drawing.Size(82, 27);
             this.label5.TabIndex = 54;
             this.label5.Text = "Ciudad";
             // 
@@ -187,7 +139,7 @@ namespace FB.Vistas
             this.txtRecogida.Depth = 0;
             this.txtRecogida.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtRecogida.LeadingIcon = null;
-            this.txtRecogida.Location = new System.Drawing.Point(281, 252);
+            this.txtRecogida.Location = new System.Drawing.Point(297, 314);
             this.txtRecogida.MaxLength = 50;
             this.txtRecogida.MouseState = MaterialSkin.MouseState.OUT;
             this.txtRecogida.Multiline = false;
@@ -201,10 +153,10 @@ namespace FB.Vistas
             // 
             this.lblRecogida.AutoSize = true;
             this.lblRecogida.BackColor = System.Drawing.Color.Transparent;
-            this.lblRecogida.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecogida.Location = new System.Drawing.Point(12, 254);
+            this.lblRecogida.Font = new System.Drawing.Font("Red Hat Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecogida.Location = new System.Drawing.Point(32, 323);
             this.lblRecogida.Name = "lblRecogida";
-            this.lblRecogida.Size = new System.Drawing.Size(261, 31);
+            this.lblRecogida.Size = new System.Drawing.Size(225, 27);
             this.lblRecogida.TabIndex = 57;
             this.lblRecogida.Text = "Dirección de recogida";
             // 
@@ -214,7 +166,7 @@ namespace FB.Vistas
             this.txtDestino.Depth = 0;
             this.txtDestino.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDestino.LeadingIcon = null;
-            this.txtDestino.Location = new System.Drawing.Point(281, 323);
+            this.txtDestino.Location = new System.Drawing.Point(297, 370);
             this.txtDestino.MaxLength = 50;
             this.txtDestino.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDestino.Multiline = false;
@@ -228,10 +180,10 @@ namespace FB.Vistas
             // 
             this.lblDestino.AutoSize = true;
             this.lblDestino.BackColor = System.Drawing.Color.Transparent;
-            this.lblDestino.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDestino.Location = new System.Drawing.Point(12, 335);
+            this.lblDestino.Font = new System.Drawing.Font("Red Hat Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestino.Location = new System.Drawing.Point(32, 379);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(247, 31);
+            this.lblDestino.Size = new System.Drawing.Size(212, 27);
             this.lblDestino.TabIndex = 59;
             this.lblDestino.Text = "Dirección de destino";
             // 
@@ -243,20 +195,92 @@ namespace FB.Vistas
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(18, 386);
+            this.btnVolver.Location = new System.Drawing.Point(12, 12);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(146, 63);
+            this.btnVolver.Size = new System.Drawing.Size(127, 65);
             this.btnVolver.TabIndex = 60;
             this.btnVolver.Text = "Volver al menú";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // cmbPais
+            // 
+            this.cmbPais.AutoResize = false;
+            this.cmbPais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbPais.Depth = 0;
+            this.cmbPais.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbPais.DropDownHeight = 174;
+            this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPais.DropDownWidth = 121;
+            this.cmbPais.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbPais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbPais.FormattingEnabled = true;
+            this.cmbPais.IntegralHeight = false;
+            this.cmbPais.ItemHeight = 43;
+            this.cmbPais.Location = new System.Drawing.Point(18, 238);
+            this.cmbPais.MaxDropDownItems = 4;
+            this.cmbPais.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbPais.Name = "cmbPais";
+            this.cmbPais.Size = new System.Drawing.Size(167, 49);
+            this.cmbPais.StartIndex = 0;
+            this.cmbPais.TabIndex = 63;
+            this.cmbPais.SelectedIndexChanged += new System.EventHandler(this.cmbPais_SelectedIndexChanged);
+            this.cmbPais.SelectedValueChanged += new System.EventHandler(this.cmbPais_SelectedValueChanged);
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.AutoResize = false;
+            this.cmbEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbEstado.Depth = 0;
+            this.cmbEstado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbEstado.DropDownHeight = 174;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.DropDownWidth = 121;
+            this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.IntegralHeight = false;
+            this.cmbEstado.ItemHeight = 43;
+            this.cmbEstado.Location = new System.Drawing.Point(210, 237);
+            this.cmbEstado.MaxDropDownItems = 4;
+            this.cmbEstado.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(205, 49);
+            this.cmbEstado.StartIndex = 0;
+            this.cmbEstado.TabIndex = 64;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            // 
+            // cmbCiudad
+            // 
+            this.cmbCiudad.AutoResize = false;
+            this.cmbCiudad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbCiudad.Depth = 0;
+            this.cmbCiudad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbCiudad.DropDownHeight = 174;
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad.DropDownWidth = 121;
+            this.cmbCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbCiudad.FormattingEnabled = true;
+            this.cmbCiudad.IntegralHeight = false;
+            this.cmbCiudad.ItemHeight = 43;
+            this.cmbCiudad.Location = new System.Drawing.Point(435, 238);
+            this.cmbCiudad.MaxDropDownItems = 4;
+            this.cmbCiudad.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(205, 49);
+            this.cmbCiudad.StartIndex = 0;
+            this.cmbCiudad.TabIndex = 65;
             // 
             // frmCambiarUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(821, 452);
+            this.ClientSize = new System.Drawing.Size(860, 468);
+            this.Controls.Add(this.cmbCiudad);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.cmbPais);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblDestino);
             this.Controls.Add(this.txtDestino);
@@ -265,9 +289,6 @@ namespace FB.Vistas
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCiudad);
-            this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.txtPais);
             this.Controls.Add(this.btnCambiarUbicacion);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblUbicacion);
@@ -286,9 +307,6 @@ namespace FB.Vistas
         private System.Windows.Forms.Label lblUbicacion;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCambiarUbicacion;
-        private MaterialSkin.Controls.MaterialTextBox txtPais;
-        private MaterialSkin.Controls.MaterialTextBox txtEstado;
-        private MaterialSkin.Controls.MaterialTextBox txtCiudad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -297,5 +315,8 @@ namespace FB.Vistas
         private MaterialSkin.Controls.MaterialTextBox txtDestino;
         private System.Windows.Forms.Label lblDestino;
         private System.Windows.Forms.Button btnVolver;
+        private MaterialSkin.Controls.MaterialComboBox cmbPais;
+        private MaterialSkin.Controls.MaterialComboBox cmbEstado;
+        private MaterialSkin.Controls.MaterialComboBox cmbCiudad;
     }
 }

@@ -46,6 +46,10 @@ namespace FB.Vistas
             this.btnAgregatMetodoPago = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.linklblAutor = new System.Windows.Forms.LinkLabel();
+            this.linklblRepositorio = new System.Windows.Forms.LinkLabel();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabMetodosPago.SuspendLayout();
@@ -67,7 +71,7 @@ namespace FB.Vistas
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(195, 173);
+            this.label1.Location = new System.Drawing.Point(196, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(288, 39);
             this.label1.TabIndex = 8;
@@ -81,7 +85,7 @@ namespace FB.Vistas
             this.btnPedirServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPedirServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedirServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPedirServicio.Location = new System.Drawing.Point(86, 236);
+            this.btnPedirServicio.Location = new System.Drawing.Point(99, 174);
             this.btnPedirServicio.Name = "btnPedirServicio";
             this.btnPedirServicio.Size = new System.Drawing.Size(222, 75);
             this.btnPedirServicio.TabIndex = 48;
@@ -97,7 +101,7 @@ namespace FB.Vistas
             this.btnOfrecerServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOfrecerServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfrecerServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOfrecerServicio.Location = new System.Drawing.Point(327, 236);
+            this.btnOfrecerServicio.Location = new System.Drawing.Point(327, 174);
             this.btnOfrecerServicio.Name = "btnOfrecerServicio";
             this.btnOfrecerServicio.Size = new System.Drawing.Size(222, 75);
             this.btnOfrecerServicio.TabIndex = 49;
@@ -237,6 +241,7 @@ namespace FB.Vistas
             this.cmbMetodosPago.Size = new System.Drawing.Size(336, 21);
             this.cmbMetodosPago.Sorted = true;
             this.cmbMetodosPago.TabIndex = 52;
+            this.cmbMetodosPago.SelectedIndexChanged += new System.EventHandler(this.cmbMetodosPago_SelectedIndexChanged);
             // 
             // btnAgregatMetodoPago
             // 
@@ -275,12 +280,62 @@ namespace FB.Vistas
             this.tabPage2.Text = "Historial de Viajes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 380);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 31);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Créditos a:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(315, 384);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(229, 31);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "JSON Localidades:";
+            // 
+            // linklblAutor
+            // 
+            this.linklblAutor.AutoSize = true;
+            this.linklblAutor.Font = new System.Drawing.Font("Red Hat Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklblAutor.Location = new System.Drawing.Point(163, 380);
+            this.linklblAutor.Name = "linklblAutor";
+            this.linklblAutor.Size = new System.Drawing.Size(132, 31);
+            this.linklblAutor.TabIndex = 54;
+            this.linklblAutor.TabStop = true;
+            this.linklblAutor.Text = "millan2993";
+            this.linklblAutor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblAutor_LinkClicked);
+            // 
+            // linklblRepositorio
+            // 
+            this.linklblRepositorio.AutoSize = true;
+            this.linklblRepositorio.Font = new System.Drawing.Font("Red Hat Text", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklblRepositorio.Location = new System.Drawing.Point(550, 380);
+            this.linklblRepositorio.Name = "linklblRepositorio";
+            this.linklblRepositorio.Size = new System.Drawing.Size(240, 31);
+            this.linklblRepositorio.TabIndex = 55;
+            this.linklblRepositorio.TabStop = true;
+            this.linklblRepositorio.Text = "Repositorio (GitHub)";
+            this.linklblRepositorio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRepositorio_LinkClicked);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(822, 389);
+            this.ClientSize = new System.Drawing.Size(822, 414);
+            this.Controls.Add(this.linklblRepositorio);
+            this.Controls.Add(this.linklblAutor);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tabPrincipal);
             this.Controls.Add(this.lblNombre);
             this.Name = "frmPrincipal";
@@ -317,5 +372,9 @@ namespace FB.Vistas
         private System.Windows.Forms.Button btnEliminarMetodoPago;
         private System.Windows.Forms.Button btnEditarMetodoPago;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.LinkLabel linklblAutor;
+        private System.Windows.Forms.LinkLabel linklblRepositorio;
     }
 }

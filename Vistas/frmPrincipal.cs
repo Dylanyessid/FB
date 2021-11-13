@@ -23,6 +23,12 @@ namespace FB.Vistas
         {
             metodoPago = new clsControladorMetodoPago(clsSesion.DocumentoSesion);
             DataTable dtMetodosPago = metodoPago.ejecutarConsultarMetodosPago();
+           
+
+            
+
+            
+           
             if (dtMetodosPago.Rows.Count == 0)
             {
                 lblAviso.Visible = true;
@@ -35,7 +41,14 @@ namespace FB.Vistas
                 lblAviso.Visible = false;
                 foreach (DataRow metodoPago in dtMetodosPago.Rows)
                 {
-                    cmbMetodosPago.Items.Add("Tarjeta de: " + metodoPago["tipoTarjeta"] + "  ||  " + metodoPago["concepto"]);
+                    string key = "jwey89e09ewhfo24";
+                    
+                    FB.secret.Encrypt encrypt = new FB.secret.Encrypt();
+                    string numTajeta = encrypt.decrypt(metodoPago["numeroTarjeta"].ToString(),key);
+                    string tipo = encrypt.decrypt(metodoPago["tipoTarjeta"].ToString(), key);
+                    string concepto = encrypt.decrypt(metodoPago["concepto"].ToString(), key);
+                    //MessageBox.Show(numTajeta);
+                    cmbMetodosPago.Items.Add("Tarjeta de: "  +tipo + "  ||  " + concepto +"  ||  " + numTajeta);
                 }
             }
             lblNombre.Text = $"{clsSesion.PrimerNombre} {clsSesion.PrimerApellido}";
@@ -98,6 +111,23 @@ namespace FB.Vistas
             this.Show();
 ;
             
+        }
+
+        private void cmbMetodosPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linklblAutor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            linklblAutor.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://github.com/millan2993");
+        }
+
+        private void linklblRepositorio_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            linklblAutor.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://github.com/millan2993/countries");
         }
     }
 }
