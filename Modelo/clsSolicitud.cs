@@ -21,9 +21,20 @@ namespace FB.Modelo
         private decimal precioSolicitado;
         private string recogida;
         private string destino;
-
+        private int idConductor;
 
         private SqlConnection solicitudConnect = clsConexion.dbConnect();
+
+        public string Documento { get => documento; set => documento = value; }
+        public DateTime Fecha { get => fecha; set => fecha = value; }
+        public string Pais { get => pais; set => pais = value; }
+        public string Estado { get => estado; set => estado = value; }
+        public string Ciudad { get => ciudad; set => ciudad = value; }
+        public decimal PrecioSolicitado { get => precioSolicitado; set => precioSolicitado = value; }
+        public string Recogida { get => recogida; set => recogida = value; }
+        public string Destino { get => destino; set => destino = value; }
+        public int IdSolicitud { get => idSolicitud; set => idSolicitud = value; }
+        public int IdConductor { get => idConductor; set => idConductor = value; }
 
         public clsSolicitud( decimal precioSolicitado, string recogida, string destino)
         {
@@ -41,16 +52,13 @@ namespace FB.Modelo
         {
             IdSolicitud = idSol;
         }
+        public clsSolicitud(int idSol, int idConductor)
+        {
+            IdSolicitud = idSol;
+            IdConductor = idConductor;
+        }
 
-        public string Documento { get => documento; set => documento = value; }
-        public DateTime Fecha { get => fecha; set => fecha = value; }
-        public string Pais { get => pais; set => pais = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public string Ciudad { get => ciudad; set => ciudad = value; }
-        public decimal PrecioSolicitado { get => precioSolicitado; set => precioSolicitado = value; }
-        public string Recogida { get => recogida; set => recogida = value; }
-        public string Destino { get => destino; set => destino = value; }
-        public int IdSolicitud { get => idSolicitud; set => idSolicitud = value; }
+ 
 
         public bool crearSolicitud()
         {
@@ -67,12 +75,19 @@ namespace FB.Modelo
             consulta.Parameters.Add("@recogida", SqlDbType.VarChar).Value = Recogida;
             consulta.Parameters.Add("@destino", SqlDbType.VarChar).Value = Destino;
 
-            consulta.CommandText = "insert into tblSolicitudes values (@documento, @fecha, @pais, @estado, @ciudad, @recogida, @destino, @precio, 'Buscando') ";
+            consulta.CommandText = "insert into tblSolicitudes values (@documento, @fecha, @pais, @estado, @ciudad, @recogida, @destino, @precio, 'Buscando', null) ";
 
             try
             {
                 if (consulta.ExecuteNonQuery() == 1)
                 {
+                    
+                    consulta.CommandText = "SELECT idSolicitud from tblSolicitudes where numDocumentoSolicitante=@documento and fechaSolicitud=@fecha";
+                    SqlDataReader adaptarId = consulta.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(adaptarId);
+                    clsSesion.SolicitudActual = Convert.ToInt32(dt.Rows[0]["idSolicitud"]);
+
                     return true;
                 }
             }
@@ -83,6 +98,23 @@ namespace FB.Modelo
             }
 
             return false;
+        }
+
+        //Método que obtiene la información de una solicitud
+        public DataTable consultarSolicitud()
+        {
+            
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+            consulta.CommandText = "SELECT * FROM  tblSolicitudes WHERE idSolicitud=@idSol";
+
+            SqlDataReader solicitud = consulta.ExecuteReader();
+            DataTable dtSolicitud = new DataTable();
+            dtSolicitud.Load(solicitud);
+            
+            return dtSolicitud;
+
         }
 
         public bool cancelarSolicitud()
@@ -114,8 +146,9 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = solicitudConnect;
             consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+            
 
-            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Aceptada' where idSolicitud=@idSol";
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='' where idSolicitud=@idSol";
 
             try
             {
@@ -132,6 +165,31 @@ namespace FB.Modelo
 
             return false;
 
+        }
+
+        public bool aceptarConductorSolicitud()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+            consulta.Parameters.Add("@idConductor", SqlDbType.Int).Value = IdConductor;
+
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Aceptada', aceptadaPor=@idConductor WHERE idSolicitud = @idSol;";
+
+            try
+            {
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
         }
 
         

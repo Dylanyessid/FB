@@ -21,12 +21,12 @@ namespace FB.Modelo
         private static string ciudad;
         private static bool ofreciendoServicio;
         private static string placaMoto;
-
         private static string direccionRecogida;
         private static string direccionDestino;
         private static DateTime fechaUltimaSolicitud;
-        
 
+        private static int solicitudActual;
+        private static int idConductor;
 
         public static string DocumentoSesion { get => documentoSesion; set => documentoSesion = value; }
         public static string PrimerNombre { get => primerNombre; set => primerNombre = value; }
@@ -42,6 +42,8 @@ namespace FB.Modelo
         public static string DireccionRecogida { get => direccionRecogida; set => direccionRecogida = value; }
         public static string DireccionDestino { get => direccionDestino; set => direccionDestino = value; }
         public static DateTime FechaUltimaSolicitud { get => fechaUltimaSolicitud; set => fechaUltimaSolicitud = value; }
+        public static int SolicitudActual { get => solicitudActual; set => solicitudActual = value; }
+        public static int IdConductor { get => idConductor; set => idConductor = value; }
     }
 
    

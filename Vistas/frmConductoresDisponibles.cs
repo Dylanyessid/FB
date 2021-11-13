@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FB.Controladores;
+using FB.Modelo;
+using FB.Vistas;
 
 namespace FB
 {
@@ -24,6 +26,11 @@ namespace FB
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            clsControladorSolicitud solicitud = new clsControladorSolicitud(clsSesion.SolicitudActual, Convert.ToInt32(txtId.Text));
+            solicitud.ejecutarAceptarConductorSolicitud();
+            frmViajes formViaje = new frmViajes(recogida, destino, Convert.ToDecimal(txtPropuestaPrecio.Text), false);
+            formViaje.ShowDialog();
+            this.Close();
 
         }
 
@@ -37,15 +44,7 @@ namespace FB
                 MessageBox.Show("Solicitud creada con éxito!");
 
                 btnCancelar.Visible = true;
-                lblOpciones.Visible = true;
-                cmbOpciones.Visible = true;
-                lblPrimerNombre.Visible = true;
-                lblPrimerApellido.Visible = true;
-                lblPrecio.Visible = true;
-                lblMarca.Visible = true;
-                lblModelo.Visible = true;
-                lblPlaca.Visible = true;
-                lblColor.Visible = true;
+                
             }
         }
 
@@ -53,15 +52,7 @@ namespace FB
         {
 
             btnCancelar.Visible = false;
-            lblOpciones.Visible = false;
-            cmbOpciones.Visible = false;
-            lblPrimerNombre.Visible = false;
-            lblPrimerApellido.Visible = false;
-            lblPrecio.Visible = false;
-            lblMarca.Visible = false;
-            lblModelo.Visible = false;
-            lblPlaca.Visible = false;
-            lblColor.Visible = false;
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -71,21 +62,25 @@ namespace FB
             {
                 MessageBox.Show("Solicitud Cancelada con éxito");
                 btnCancelar.Visible = false;
-                lblOpciones.Visible = false;
-                cmbOpciones.Visible = false;
-                lblPrimerNombre.Visible = false;
-                lblPrimerApellido.Visible = false;
-                lblPrecio.Visible = false;
-                lblMarca.Visible = false;
-                lblModelo.Visible = false;
-                lblPlaca.Visible = false;
-                lblColor.Visible = false;
 
                 txtPropuestaPrecio.Enabled = true;
                 btnBuscarConductores.Enabled = true;
             }
 
             
+        }
+
+        private void timerCheck_Tick(object sender, EventArgs e)
+        {
+
+            clsControladorConductores controladorConductores = new clsControladorConductores(clsSesion.SolicitudActual);
+            dtgConductores.DataSource = controladorConductores.ejecutarConductoresSolicitud();
+;
+        }
+
+        private void dtgConductores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dtgConductores.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }

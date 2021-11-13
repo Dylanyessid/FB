@@ -196,7 +196,7 @@ namespace FB
             // 
             this.rdbPropia.AutoSize = true;
             this.rdbPropia.Depth = 0;
-            this.rdbPropia.Location = new System.Drawing.Point(270, 188);
+            this.rdbPropia.Location = new System.Drawing.Point(300, 188);
             this.rdbPropia.Margin = new System.Windows.Forms.Padding(0);
             this.rdbPropia.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rdbPropia.MouseState = MaterialSkin.MouseState.HOVER;

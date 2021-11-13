@@ -74,7 +74,7 @@ namespace FB.Vistas
             // timerChecker
             // 
             this.timerChecker.Enabled = true;
-            this.timerChecker.Interval = 6000;
+            this.timerChecker.Interval = 4500;
             this.timerChecker.Tick += new System.EventHandler(this.timerChecker_Tick);
             // 
             // dtgSolicitantes

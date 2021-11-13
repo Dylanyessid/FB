@@ -48,6 +48,8 @@ namespace FB.Controladores
             usuario = new clsUsuario();
         }
 
+        
+
         public bool controladorLogin()
         {
 
@@ -118,5 +120,7 @@ namespace FB.Controladores
         {
             return usuario.usuariosSolicitando();
         }
+
+       
     }
 }

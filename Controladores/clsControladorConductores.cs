@@ -23,10 +23,15 @@ namespace FB.Controladores
         {
             conductor = new clsConductor(idSol);
         }
-
-        public bool ejecutarRegistrarConductor()
+        public clsControladorConductores(string placaMoto, string numDocumentoIdentidad, DateTime licenciaDesde, DateTime licenciaHasta, string numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica, string marcaMoto, string modeloMoto, string lineaMoto, string color, int cilindraje, string numChasis, string numMotor, string numDocumento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string celular)
         {
-            if (conductor.registrarConductor())
+            conductor = new clsConductor(placaMoto, numDocumentoIdentidad, licenciaDesde, licenciaHasta, numeroMatricula, motoPropia, inicioSOAT, finSOAT, inicioTecnomecanica, finTecnomecanica, marcaMoto, modeloMoto, lineaMoto, color, cilindraje, numChasis, numMotor, numDocumento, primerNombre, segundoNombre, primerApellido, segundoApellido, celular);
+        
+        }
+
+        public bool ejecutarRegistrarComoConductor()
+        {
+            if (conductor.registrarComoConductor())
             {
                 return true;
             }
@@ -36,6 +41,8 @@ namespace FB.Controladores
             }
         }
 
+        
+        
         public bool ejecutarPrestarServicio()
         {
             if (conductor.prestarServicio())
@@ -64,7 +71,7 @@ namespace FB.Controladores
         {
             return conductor.conductoresActivos();
         }
-        public bool ejecutarCambiarEstado()
+        public bool ejecutarCambiarSolicitudConductor()
         {
             if(conductor.cambiarSolicitudConductor())
             {
@@ -74,6 +81,11 @@ namespace FB.Controladores
             {
                 return false;
             }
+        }
+
+        public DataTable ejecutarConductoresSolicitud()
+        {
+            return conductor.conductoresSolicitud();
         }
     }
 }

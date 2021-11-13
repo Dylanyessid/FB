@@ -102,7 +102,7 @@ namespace FB
                     MessageBox.Show("Se ha registrado como conductor con Éxito!");
 
                     clsControladorConductores controladorConductores = new clsControladorConductores(clsSesion.DocumentoSesion,dtpInicioLicencia.Value, dtpFinLicencia.Value);
-                    controladorConductores.ejecutarRegistrarConductor();
+                    //controladorConductores.ejecutarRegistrarConductor();
                     this.Close();
                 }
             }
@@ -117,7 +117,7 @@ namespace FB
                     MessageBox.Show("Se ha registrado como conductor con Éxito!");
 
                     clsControladorConductores controladorConductores = new clsControladorConductores(txtDocumento.Text,dtpInicioLicencia.Value, dtpFinLicencia.Value);
-                    controladorConductores.ejecutarRegistrarConductor();
+                    //controladorConductores.ejecutarRegistrarConductor();
                     this.Close();
 
                 }

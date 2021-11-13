@@ -157,6 +157,8 @@ namespace FB.Modelo
         }
 
         //TERMINAR ESOT
+
+        
         public bool registrarPropietarioMoto()
         {
             SqlCommand consulta = new SqlCommand();

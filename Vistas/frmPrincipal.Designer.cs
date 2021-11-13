@@ -31,7 +31,7 @@ namespace FB.Vistas
         {
             this.lblIngreso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnPedirServicio = new System.Windows.Forms.Button();
             this.btnOfrecerServicio = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -59,21 +59,21 @@ namespace FB.Vistas
             this.label1.TabIndex = 8;
             this.label1.Text = "¿Qué deseas hacer?";
             // 
-            // btnConfirmar
+            // btnPedirServicio
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.btnConfirmar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmar.Location = new System.Drawing.Point(62, 187);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(222, 75);
-            this.btnConfirmar.TabIndex = 48;
-            this.btnConfirmar.Text = "Quiero pedir un servicio";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnPedirServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnPedirServicio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnPedirServicio.FlatAppearance.BorderSize = 0;
+            this.btnPedirServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPedirServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedirServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPedirServicio.Location = new System.Drawing.Point(62, 187);
+            this.btnPedirServicio.Name = "btnPedirServicio";
+            this.btnPedirServicio.Size = new System.Drawing.Size(222, 75);
+            this.btnPedirServicio.TabIndex = 48;
+            this.btnPedirServicio.Text = "Quiero pedir un servicio";
+            this.btnPedirServicio.UseVisualStyleBackColor = false;
+            this.btnPedirServicio.Click += new System.EventHandler(this.btnPedirServicio_Click);
             // 
             // btnOfrecerServicio
             // 
@@ -125,7 +125,7 @@ namespace FB.Vistas
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnOfrecerServicio);
-            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.btnPedirServicio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIngreso);
             this.Name = "frmPrincipal";
@@ -141,7 +141,7 @@ namespace FB.Vistas
 
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnPedirServicio;
         private System.Windows.Forms.Button btnOfrecerServicio;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblNombre;

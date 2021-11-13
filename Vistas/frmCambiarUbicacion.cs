@@ -96,8 +96,9 @@ namespace FB.Vistas
                 if (btnConfirmar.Text == "Pedir Transporte")
                 {
                     frmConductoresDisponibles formConductores = new frmConductoresDisponibles(txtRecogida.Text, txtDestino.Text);
-                    formConductores.ShowDialog();
                     this.Hide();
+                    formConductores.ShowDialog();
+                    this.Show();
                 }
                 else if (btnConfirmar.Text == "Guardar cambios de ubicación")
                 {
@@ -132,7 +133,9 @@ namespace FB.Vistas
                     if (conductor.ejecutarPrestarServicio())
                     {
                         frmSolicitantes solicitantesForm = new frmSolicitantes();
+                        this.Hide();
                         solicitantesForm.ShowDialog();
+                        this.Show();
 
                     }
 

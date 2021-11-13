@@ -121,7 +121,7 @@ namespace FB.Modelo
             PrecioSolicitado = precioSolicitado;
             usersConnect = clsConexion.dbConnect();
         }
-
+        
         public void obtenerUsuarioUnico()
         {
 
@@ -248,12 +248,15 @@ namespace FB.Modelo
 
             SqlDataReader lista = consulta.ExecuteReader();
             DataTable dt = new DataTable();
+            
+
             dt.Load(lista);
 
             
 
             if(dt.Rows.Count == 1)
             {
+                clsSesion.IdConductor = Convert.ToInt32(dt.Rows[0]["idConductor"]);
                 return true;
             }
             else
@@ -302,7 +305,7 @@ namespace FB.Modelo
             consulta.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = clsSesion.Ciudad;
             consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = clsSesion.Estado;
             consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = clsSesion.Pais;
-            consulta.CommandText = "select idSolicitud, numDocumentoSolicitante, primerNombreUsuario,primerApellidoUsuario, direccionRecogida, direccionDestino, precioSolicitado from usuariosSolicitando where ciudadActual=@ciudad and estadoActual=@estado and paisActual=@pais";
+            consulta.CommandText = "select idSolicitud, numDocumentoSolicitante, primerNombreUsuario,primerApellidoUsuario, direccionRecogida, direccionDestino, precioSolicitado FROM usuariosSolicitando WHERE ciudadActual=@ciudad and estadoActual=@estado and paisActual=@pais";
 
             SqlDataReader listaUsuariosSolicitando = consulta.ExecuteReader();
             DataTable infoUsuariosSolicitando = new DataTable();
@@ -310,6 +313,28 @@ namespace FB.Modelo
 
             return infoUsuariosSolicitando;
             
+        }
+
+        public bool aceptarConductor()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Aceptada' where idSolicitud=@idSol";
+
+            try
+            {
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
         }
 
        

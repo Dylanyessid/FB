@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FB.Modelo;
+using System.Data;
 
 
 namespace FB.Controladores
@@ -20,6 +21,10 @@ namespace FB.Controladores
         public clsControladorSolicitud()
         {
             solicitud = new clsSolicitud(clsSesion.FechaUltimaSolicitud);
+        }
+        public clsControladorSolicitud(int idSol, int idConductor)
+        {
+            solicitud = new clsSolicitud(idSol, idConductor);
         }
         public clsControladorSolicitud(int idSol)
         {
@@ -61,5 +66,23 @@ namespace FB.Controladores
                 return false;
             }
         }
+
+        public bool ejecutarAceptarConductorSolicitud()
+        {
+            if (solicitud.aceptarConductorSolicitud())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public DataTable ejecutarConsultarSolicitud()
+        {
+            return solicitud.consultarSolicitud();
+        }
+       
     }
 }

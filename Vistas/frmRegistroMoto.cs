@@ -8,12 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FB.Controladores;
+using FB.Modelo;
 
 namespace FB
 {
     public partial class frmRegistroMoto : Form
     {
-
+        private bool propia;
+        private string documentoPropietario;
+        private string primerNombrePropietario;
+        private string segundoNombrePropietario;
+        private string primerApellidoPropietario;
+        private string segundoApellidoPropietario;
+        private string celularPropietario;
         public frmRegistroMoto()
         {
             InitializeComponent();
@@ -37,21 +44,36 @@ namespace FB
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
+
+            if (rdoSi.Checked)
+            {
+                propia = true;
+                documentoPropietario = clsSesion.DocumentoSesion;
+                primerNombrePropietario = clsSesion.PrimerNombre;
+                segundoNombrePropietario = clsSesion.SegundoNombre;
+                primerApellidoPropietario = clsSesion.PrimerApellido;
+                segundoApellidoPropietario = clsSesion.SegundoApellido;
+                celularPropietario = clsSesion.Celular;
+
+            }
+            else if (rdoNo.Checked)
+            {
+                propia = false;
+                documentoPropietario = txtNumDocumento.Text;
+                primerNombrePropietario = txtPrimerNombre.Text;
+                segundoNombrePropietario = txtSegundoNombre.Text;
+                primerApellidoPropietario = txtPrimerApellido.Text;
+                segundoApellidoPropietario = txtSegundoApellido.Text;
+                celularPropietario = txtCelular.Text;
+            }
+
             try
             {
-                clsControladorMotos moto = new clsControladorMotos(txtPlaca.Text, txtMarca.Text, txtModelo.Text, txtLinea.Text, cmbColor.Text, Convert.ToInt32(txtCilindraje.Text),txtChasis.Text, txtMotor.Text);
-                if (moto.ejecutarIngresarDetallesMoto())
+                clsControladorConductores conductor = new clsControladorConductores(txtPlaca.Text, clsSesion.DocumentoSesion, dtpInicioLicencia.Value, dtpFinLicencia.Value, txtMatricula.Text, propia, dtpInicioSOAT.Value, dtpFinSOAT.Value, dtpInicioTecno.Value, dtpFinTecno.Value, txtMarca.Text, txtModelo.Text, txtLinea.Text, cmbColor.Text, Convert.ToInt32(txtCilindraje.Text), txtNumChasis.Text, txtNumMotor.Text, documentoPropietario, primerNombrePropietario, segundoNombrePropietario, primerApellidoPropietario, segundoApellidoPropietario, celularPropietario);
+                if (conductor.ejecutarRegistrarComoConductor())
                 {
-                    MessageBox.Show("Ingreso Exito");
-                    frmRegistroPapelesMoto formularioPapeles = new frmRegistroPapelesMoto(txtPlaca.Text); ;
-                    this.Hide();
-                    formularioPapeles.ShowDialog();
                     this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Hubo algún problema");
-                }
+                }     
             }
             catch (Exception err)
             {

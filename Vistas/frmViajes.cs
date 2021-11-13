@@ -12,9 +12,30 @@ namespace FB.Vistas
 {
     public partial class frmViajes : Form
     {
-        public frmViajes()
+        string recogida;
+        string destino;
+        decimal precio;
+        bool conductor;
+        public frmViajes(string recogida, string destino, decimal precio, bool conductor )
         {
             InitializeComponent();
+            this.recogida = recogida;
+            this.destino = destino;
+            this.precio = precio;
+            this.conductor = conductor;
+        }
+
+        private void frmViajes_Load(object sender, EventArgs e)
+        {
+            lblDestino.Text = destino;
+            lblRecogida.Text = recogida;
+            lblPrecio.Text = precio.ToString();
+
+            if (!conductor)
+            {
+                lblTituloDestino.Text = "Quieres ir a:";
+                lblTituloRecogida.Text = "Dirección de tu recogida:";
+            }
         }
     }
 }

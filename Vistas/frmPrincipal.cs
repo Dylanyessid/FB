@@ -55,13 +55,15 @@ namespace FB.Vistas
             Application.Exit();
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private void btnPedirServicio_Click(object sender, EventArgs e)
         {
+            
             clsSesion.OfreciendoServicio = false;
             frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
             this.Hide();
             ubicacion.ShowDialog();
             this.Show();
+            
         }
     }
 }

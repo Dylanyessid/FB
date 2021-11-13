@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using FB.Controladores;
+using FB.Modelo;
 
 namespace FB.Vistas
 {
     public partial class frmSolicitantes : Form
     {
         DataTable info;
+        DataTable estadoSolicitud;
+        string modo = "";
+        int idSolicitd;
         public frmSolicitantes()
         {
             InitializeComponent();
-             clsControladorConductores controladorConductor = new clsControladorConductores();
         }
 
         private void btnDejarTrabajar_Click(object sender, EventArgs e)
@@ -35,37 +38,42 @@ namespace FB.Vistas
 
         private void timerChecker_Tick(object sender, EventArgs e)
         {
-            string valorSeleccionado;
-            //cmbPosiblesClientes.Items.Clear();
-            clsControladorUsuarios controladorUsuario = new clsControladorUsuarios();
-            DataTable infoPosiblesClientes = controladorUsuario.ejecutarUsuariosSolicitando();
-            info = controladorUsuario.ejecutarUsuariosSolicitando();
-
-        
-            dtgSolicitantes.DataSource = infoPosiblesClientes;
-            dtgSolicitantes.Columns[0].HeaderText = "NumeroSolicitud";
-            dtgSolicitantes.Columns[1].HeaderText = "NumDocumento";
-            dtgSolicitantes.Columns[2].HeaderText = "Nombre";
-            dtgSolicitantes.Columns[3].HeaderText = "Apellido";
-            dtgSolicitantes.Columns[4].HeaderText = "Recoges en:";
-            dtgSolicitantes.Columns[5].HeaderText = "Quiere ir a:";
-            dtgSolicitantes.Columns[6].HeaderText = "Precio Solicitado";
-
-
-            //DataGridViewButtonColumn botonDataGrid = new DataGridViewButtonColumn();
-            //botonDataGrid.Name = "btnAtenderSolicitud";
-            //botonDataGrid.Text = "Atender solicitud";
-            //botonDataGrid.HeaderText = "Atender Solicitud";
-
-            //if(dtgSolicitantes.Columns["btnAtenderSolicitud"] == null)
-            //{
-            //    dtgSolicitantes.Columns.Insert(7, botonDataGrid);
-            //}
+            if(modo == "Esperando Respuesta")
+            {
+                string estado;
+                clsControladorSolicitud solicitud = new clsControladorSolicitud(idSolicitd);
+                estadoSolicitud = solicitud.ejecutarConsultarSolicitud();
+                estado = estadoSolicitud.Rows[0]["estadoSolicitud"].ToString();
+               
+                if (estado=="Aceptada" && Convert.ToInt32(estadoSolicitud.Rows[0]["aceptadaPor"]) == clsSesion.IdConductor)
+                {
+                    //MessageBox.Show(estadoSolicitud.Rows[0]["aceptadaPor"].ToString());
+                    
+                    timerChecker.Stop();
+                    timerChecker.Enabled = false;
+                    MessageBox.Show("El cliente ha aceptado tu propuesta!");
+                    frmViajes frmViaje = new frmViajes(estadoSolicitud.Rows[0]["direccionRecogida"].ToString(), estadoSolicitud.Rows[0]["direccioDestino"].ToString(), Convert.ToDecimal(estadoSolicitud.Rows[0]["precioSolicitado"]), true);
+                    frmViaje.ShowDialog();
+                    this.Close();
+                }
+            }
+            else
+            {
+                clsControladorUsuarios controladorUsuario = new clsControladorUsuarios();
+                DataTable infoPosiblesClientes = controladorUsuario.ejecutarUsuariosSolicitando();
+                info = controladorUsuario.ejecutarUsuariosSolicitando();
 
 
+                dtgSolicitantes.DataSource = infoPosiblesClientes;
+                dtgSolicitantes.Columns[0].HeaderText = "NumeroSolicitud";
+                dtgSolicitantes.Columns[1].HeaderText = "NumDocumento";
+                dtgSolicitantes.Columns[2].HeaderText = "Nombre";
+                dtgSolicitantes.Columns[3].HeaderText = "Apellido";
+                dtgSolicitantes.Columns[4].HeaderText = "Recoges en:";
+                dtgSolicitantes.Columns[5].HeaderText = "Quiere ir a:";
+                dtgSolicitantes.Columns[6].HeaderText = "Precio Solicitado";
+            }
 
-            //clsControladorConductores controladorConductor = new clsControladorConductores();
-            //dtgConductoresActivos.DataSource = controladorConductor.ejecutarConductoresActivos();
 
         }
 
@@ -82,23 +90,22 @@ namespace FB.Vistas
 
         private void cmbPosiblesClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(info.Rows.Count.ToString());
+            
         }
-
+        //CUando se quiere atender un usuario...
         private void btnAtender_Click(object sender, EventArgs e)
         {
-            clsControladorSolicitud controladorSolicitud = new clsControladorSolicitud(Convert.ToInt32(txtNumSolicitud.Text));
-            if (controladorSolicitud.ejecutarAtenderSolicitud())
-            {
-                MessageBox.Show("Se atendió");
-                clsControladorConductores controladorConductores = new clsControladorConductores(Convert.ToInt32(txtNumSolicitud.Text));
-                if (controladorConductores.ejecutarCambiarEstado())
+            timerChecker.Enabled = true;
+            timerChecker.Start();
+            idSolicitd = (Convert.ToInt32(txtNumSolicitud.Text));
+                clsControladorConductores controladorConductores = new clsControladorConductores(idSolicitd);
+                if (controladorConductores.ejecutarCambiarSolicitudConductor())
                 {
-                    frmViajes viaje = new frmViajes();
-                    viaje.ShowDialog();
-                    this.Hide();
+                    MessageBox.Show("Aceptaste esta solicitud");
+                    modo = "Esperando Respuesta";
+                    
                 }
-            }
+            
         }
     }
 }

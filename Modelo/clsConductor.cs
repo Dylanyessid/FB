@@ -16,26 +16,68 @@ namespace FB.Modelo
         private SqlConnection usersConnect = clsConexion.dbConnect();
 
         private string placaMoto;
-		private string numDocumentoIdentidad;
+		private string numDocumentoIdentidadConductor;
 		private decimal calificacionPromedio;
 		private char activo;
 		private DateTime licenciaDesde;
 		private DateTime licenciaHasta;
 		private int solicitudActual;
+
+        private string numeroMatricula;
+        private bool motoPropia;
+        private DateTime inicioSOAT;
+        private DateTime finSOAT;
+        private DateTime inicioTecnomecanica;
+        private DateTime finTecnomecanica;
+
+        private string marcaMoto;
+        private string modeloMoto;
+        private string lineaMoto;
+        private string color;
+        private int cilindraje;
+        private string numChasis;
+        private string numMotor;
+
+        private string numDocumentoPropietario;
+        private string primerNombre;
+        private string segundoNombre;
+        private string primerApellido;
+        private string segundoApellido;
+        private string celular;
+
+
         public string PlacaMoto { get => placaMoto; set => placaMoto = value; }
-        public string NumDocumentoIdentidad { get => numDocumentoIdentidad; set => numDocumentoIdentidad = value; }
+        public string NumDocumentoIdentidadConductor { get => numDocumentoIdentidadConductor; set => numDocumentoIdentidadConductor = value; }
         public DateTime LicenciaDesde { get => licenciaDesde; set => licenciaDesde = value; }
         public DateTime LicenciaHasta { get => licenciaHasta; set => licenciaHasta = value; }
         public int SolicitudActual { get => solicitudActual; set => solicitudActual = value; }
         public decimal CalificacionPromedio { get => calificacionPromedio; set => calificacionPromedio = value; }
         public char Activo { get => activo; set => activo = value; }
-
+        public string NumeroMatricula { get => numeroMatricula; set => numeroMatricula = value; }
+        public bool MotoPropia { get => motoPropia; set => motoPropia = value; }
+        public DateTime InicioSOAT { get => inicioSOAT; set => inicioSOAT = value; }
+        public DateTime FinSOAT { get => finSOAT; set => finSOAT = value; }
+        public DateTime InicioTecnomecanica { get => inicioTecnomecanica; set => inicioTecnomecanica = value; }
+        public DateTime FinTecnomecanica { get => finTecnomecanica; set => finTecnomecanica = value; }
+        public string MarcaMoto { get => marcaMoto; set => marcaMoto = value; }
+        public string ModeloMoto { get => modeloMoto; set => modeloMoto = value; }
+        public string LineaMoto { get => lineaMoto; set => lineaMoto = value; }
+        public string Color { get => color; set => color = value; }
+        public int Cilindraje { get => cilindraje; set => cilindraje = value; }
+        public string NumChasis { get => numChasis; set => numChasis = value; }
+        public string NumMotor { get => numMotor; set => numMotor = value; }
+        public string NumDocumentoPropietario { get => numDocumentoPropietario; set => numDocumentoPropietario = value; }
+        public string PrimerNombre { get => primerNombre; set => primerNombre = value; }
+        public string SegundoNombre { get => segundoNombre; set => segundoNombre = value; }
+        public string PrimerApellido { get => primerApellido; set => primerApellido = value; }
+        public string SegundoApellido { get => segundoApellido; set => segundoApellido = value; }
+        public string Celular { get => celular; set => celular = value; }
 
         public clsConductor(string numDoc, DateTime licenciaDesde, DateTime licenciaHasta)
         { 
             LicenciaDesde = licenciaDesde;
             LicenciaHasta = licenciaHasta;
-            NumDocumentoIdentidad = numDoc;
+            NumDocumentoIdentidadConductor = numDoc;
         }
 
         public clsConductor()
@@ -48,14 +90,98 @@ namespace FB.Modelo
             SolicitudActual = solicitudActual;
         }
 
+        public clsConductor(string placaMoto, string numDocumentoIdentidad, DateTime licenciaDesde, DateTime licenciaHasta, string numeroMatricula, bool motoPropia, DateTime inicioSOAT, DateTime finSOAT, DateTime inicioTecnomecanica, DateTime finTecnomecanica, string marcaMoto, string modeloMoto, string lineaMoto, string color, int cilindraje, string numChasis, string numMotor, string numDocumento, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string celular)
+        {
+            PlacaMoto = placaMoto;
+            NumDocumentoIdentidadConductor = numDocumentoIdentidad;
+            LicenciaDesde = licenciaDesde;
+            LicenciaHasta = licenciaHasta;
+            
+            
+            Activo = activo;
+            NumeroMatricula = numeroMatricula;
+            MotoPropia = motoPropia;
+            InicioSOAT = inicioSOAT;
+            FinSOAT = finSOAT;
+            InicioTecnomecanica = inicioTecnomecanica;
+            FinTecnomecanica = finTecnomecanica;
+            MarcaMoto = marcaMoto;
+            ModeloMoto = modeloMoto;
+            LineaMoto = lineaMoto;
+            Color = color;
+            Cilindraje = cilindraje;
+            NumChasis = numChasis;
+            NumMotor = numMotor;
+            NumDocumentoPropietario = numDocumento;
+            PrimerNombre = primerNombre;
+            SegundoNombre = segundoNombre;
+            PrimerApellido = primerApellido;
+            SegundoApellido = segundoApellido;
+            Celular = celular;
+        }
+
         //Metodo para registrar conductor por primera vez
+        public bool registrarComoConductor()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            consulta.CommandText = "EXECUTE registrarComoConductor @placa,@marca, @modelo, @linea, @color, @cilindraje, @numChasis, @numMotor, " +
+                "@numMatricula, @motoPropia, @inicioSOAT, @finSOAT, @inicioTecnomecanica, @finTecnomecanica,@numDocumentoPropietario, @primerNombre, @segundoNombre," +
+                " @primerApellido, @segundoApellido, @celular, @numDocumentoConductor, @licenciaDesde, @licenciaHasta, null, null";
+            consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = PlacaMoto;
+            consulta.Parameters.Add("@marca", SqlDbType.VarChar).Value = MarcaMoto;
+            consulta.Parameters.Add("@modelo", SqlDbType.VarChar).Value = ModeloMoto;
+            consulta.Parameters.Add("@linea", SqlDbType.VarChar).Value = LineaMoto;
+            consulta.Parameters.Add("@color", SqlDbType.VarChar).Value = Color;
+            consulta.Parameters.Add("@cilindraje", SqlDbType.Int).Value =Cilindraje ;
+            consulta.Parameters.Add("@numChasis", SqlDbType.VarChar).Value = NumChasis;
+            consulta.Parameters.Add("@numMotor", SqlDbType.VarChar).Value = NumMotor;
+            consulta.Parameters.Add("@numMatricula", SqlDbType.VarChar).Value = NumeroMatricula;
+            consulta.Parameters.Add("@motoPropia", SqlDbType.Bit).Value = MotoPropia;
+            consulta.Parameters.Add("@inicioSOAT", SqlDbType.Date).Value = InicioSOAT;
+            consulta.Parameters.Add("@finSOAT", SqlDbType.Date).Value = FinSOAT;
+            consulta.Parameters.Add("@inicioTecnomecanica", SqlDbType.Date).Value = InicioTecnomecanica;
+            consulta.Parameters.Add("@finTecnomecanica", SqlDbType.Date).Value = FinTecnomecanica;
+            consulta.Parameters.Add("@numDocumentoPropietario", SqlDbType.VarChar).Value = NumDocumentoPropietario;
+            consulta.Parameters.Add("@primerNombre", SqlDbType.VarChar).Value = PrimerNombre;
+            consulta.Parameters.Add("@segundoNombre", SqlDbType.VarChar).Value = SegundoNombre;
+            consulta.Parameters.Add("@primerApellido", SqlDbType.VarChar).Value = PrimerApellido;
+            consulta.Parameters.Add("@segundoApellido", SqlDbType.VarChar).Value = SegundoApellido;
+            consulta.Parameters.Add("@celular", SqlDbType.VarChar).Value = Celular;
+            consulta.Parameters.Add("@numDocumentoConductor", SqlDbType.VarChar).Value = numDocumentoIdentidadConductor;
+            consulta.Parameters.Add("@licenciaDesde", SqlDbType.Date).Value = LicenciaDesde;
+            consulta.Parameters.Add("@licenciaHasta", SqlDbType.Date).Value = LicenciaHasta;
+
+            try
+            {
+                if(consulta.ExecuteNonQuery() == 4)
+                {
+                    MessageBox.Show("Registro exitoso!");
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Puede que no se haya registrado correctamente");
+                    return false;
+                }
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+
+            }
+        }
+
+
         public bool registrarConductor()
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
             consulta.CommandText = "insert into tblConductores values (@placa, @numDocumento, 0, 0,0, @licenciaDesde, @licenciaHasta, null)";
             consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = clsSesion.PlacaMoto;
-            consulta.Parameters.Add("@numDocumento", SqlDbType.VarChar).Value = NumDocumentoIdentidad;
+            consulta.Parameters.Add("@numDocumento", SqlDbType.VarChar).Value = NumDocumentoIdentidadConductor;
             consulta.Parameters.Add("@licenciaDesde", SqlDbType.Date).Value = LicenciaDesde;
             consulta.Parameters.Add("@licenciaHasta", SqlDbType.Date).Value = LicenciaHasta;
            
@@ -159,7 +285,7 @@ namespace FB.Modelo
             }
             else
             {
-                consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = null;
+                consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = DBNull.Value;
             }
             consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = clsSesion.DocumentoSesion;
             consulta.CommandText = "UPDATE tblConductores SET solicitudActual=@idSol where numDocumentoIdentidad=@documento";
@@ -181,6 +307,20 @@ namespace FB.Modelo
                 return false;
             }
 
+        }
+
+        public DataTable conductoresSolicitud()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = usersConnect;
+            consulta.Parameters.Add("@solId", SqlDbType.Int).Value = SolicitudActual;
+            consulta.CommandText = "select * from conductorSolicitud where solicitudActual=@solId order by calificacionPromedio DESC";
+
+            SqlDataReader listaConductores = consulta.ExecuteReader();
+            DataTable infoConductores = new DataTable();
+            infoConductores.Load(listaConductores);
+
+            return infoConductores;
         }
     }
 }
