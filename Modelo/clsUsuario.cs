@@ -75,7 +75,7 @@ namespace FB.Modelo
         }
 
         //Toca revisar este constructor
-        public clsUsuario(string numDocumentoIdentidad, string primerNombreUsuario, string segundoNombreUsuario, string primerApellidoUsuario, string segundoApellidoUsuario, DateTime fechNacimientoUsuario, string sexo, string paisActual, string estadoActual, string ciudadActual)
+        public clsUsuario(string numDocumentoIdentidad, string primerNombreUsuario, string segundoNombreUsuario, string primerApellidoUsuario, string segundoApellidoUsuario, DateTime fechNacimientoUsuario, string sexo, string paisActual, string estadoActual, string ciudadActual, string email, string password,string celular)
         {
             NumDocumentoIdentidad = numDocumentoIdentidad;
             PrimerNombreUsuario = primerNombreUsuario;
@@ -87,9 +87,9 @@ namespace FB.Modelo
             PaisActual = paisActual;
             EstadoActual = estadoActual;
             CiudadActual = ciudadActual;
-            Saldo = saldo;
-            Rol = rol;
-            EstadoCuenta = estadoCuenta;
+            Email = email;
+            Contraseña = password;
+            Celular = celular;
             usersConnect = clsConexion.dbConnect();
         }
         public clsUsuario(string pais, string estado, string ciudad)
@@ -102,9 +102,7 @@ namespace FB.Modelo
         public clsUsuario(string documento, string email, string password, string celular)
         {
             NumDocumentoIdentidad = documento;
-            Email = email;
-            Contraseña = password;
-            Celular = celular;
+           
             usersConnect = clsConexion.dbConnect();
         }
 
@@ -131,9 +129,9 @@ namespace FB.Modelo
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
-            consulta.CommandText = "insert into tblUsuarios values (@documento, @primerNom, @segundoNom, " +
-                "@primerApe, @segundoApe, @fechaNacimiento, @sexo, @pais, @estado, @ciudad, 'Usuario', 'Activo')";
-            consulta.Parameters.Add("@documento", SqlDbType.Int).Value = numDocumentoIdentidad;
+            consulta.CommandText = "EXECUTE registrarUsuario @documento, @primerNom, @segundoNom, @primerApe, @segundoApe, @fechaNacimiento, " +
+                "@sexo, @pais, @estado, @ciudad, @email, @password, @celular";
+            consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = numDocumentoIdentidad;
             consulta.Parameters.Add("@primerNom", SqlDbType.VarChar).Value = primerNombreUsuario;
             consulta.Parameters.Add("@segundoNom", SqlDbType.VarChar).Value = segundoNombreUsuario;
             consulta.Parameters.Add("@primerApe", SqlDbType.VarChar).Value = primerApellidoUsuario;
@@ -143,11 +141,16 @@ namespace FB.Modelo
             consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = paisActual;
             consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = estadoActual;
             consulta.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = ciudadActual;
+            consulta.Parameters.Add("@email", SqlDbType.VarChar).Value = Email;
+            consulta.Parameters.Add("@password", SqlDbType.VarChar).Value = Contraseña;
+            consulta.Parameters.Add("@celular", SqlDbType.VarChar).Value = Celular;
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() == 2)
                 {
+                    clsSesion.DocumentoSesion = NumDocumentoIdentidad;
+                    clsSesion.Ciudad = Celular;
                     clsSesion.PrimerNombre = PrimerNombreUsuario;
                     clsSesion.SegundoNombre = SegundoNombreUsuario;
                     clsSesion.PrimerApellido = PrimerApellidoUsuario;
@@ -158,6 +161,10 @@ namespace FB.Modelo
 
                     return true;
                 }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception err)
             {
@@ -165,7 +172,7 @@ namespace FB.Modelo
                 return false;
             }
 
-            return false;
+            
         }
 
         public bool registrarCredenciales()
@@ -173,7 +180,7 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
             consulta.CommandText = "insert into tblCredenciales values (@documento, @email, @password, @celular)";
-            consulta.Parameters.Add("documento", SqlDbType.Int).Value = numDocumentoIdentidad;
+            consulta.Parameters.Add("documento", SqlDbType.VarChar).Value = numDocumentoIdentidad;
             consulta.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
             consulta.Parameters.Add("@password", SqlDbType.VarChar).Value = contraseña;
             consulta.Parameters.Add("@celular", SqlDbType.VarChar).Value = celular;
@@ -213,7 +220,7 @@ namespace FB.Modelo
                 clsSesion.DocumentoSesion = infoLogin.Rows[0]["numDocumentoIdentidad"].ToString();
                 clsSesion.Celular = infoLogin.Rows[0]["celular"].ToString();
 
-                consulta.Parameters.Add("@documento", SqlDbType.Int).Value = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
+                consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
                 consulta.CommandText = "select * from tblUsuarios where numDocumentoIdentidad=@documento";
                 SqlDataReader consultaInfoUsuario = consulta.ExecuteReader();
                 DataTable infoUsuario = new DataTable();
@@ -224,7 +231,6 @@ namespace FB.Modelo
                  clsSesion.PrimerNombre = infoUsuario.Rows[0]["primerNombreUsuario"].ToString();
                  clsSesion.SegundoNombre = infoUsuario.Rows[0]["segundoNombreUsuario"].ToString();
                 clsSesion.PrimerApellido =infoUsuario.Rows[0]["primerApellidoUsuario"].ToString();
-                
                 clsSesion.SegundoApellido = infoUsuario.Rows[0]["segundoApellidoUsuario"].ToString();
                 
                 clsSesion.Pais = infoUsuario.Rows[0]["paisActual"].ToString();

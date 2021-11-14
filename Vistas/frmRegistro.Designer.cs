@@ -30,28 +30,47 @@ namespace FB
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPrimerNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSegundoNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.rdoHombre = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rdoMujer = new MaterialSkin.Controls.MaterialRadioButton();
-            this.txtPrimerApellido = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtSegundoApellido = new MaterialSkin.Controls.MaterialTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDocumentoIdentidad = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnSiguiente = new System.Windows.Forms.Button();
-            this.txtPais = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtEstado = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtCuidad = new MaterialSkin.Controls.MaterialTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabRegistro = new System.Windows.Forms.TabControl();
+            this.tabDatos = new System.Windows.Forms.TabPage();
+            this.txtDocumentoIdentidad = new System.Windows.Forms.TextBox();
+            this.txtSegundoApellido = new System.Windows.Forms.TextBox();
+            this.txtPrimerApellido = new System.Windows.Forms.TextBox();
+            this.txtSegundoNombre = new System.Windows.Forms.TextBox();
+            this.txtPrimerNombre = new System.Windows.Forms.TextBox();
+            this.grpSexo = new System.Windows.Forms.GroupBox();
+            this.rdoHombre = new System.Windows.Forms.RadioButton();
+            this.rdoMujer = new System.Windows.Forms.RadioButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbCiudad = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cmbPais = new System.Windows.Forms.ComboBox();
+            this.tabCredenciales = new System.Windows.Forms.TabPage();
+            this.txtConfirmarPassword = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.tabRegistro.SuspendLayout();
+            this.tabDatos.SuspendLayout();
+            this.grpSexo.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabCredenciales.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -59,60 +78,27 @@ namespace FB
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 102);
+            this.label1.Location = new System.Drawing.Point(38, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 31);
             this.label1.TabIndex = 8;
             this.label1.Text = "Primer Nombe";
-            // 
-            // txtPrimerNombre
-            // 
-            this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrimerNombre.Depth = 0;
-            this.txtPrimerNombre.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPrimerNombre.LeadingIcon = null;
-            this.txtPrimerNombre.Location = new System.Drawing.Point(41, 136);
-            this.txtPrimerNombre.MaxLength = 50;
-            this.txtPrimerNombre.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPrimerNombre.Multiline = false;
-            this.txtPrimerNombre.Name = "txtPrimerNombre";
-            this.txtPrimerNombre.Size = new System.Drawing.Size(225, 50);
-            this.txtPrimerNombre.TabIndex = 9;
-            this.txtPrimerNombre.Text = "";
-            this.txtPrimerNombre.TrailingIcon = null;
-            this.txtPrimerNombre.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(336, 102);
+            this.label2.Location = new System.Drawing.Point(305, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(214, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Segundo Nombre";
             // 
-            // txtSegundoNombre
-            // 
-            this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSegundoNombre.Depth = 0;
-            this.txtSegundoNombre.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSegundoNombre.LeadingIcon = null;
-            this.txtSegundoNombre.Location = new System.Drawing.Point(325, 144);
-            this.txtSegundoNombre.MaxLength = 50;
-            this.txtSegundoNombre.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtSegundoNombre.Multiline = false;
-            this.txtSegundoNombre.Name = "txtSegundoNombre";
-            this.txtSegundoNombre.Size = new System.Drawing.Size(225, 50);
-            this.txtSegundoNombre.TabIndex = 11;
-            this.txtSegundoNombre.Text = "";
-            this.txtSegundoNombre.TrailingIcon = null;
-            // 
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.CalendarFont = new System.Drawing.Font("Red Hat Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(66, 354);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(311, 269);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(196, 20);
             this.dtpFechaNacimiento.TabIndex = 12;
@@ -123,82 +109,18 @@ namespace FB
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 314);
+            this.label3.Location = new System.Drawing.Point(305, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(251, 31);
             this.label3.TabIndex = 13;
             this.label3.Text = "Fecha de Nacimiento";
-            // 
-            // rdoHombre
-            // 
-            this.rdoHombre.AutoSize = true;
-            this.rdoHombre.Depth = 0;
-            this.rdoHombre.Location = new System.Drawing.Point(342, 354);
-            this.rdoHombre.Margin = new System.Windows.Forms.Padding(0);
-            this.rdoHombre.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rdoHombre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rdoHombre.Name = "rdoHombre";
-            this.rdoHombre.Ripple = true;
-            this.rdoHombre.Size = new System.Drawing.Size(91, 37);
-            this.rdoHombre.TabIndex = 14;
-            this.rdoHombre.TabStop = true;
-            this.rdoHombre.Text = "Hombre";
-            this.rdoHombre.UseVisualStyleBackColor = true;
-            // 
-            // rdoMujer
-            // 
-            this.rdoMujer.AutoSize = true;
-            this.rdoMujer.Depth = 0;
-            this.rdoMujer.Location = new System.Drawing.Point(445, 354);
-            this.rdoMujer.Margin = new System.Windows.Forms.Padding(0);
-            this.rdoMujer.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rdoMujer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rdoMujer.Name = "rdoMujer";
-            this.rdoMujer.Ripple = true;
-            this.rdoMujer.Size = new System.Drawing.Size(75, 37);
-            this.rdoMujer.TabIndex = 15;
-            this.rdoMujer.TabStop = true;
-            this.rdoMujer.Text = "Mujer";
-            this.rdoMujer.UseVisualStyleBackColor = true;
-            // 
-            // txtPrimerApellido
-            // 
-            this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrimerApellido.Depth = 0;
-            this.txtPrimerApellido.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPrimerApellido.LeadingIcon = null;
-            this.txtPrimerApellido.Location = new System.Drawing.Point(41, 249);
-            this.txtPrimerApellido.MaxLength = 50;
-            this.txtPrimerApellido.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPrimerApellido.Multiline = false;
-            this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(225, 50);
-            this.txtPrimerApellido.TabIndex = 16;
-            this.txtPrimerApellido.Text = "";
-            this.txtPrimerApellido.TrailingIcon = null;
-            // 
-            // txtSegundoApellido
-            // 
-            this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSegundoApellido.Depth = 0;
-            this.txtSegundoApellido.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSegundoApellido.LeadingIcon = null;
-            this.txtSegundoApellido.Location = new System.Drawing.Point(325, 249);
-            this.txtSegundoApellido.MaxLength = 50;
-            this.txtSegundoApellido.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtSegundoApellido.Multiline = false;
-            this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(225, 50);
-            this.txtSegundoApellido.TabIndex = 17;
-            this.txtSegundoApellido.Text = "";
-            this.txtSegundoApellido.TrailingIcon = null;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 207);
+            this.label4.Location = new System.Drawing.Point(38, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(192, 31);
             this.label4.TabIndex = 18;
@@ -209,7 +131,7 @@ namespace FB
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(334, 207);
+            this.label5.Location = new System.Drawing.Point(305, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(216, 31);
             this.label5.TabIndex = 19;
@@ -220,7 +142,7 @@ namespace FB
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(336, 314);
+            this.label6.Location = new System.Drawing.Point(384, 292);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 31);
             this.label6.TabIndex = 20;
@@ -231,98 +153,18 @@ namespace FB
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(248, 394);
+            this.label7.Location = new System.Drawing.Point(62, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(157, 62);
             this.label7.TabIndex = 21;
             this.label7.Text = "Documento \r\nde Identidad";
-            // 
-            // txtDocumentoIdentidad
-            // 
-            this.txtDocumentoIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDocumentoIdentidad.Depth = 0;
-            this.txtDocumentoIdentidad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDocumentoIdentidad.LeadingIcon = null;
-            this.txtDocumentoIdentidad.Location = new System.Drawing.Point(208, 460);
-            this.txtDocumentoIdentidad.MaxLength = 50;
-            this.txtDocumentoIdentidad.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDocumentoIdentidad.Multiline = false;
-            this.txtDocumentoIdentidad.Name = "txtDocumentoIdentidad";
-            this.txtDocumentoIdentidad.Size = new System.Drawing.Size(225, 50);
-            this.txtDocumentoIdentidad.TabIndex = 22;
-            this.txtDocumentoIdentidad.Text = "";
-            this.txtDocumentoIdentidad.TrailingIcon = null;
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.btnSiguiente.FlatAppearance.BorderSize = 0;
-            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSiguiente.Location = new System.Drawing.Point(652, 516);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(165, 52);
-            this.btnSiguiente.TabIndex = 27;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = false;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // txtPais
-            // 
-            this.txtPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPais.Depth = 0;
-            this.txtPais.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPais.LeadingIcon = null;
-            this.txtPais.Location = new System.Drawing.Point(651, 216);
-            this.txtPais.MaxLength = 50;
-            this.txtPais.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPais.Multiline = false;
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(150, 50);
-            this.txtPais.TabIndex = 28;
-            this.txtPais.Text = "";
-            this.txtPais.TrailingIcon = null;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEstado.Depth = 0;
-            this.txtEstado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtEstado.LeadingIcon = null;
-            this.txtEstado.Location = new System.Drawing.Point(651, 314);
-            this.txtEstado.MaxLength = 50;
-            this.txtEstado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtEstado.Multiline = false;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(165, 50);
-            this.txtEstado.TabIndex = 29;
-            this.txtEstado.Text = "";
-            this.txtEstado.TrailingIcon = null;
-            // 
-            // txtCuidad
-            // 
-            this.txtCuidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCuidad.Depth = 0;
-            this.txtCuidad.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCuidad.LeadingIcon = null;
-            this.txtCuidad.Location = new System.Drawing.Point(652, 417);
-            this.txtCuidad.MaxLength = 50;
-            this.txtCuidad.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCuidad.Multiline = false;
-            this.txtCuidad.Name = "txtCuidad";
-            this.txtCuidad.Size = new System.Drawing.Size(165, 50);
-            this.txtCuidad.TabIndex = 30;
-            this.txtCuidad.Text = "";
-            this.txtCuidad.TrailingIcon = null;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(663, 182);
+            this.label9.Location = new System.Drawing.Point(52, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(138, 31);
             this.label9.TabIndex = 31;
@@ -333,7 +175,7 @@ namespace FB
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(644, 280);
+            this.label10.Location = new System.Drawing.Point(215, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(172, 31);
             this.label10.TabIndex = 32;
@@ -344,22 +186,290 @@ namespace FB
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(645, 383);
+            this.label11.Location = new System.Drawing.Point(413, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(172, 31);
             this.label11.TabIndex = 33;
             this.label11.Text = "Ciudad Actual";
             // 
-            // materialDivider1
+            // label8
             // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(604, 113);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(13, 388);
-            this.materialDivider1.TabIndex = 34;
-            this.materialDivider1.Text = "materialDivider1";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Red Hat Text", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(252, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(187, 39);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "REGISTRAR";
+            // 
+            // tabRegistro
+            // 
+            this.tabRegistro.Controls.Add(this.tabDatos);
+            this.tabRegistro.Controls.Add(this.tabPage2);
+            this.tabRegistro.Controls.Add(this.tabCredenciales);
+            this.tabRegistro.Location = new System.Drawing.Point(12, 47);
+            this.tabRegistro.Name = "tabRegistro";
+            this.tabRegistro.SelectedIndex = 0;
+            this.tabRegistro.Size = new System.Drawing.Size(682, 414);
+            this.tabRegistro.TabIndex = 36;
+            // 
+            // tabDatos
+            // 
+            this.tabDatos.Controls.Add(this.txtDocumentoIdentidad);
+            this.tabDatos.Controls.Add(this.txtSegundoApellido);
+            this.tabDatos.Controls.Add(this.txtPrimerApellido);
+            this.tabDatos.Controls.Add(this.txtSegundoNombre);
+            this.tabDatos.Controls.Add(this.txtPrimerNombre);
+            this.tabDatos.Controls.Add(this.grpSexo);
+            this.tabDatos.Controls.Add(this.label1);
+            this.tabDatos.Controls.Add(this.label4);
+            this.tabDatos.Controls.Add(this.label3);
+            this.tabDatos.Controls.Add(this.dtpFechaNacimiento);
+            this.tabDatos.Controls.Add(this.label7);
+            this.tabDatos.Controls.Add(this.label6);
+            this.tabDatos.Controls.Add(this.label2);
+            this.tabDatos.Controls.Add(this.label5);
+            this.tabDatos.Location = new System.Drawing.Point(4, 22);
+            this.tabDatos.Name = "tabDatos";
+            this.tabDatos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDatos.Size = new System.Drawing.Size(674, 388);
+            this.tabDatos.TabIndex = 0;
+            this.tabDatos.Text = "Datos Usuario";
+            this.tabDatos.UseVisualStyleBackColor = true;
+            // 
+            // txtDocumentoIdentidad
+            // 
+            this.txtDocumentoIdentidad.Location = new System.Drawing.Point(85, 303);
+            this.txtDocumentoIdentidad.Name = "txtDocumentoIdentidad";
+            this.txtDocumentoIdentidad.Size = new System.Drawing.Size(116, 20);
+            this.txtDocumentoIdentidad.TabIndex = 30;
+            // 
+            // txtSegundoApellido
+            // 
+            this.txtSegundoApellido.Location = new System.Drawing.Point(348, 167);
+            this.txtSegundoApellido.Name = "txtSegundoApellido";
+            this.txtSegundoApellido.Size = new System.Drawing.Size(116, 20);
+            this.txtSegundoApellido.TabIndex = 29;
+            // 
+            // txtPrimerApellido
+            // 
+            this.txtPrimerApellido.Location = new System.Drawing.Point(68, 167);
+            this.txtPrimerApellido.Name = "txtPrimerApellido";
+            this.txtPrimerApellido.Size = new System.Drawing.Size(116, 20);
+            this.txtPrimerApellido.TabIndex = 28;
+            // 
+            // txtSegundoNombre
+            // 
+            this.txtSegundoNombre.Location = new System.Drawing.Point(337, 53);
+            this.txtSegundoNombre.Name = "txtSegundoNombre";
+            this.txtSegundoNombre.Size = new System.Drawing.Size(143, 20);
+            this.txtSegundoNombre.TabIndex = 27;
+            // 
+            // txtPrimerNombre
+            // 
+            this.txtPrimerNombre.Location = new System.Drawing.Point(68, 53);
+            this.txtPrimerNombre.Name = "txtPrimerNombre";
+            this.txtPrimerNombre.Size = new System.Drawing.Size(116, 20);
+            this.txtPrimerNombre.TabIndex = 26;
+            // 
+            // grpSexo
+            // 
+            this.grpSexo.Controls.Add(this.rdoHombre);
+            this.grpSexo.Controls.Add(this.rdoMujer);
+            this.grpSexo.Location = new System.Drawing.Point(348, 326);
+            this.grpSexo.Name = "grpSexo";
+            this.grpSexo.Size = new System.Drawing.Size(132, 42);
+            this.grpSexo.TabIndex = 25;
+            this.grpSexo.TabStop = false;
+            // 
+            // rdoHombre
+            // 
+            this.rdoHombre.AutoSize = true;
+            this.rdoHombre.Location = new System.Drawing.Point(11, 15);
+            this.rdoHombre.Name = "rdoHombre";
+            this.rdoHombre.Size = new System.Drawing.Size(62, 17);
+            this.rdoHombre.TabIndex = 23;
+            this.rdoHombre.TabStop = true;
+            this.rdoHombre.Text = "Hombre";
+            this.rdoHombre.UseVisualStyleBackColor = true;
+            this.rdoHombre.CheckedChanged += new System.EventHandler(this.rdoHombre_CheckedChanged);
+            // 
+            // rdoMujer
+            // 
+            this.rdoMujer.AutoSize = true;
+            this.rdoMujer.Location = new System.Drawing.Point(79, 15);
+            this.rdoMujer.Name = "rdoMujer";
+            this.rdoMujer.Size = new System.Drawing.Size(51, 17);
+            this.rdoMujer.TabIndex = 24;
+            this.rdoMujer.TabStop = true;
+            this.rdoMujer.Text = "Mujer";
+            this.rdoMujer.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.cmbCiudad);
+            this.tabPage2.Controls.Add(this.cmbEstado);
+            this.tabPage2.Controls.Add(this.cmbPais);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(674, 388);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tu Ubicación";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Red Hat Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(46, 119);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(522, 31);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Al registrarte, emepzarías con esta ubicación";
+            // 
+            // cmbCiudad
+            // 
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad.FormattingEnabled = true;
+            this.cmbCiudad.Location = new System.Drawing.Point(419, 69);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(156, 21);
+            this.cmbCiudad.TabIndex = 36;
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(231, 69);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(156, 21);
+            this.cmbEstado.TabIndex = 35;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            // 
+            // cmbPais
+            // 
+            this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPais.FormattingEnabled = true;
+            this.cmbPais.Location = new System.Drawing.Point(52, 69);
+            this.cmbPais.Name = "cmbPais";
+            this.cmbPais.Size = new System.Drawing.Size(138, 21);
+            this.cmbPais.TabIndex = 34;
+            this.cmbPais.SelectedIndexChanged += new System.EventHandler(this.cmbPais_SelectedIndexChanged);
+            // 
+            // tabCredenciales
+            // 
+            this.tabCredenciales.Controls.Add(this.txtConfirmarPassword);
+            this.tabCredenciales.Controls.Add(this.label16);
+            this.tabCredenciales.Controls.Add(this.label15);
+            this.tabCredenciales.Controls.Add(this.txtPassword);
+            this.tabCredenciales.Controls.Add(this.label14);
+            this.tabCredenciales.Controls.Add(this.label13);
+            this.tabCredenciales.Controls.Add(this.txtCelular);
+            this.tabCredenciales.Controls.Add(this.txtEmail);
+            this.tabCredenciales.Location = new System.Drawing.Point(4, 22);
+            this.tabCredenciales.Name = "tabCredenciales";
+            this.tabCredenciales.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCredenciales.Size = new System.Drawing.Size(674, 388);
+            this.tabCredenciales.TabIndex = 2;
+            this.tabCredenciales.Text = "Credenciales de Accesso";
+            this.tabCredenciales.UseVisualStyleBackColor = true;
+            // 
+            // txtConfirmarPassword
+            // 
+            this.txtConfirmarPassword.Location = new System.Drawing.Point(394, 163);
+            this.txtConfirmarPassword.Name = "txtConfirmarPassword";
+            this.txtConfirmarPassword.PasswordChar = '*';
+            this.txtConfirmarPassword.Size = new System.Drawing.Size(172, 20);
+            this.txtConfirmarPassword.TabIndex = 29;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(344, 106);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(299, 54);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Ingrese su contraseña \r\nnuevamente para confirmar\r\n";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(19, 123);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(252, 27);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Ingrese una contraseña";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(66, 163);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(172, 20);
+            this.txtPassword.TabIndex = 26;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(344, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(306, 27);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Ingrese su numero de celular";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(310, 27);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Ingrese su correo electrónico";
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(439, 53);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(100, 20);
+            this.txtCelular.TabIndex = 1;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(114, 53);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 0;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegistrar.Location = new System.Drawing.Point(299, 467);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(127, 65);
+            this.btnRegistrar.TabIndex = 61;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // frmRegistro
             // 
@@ -367,34 +477,23 @@ namespace FB
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(848, 580);
-            this.Controls.Add(this.materialDivider1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtCuidad);
-            this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.txtPais);
-            this.Controls.Add(this.btnSiguiente);
-            this.Controls.Add(this.txtDocumentoIdentidad);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSegundoApellido);
-            this.Controls.Add(this.txtPrimerApellido);
-            this.Controls.Add(this.rdoMujer);
-            this.Controls.Add(this.rdoHombre);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpFechaNacimiento);
-            this.Controls.Add(this.txtSegundoNombre);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPrimerNombre);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(702, 535);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.tabRegistro);
             this.DoubleBuffered = true;
             this.Name = "frmRegistro";
-            this.Text = "6";
+            this.Text = "Registrar Nuevo Usuario";
             this.Load += new System.EventHandler(this.frmRegistrocs_Load);
+            this.tabRegistro.ResumeLayout(false);
+            this.tabDatos.ResumeLayout(false);
+            this.tabDatos.PerformLayout();
+            this.grpSexo.ResumeLayout(false);
+            this.grpSexo.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabCredenciales.ResumeLayout(false);
+            this.tabCredenciales.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,27 +502,41 @@ namespace FB
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialTextBox txtPrimerNombre;
         private System.Windows.Forms.Label label2;
-        private MaterialSkin.Controls.MaterialTextBox txtSegundoNombre;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Label label3;
-        private MaterialSkin.Controls.MaterialRadioButton rdoHombre;
-        private MaterialSkin.Controls.MaterialRadioButton rdoMujer;
-        private MaterialSkin.Controls.MaterialTextBox txtPrimerApellido;
-        private MaterialSkin.Controls.MaterialTextBox txtSegundoApellido;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private MaterialSkin.Controls.MaterialTextBox txtDocumentoIdentidad;
-        private System.Windows.Forms.Button btnSiguiente;
-        private MaterialSkin.Controls.MaterialTextBox txtPais;
-        private MaterialSkin.Controls.MaterialTextBox txtEstado;
-        private MaterialSkin.Controls.MaterialTextBox txtCuidad;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabControl tabRegistro;
+        private System.Windows.Forms.TabPage tabDatos;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbCiudad;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.ComboBox cmbPais;
+        private System.Windows.Forms.GroupBox grpSexo;
+        private System.Windows.Forms.RadioButton rdoHombre;
+        private System.Windows.Forms.RadioButton rdoMujer;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.TextBox txtPrimerNombre;
+        private System.Windows.Forms.TextBox txtPrimerApellido;
+        private System.Windows.Forms.TextBox txtSegundoNombre;
+        private System.Windows.Forms.TextBox txtSegundoApellido;
+        private System.Windows.Forms.TextBox txtDocumentoIdentidad;
+        private System.Windows.Forms.TabPage tabCredenciales;
+        private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtConfirmarPassword;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }

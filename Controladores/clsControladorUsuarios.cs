@@ -17,10 +17,10 @@ namespace FB.Controladores
         //Constructor para registrar
         public clsControladorUsuarios(string numDocumentoIdentidad, string primerNombreUsuario, string segundoNombreUsuario, 
             string primerApellidoUsuario, string segundoApellidoUsuario, DateTime fechNacimientoUsuario, string sexo, 
-            string paisActual, string estadoActual, string ciudadActual)
+            string paisActual, string estadoActual, string ciudadActual, string email, string password, string celular)
         {
             usuario = new clsUsuario(numDocumentoIdentidad, primerNombreUsuario, segundoNombreUsuario, primerApellidoUsuario,
-                segundoApellidoUsuario, fechNacimientoUsuario, sexo, paisActual, estadoActual, ciudadActual);
+                segundoApellidoUsuario, fechNacimientoUsuario, sexo, paisActual, estadoActual, ciudadActual, email,password, celular);
         }
 
         //Constructor para ingresar

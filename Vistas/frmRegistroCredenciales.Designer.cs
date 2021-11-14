@@ -36,7 +36,7 @@ namespace FB.Vistas
             this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCelular = new MaterialSkin.Controls.MaterialTextBox();
             this.txtPassword = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtConfirmPassword = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtConfirmarPassword = new MaterialSkin.Controls.MaterialTextBox();
             this.btnSigueinte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -132,21 +132,21 @@ namespace FB.Vistas
             this.txtPassword.Text = "";
             this.txtPassword.TrailingIcon = null;
             // 
-            // txtConfirmPassword
+            // txtConfirmarPassword
             // 
-            this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmPassword.Depth = 0;
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtConfirmPassword.LeadingIcon = null;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(425, 245);
-            this.txtConfirmPassword.MaxLength = 50;
-            this.txtConfirmPassword.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtConfirmPassword.Multiline = false;
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(300, 50);
-            this.txtConfirmPassword.TabIndex = 45;
-            this.txtConfirmPassword.Text = "";
-            this.txtConfirmPassword.TrailingIcon = null;
+            this.txtConfirmarPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirmarPassword.Depth = 0;
+            this.txtConfirmarPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtConfirmarPassword.LeadingIcon = null;
+            this.txtConfirmarPassword.Location = new System.Drawing.Point(425, 245);
+            this.txtConfirmarPassword.MaxLength = 50;
+            this.txtConfirmarPassword.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtConfirmarPassword.Multiline = false;
+            this.txtConfirmarPassword.Name = "txtConfirmarPassword";
+            this.txtConfirmarPassword.Size = new System.Drawing.Size(300, 50);
+            this.txtConfirmarPassword.TabIndex = 45;
+            this.txtConfirmarPassword.Text = "";
+            this.txtConfirmarPassword.TrailingIcon = null;
             // 
             // btnSigueinte
             // 
@@ -171,7 +171,7 @@ namespace FB.Vistas
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 363);
             this.Controls.Add(this.btnSigueinte);
-            this.Controls.Add(this.txtConfirmPassword);
+            this.Controls.Add(this.txtConfirmarPassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtEmail);
@@ -196,7 +196,7 @@ namespace FB.Vistas
         private MaterialSkin.Controls.MaterialTextBox txtEmail;
         private MaterialSkin.Controls.MaterialTextBox txtCelular;
         private MaterialSkin.Controls.MaterialTextBox txtPassword;
-        private MaterialSkin.Controls.MaterialTextBox txtConfirmPassword;
+        private MaterialSkin.Controls.MaterialTextBox txtConfirmarPassword;
         private System.Windows.Forms.Button btnSigueinte;
     }
 }

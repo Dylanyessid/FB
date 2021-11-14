@@ -11,10 +11,8 @@ using FB.Modelo;
 using FB.Controladores;
 using FB.Vistas;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Newtonsoft.Json;
-using System.Linq;
+
 
 namespace FB.Vistas
 {

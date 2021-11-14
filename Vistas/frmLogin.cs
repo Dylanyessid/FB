@@ -65,6 +65,7 @@ namespace FB
         {
             frmRegistro registro = new frmRegistro();
             registro.ShowDialog();
+            this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
