@@ -15,20 +15,36 @@ namespace FB.Vistas
     public partial class frmPrincipal : Form
     {
         DataTable dtMetodosPago;
+        DataTable dtHistorialViajes;
         private clsControladorMetodoPago metodoPago;
+        private clsControladorViaje viaje;
         public frmPrincipal()
         {
             InitializeComponent();
+        }
+        void obtenerHistorialViajes()
+        {
+            viaje = new clsControladorViaje(clsSesion.DocumentoSesion);
+            dtHistorialViajes = viaje.ejecutarMisViajes();
+            if (dtHistorialViajes.Rows.Count == 0)
+            {
+                cmbViajes.Text = "Este usuario no tiene viajes registrados";
+            }
+            else
+            {
+                foreach(DataRow viaje in dtHistorialViajes.Rows)
+                {
+                    string recogida = viaje["direccionRecogida"].ToString();
+                    string destino = viaje["direccionDestino"].ToString();
+                    string fecha = viaje["direccionDestino"].ToString();
+                     
+                }
+            }
         }
         void obtenerMetodosPago()
         {
             metodoPago = new clsControladorMetodoPago(clsSesion.DocumentoSesion);
              dtMetodosPago = metodoPago.ejecutarConsultarMetodosPago();
-           
-
-            
-
-            
            
             if (dtMetodosPago.Rows.Count == 0)
             {
@@ -155,6 +171,16 @@ namespace FB.Vistas
         }
 
         private void btnEliminarMetodoPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbViajes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

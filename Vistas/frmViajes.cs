@@ -258,6 +258,8 @@ namespace FB.Vistas
             }
         }
 
+
+
         private void btnPagarViaje_Click(object sender, EventArgs e)
         {
             

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FB.Modelo;
+using System.Data;
 namespace FB.Controladores
 {
     class clsControladorViaje
@@ -12,6 +13,10 @@ namespace FB.Controladores
         public clsControladorViaje(int idSolicitud, string numDocumentoPasajero, string numDocumentoConductor, string formaPago, DateTime fechaInicio, DateTime fechaFina, decimal calificacionConductor, int idMetodoPago)
         {
             viaje = new clsViaje(idSolicitud, numDocumentoPasajero, numDocumentoConductor, formaPago, fechaInicio, fechaFina, calificacionConductor, idMetodoPago);
+        }
+        public clsControladorViaje(string numDocumentoPasajero)
+        {
+            viaje = new clsViaje(numDocumentoPasajero);
         }
 
         public bool ejecutarRegistrarViaje()
@@ -24,6 +29,11 @@ namespace FB.Controladores
             {
                 return false;
             }
+        }
+
+        public DataTable ejecutarMisViajes()
+        {
+            return viaje.historialViajes();
         }
     }
 }

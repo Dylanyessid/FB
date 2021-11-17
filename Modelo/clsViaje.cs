@@ -40,6 +40,24 @@ namespace FB.Modelo
             IdMetodoPago = idMetodo;
         }
 
+        public clsViaje(string numDocumentoPasajero)
+        {
+            NumDocumentoPasajero = numDocumentoPasajero;
+        }
+
+        public DataTable historialViajes()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = conexionViaje;
+            consulta.Parameters.Add("@docPasajero", SqlDbType.VarChar).Value = NumDocumentoPasajero;
+            consulta.CommandText = "SELECT * from historialViajes where numDocumentoPasajero=@docPasajero order by fechaInicio DESC";
+
+            SqlDataReader viajes = consulta.ExecuteReader();
+            DataTable dtMisViajes = new DataTable();
+            dtMisViajes.Load(viajes);
+            return dtMisViajes;
+        }
+
         public bool crearViaje()
         {
             SqlCommand consulta = new SqlCommand();
