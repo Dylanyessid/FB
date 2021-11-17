@@ -45,6 +45,7 @@ namespace FB.Modelo
         private string segundoApellido;
         private string celular;
 
+        private int idConductor;
 
         public string PlacaMoto { get => placaMoto; set => placaMoto = value; }
         public string NumDocumentoIdentidadConductor { get => numDocumentoIdentidadConductor; set => numDocumentoIdentidadConductor = value; }
@@ -72,6 +73,7 @@ namespace FB.Modelo
         public string PrimerApellido { get => primerApellido; set => primerApellido = value; }
         public string SegundoApellido { get => segundoApellido; set => segundoApellido = value; }
         public string Celular { get => celular; set => celular = value; }
+        public int IdConductor { get => idConductor; set => idConductor = value; }
 
         public clsConductor(string numDoc, DateTime licenciaDesde, DateTime licenciaHasta)
         { 
@@ -82,7 +84,13 @@ namespace FB.Modelo
 
         public clsConductor()
         {
-            
+
+        }
+
+        public clsConductor(int idConductor, int solicitudActual)
+        {
+            IdConductor = idConductor;
+            SolicitudActual = solicitudActual;
         }
 
         public clsConductor(int solicitudActual)
@@ -127,7 +135,7 @@ namespace FB.Modelo
             consulta.Connection = usersConnect;
             consulta.CommandText = "EXECUTE registrarComoConductor @placa,@marca, @modelo, @linea, @color, @cilindraje, @numChasis, @numMotor, " +
                 "@numMatricula, @motoPropia, @inicioSOAT, @finSOAT, @inicioTecnomecanica, @finTecnomecanica,@numDocumentoPropietario, @primerNombre, @segundoNombre," +
-                " @primerApellido, @segundoApellido, @celular, @numDocumentoConductor, @licenciaDesde, @licenciaHasta, null, null";
+                " @primerApellido, @segundoApellido, @celular, @numDocumentoConductor, @licenciaDesde, @licenciaHasta, null";
             consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = PlacaMoto;
             consulta.Parameters.Add("@marca", SqlDbType.VarChar).Value = MarcaMoto;
             consulta.Parameters.Add("@modelo", SqlDbType.VarChar).Value = ModeloMoto;
@@ -136,7 +144,7 @@ namespace FB.Modelo
             consulta.Parameters.Add("@cilindraje", SqlDbType.Int).Value =Cilindraje ;
             consulta.Parameters.Add("@numChasis", SqlDbType.VarChar).Value = NumChasis;
             consulta.Parameters.Add("@numMotor", SqlDbType.VarChar).Value = NumMotor;
-            consulta.Parameters.Add("@numMatricula", SqlDbType.VarChar).Value = NumeroMatricula;
+            consulta.Parameters.Add("@numMatricula", SqlDbType.VarChar).Value = NumeroMatricula.ToString();
             consulta.Parameters.Add("@motoPropia", SqlDbType.Bit).Value = MotoPropia;
             consulta.Parameters.Add("@inicioSOAT", SqlDbType.Date).Value = InicioSOAT;
             consulta.Parameters.Add("@finSOAT", SqlDbType.Date).Value = FinSOAT;
@@ -154,7 +162,7 @@ namespace FB.Modelo
 
             try
             {
-                if(consulta.ExecuteNonQuery() == 4)
+                if(consulta.ExecuteNonQuery() >= 1)
                 {
                     MessageBox.Show("Registro exitoso!");
                     return true;
@@ -168,41 +176,13 @@ namespace FB.Modelo
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show(err.ToString());
                 return false;
 
             }
         }
 
 
-        public bool registrarConductor()
-        {
-            SqlCommand consulta = new SqlCommand();
-            consulta.Connection = usersConnect;
-            consulta.CommandText = "insert into tblConductores values (@placa, @numDocumento, 0, 0,0, @licenciaDesde, @licenciaHasta, null)";
-            consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = clsSesion.PlacaMoto;
-            consulta.Parameters.Add("@numDocumento", SqlDbType.VarChar).Value = NumDocumentoIdentidadConductor;
-            consulta.Parameters.Add("@licenciaDesde", SqlDbType.Date).Value = LicenciaDesde;
-            consulta.Parameters.Add("@licenciaHasta", SqlDbType.Date).Value = LicenciaHasta;
-           
-            try
-            {
-                if (consulta.ExecuteNonQuery() == 1)
-                {
-                    
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-                return false;
-            }
-        }
         //Metodo para indicar que se quiere prestar servicio
         public bool prestarServicio()
         {
@@ -257,14 +237,13 @@ namespace FB.Modelo
         }
 
         //Metodo para mostrar los conductores activos
-        public DataTable conductoresActivos()
+        public DataTable infoConductor()
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
-            consulta.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = clsSesion.Ciudad;
-            consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = clsSesion.Estado;
-            consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = clsSesion.Pais;
-            consulta.CommandText = "select * from conductoresActivos where ciudadActual=@ciudad and estadoActual=@estado and paisActual=@pais order by calificacionPromedio DESC";
+            consulta.Parameters.Add("@idConductor", SqlDbType.Int).Value = idConductor;
+            consulta.Parameters.Add("@solActual", SqlDbType.Int).Value = SolicitudActual;
+            consulta.CommandText = "select * from tblConductores where solicitudActual=@solActual and idConductor=@idConductor";
 
             SqlDataReader listaConductoresActivos = consulta.ExecuteReader();
             DataTable infoConductoresActivos = new DataTable();

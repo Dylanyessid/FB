@@ -156,39 +156,6 @@ namespace FB.Modelo
 
         }
 
-        //TERMINAR ESOT
-
-        
-        public bool registrarPropietarioMoto()
-        {
-            SqlCommand consulta = new SqlCommand();
-            consulta.Connection = usersConnect;
-            consulta.CommandText = "insert into tblPropietariosMoto values (@numDocPropietario, @placa, @primerNombre," +
-                "@segundoNombre, @primerApellido, @segundoApellido, @celular)";
-            consulta.Parameters.Add("@numDocPropietario", SqlDbType.Int).Value = numDocumento;
-            consulta.Parameters.Add("@placa", SqlDbType.VarChar).Value = clsSesion.PlacaMoto;
-            consulta.Parameters.Add("@primerNombre", SqlDbType.VarChar).Value = PrimerNombre;
-            consulta.Parameters.Add("@segundoNombre", SqlDbType.VarChar).Value = SegundoNombre;
-            consulta.Parameters.Add("@primerApellido", SqlDbType.VarChar).Value = PrimerApellido;
-            consulta.Parameters.Add("@segundoApellido", SqlDbType.VarChar).Value = SegundoApellido;
-            consulta.Parameters.Add("@celular", SqlDbType.VarChar).Value = Celular;
-
-            try
-            {
-                if (consulta.ExecuteNonQuery() == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-                return false;
-            }
-        }
+      
     }
 }

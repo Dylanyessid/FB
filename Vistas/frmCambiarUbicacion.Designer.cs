@@ -61,7 +61,7 @@ namespace FB.Vistas
             this.lblUbicacion.AutoSize = true;
             this.lblUbicacion.BackColor = System.Drawing.Color.Transparent;
             this.lblUbicacion.Font = new System.Drawing.Font("Red Hat Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUbicacion.Location = new System.Drawing.Point(7, 105);
+            this.lblUbicacion.Location = new System.Drawing.Point(7, 115);
             this.lblUbicacion.Name = "lblUbicacion";
             this.lblUbicacion.Size = new System.Drawing.Size(154, 31);
             this.lblUbicacion.TabIndex = 12;
@@ -139,7 +139,7 @@ namespace FB.Vistas
             this.txtRecogida.Depth = 0;
             this.txtRecogida.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtRecogida.LeadingIcon = null;
-            this.txtRecogida.Location = new System.Drawing.Point(297, 314);
+            this.txtRecogida.Location = new System.Drawing.Point(297, 308);
             this.txtRecogida.MaxLength = 50;
             this.txtRecogida.MouseState = MaterialSkin.MouseState.OUT;
             this.txtRecogida.Multiline = false;
@@ -154,7 +154,7 @@ namespace FB.Vistas
             this.lblRecogida.AutoSize = true;
             this.lblRecogida.BackColor = System.Drawing.Color.Transparent;
             this.lblRecogida.Font = new System.Drawing.Font("Red Hat Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecogida.Location = new System.Drawing.Point(32, 323);
+            this.lblRecogida.Location = new System.Drawing.Point(32, 314);
             this.lblRecogida.Name = "lblRecogida";
             this.lblRecogida.Size = new System.Drawing.Size(225, 27);
             this.lblRecogida.TabIndex = 57;
@@ -166,7 +166,7 @@ namespace FB.Vistas
             this.txtDestino.Depth = 0;
             this.txtDestino.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDestino.LeadingIcon = null;
-            this.txtDestino.Location = new System.Drawing.Point(297, 370);
+            this.txtDestino.Location = new System.Drawing.Point(297, 364);
             this.txtDestino.MaxLength = 50;
             this.txtDestino.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDestino.Multiline = false;
@@ -181,7 +181,7 @@ namespace FB.Vistas
             this.lblDestino.AutoSize = true;
             this.lblDestino.BackColor = System.Drawing.Color.Transparent;
             this.lblDestino.Font = new System.Drawing.Font("Red Hat Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDestino.Location = new System.Drawing.Point(32, 379);
+            this.lblDestino.Location = new System.Drawing.Point(32, 364);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(212, 27);
             this.lblDestino.TabIndex = 59;
@@ -189,13 +189,13 @@ namespace FB.Vistas
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(12, 12);
+            this.btnVolver.Location = new System.Drawing.Point(18, 403);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(127, 65);
             this.btnVolver.TabIndex = 60;
@@ -212,7 +212,7 @@ namespace FB.Vistas
             this.cmbPais.DropDownHeight = 174;
             this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPais.DropDownWidth = 121;
-            this.cmbPais.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmbPais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmbPais.FormattingEnabled = true;
             this.cmbPais.IntegralHeight = false;

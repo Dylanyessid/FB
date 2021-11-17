@@ -55,17 +55,7 @@ namespace FB.Controladores
             }
         }
 
-        public bool ejecutarAtenderSolicitud()
-        {
-            if (solicitud.atender())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
 
         public bool ejecutarAceptarConductorSolicitud()
         {
@@ -84,5 +74,50 @@ namespace FB.Controladores
             return solicitud.consultarSolicitud();
         }
        
+        public bool ejecutarClienteRecogido()
+        {
+            if (solicitud.clienteRecogido())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ejecutarConfirmarRecogida()
+        {
+            if (solicitud.confirmarRecogida())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ejecutarLlegarDestino()
+        {
+            if (solicitud.llegarDestino())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ejecutarConfirmarLlegarDestino()
+        {
+            if (solicitud.confirmarLlegarDestino())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

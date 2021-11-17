@@ -31,12 +31,12 @@ namespace FB
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtPassword = new MaterialSkin.Controls.MaterialTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.lblIngreso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -54,26 +54,6 @@ namespace FB
             this.txtEmail.TabIndex = 2;
             this.txtEmail.Text = "";
             this.txtEmail.TrailingIcon = null;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.BulletIndent = 2;
-            this.txtPassword.Depth = 0;
-            this.txtPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPassword.Hint = "*";
-            this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtPassword.LeadingIcon = null;
-            this.txtPassword.Location = new System.Drawing.Point(53, 379);
-            this.txtPassword.MaxLength = 50;
-            this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPassword.Multiline = false;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Password = true;
-            this.txtPassword.Size = new System.Drawing.Size(590, 50);
-            this.txtPassword.TabIndex = 3;
-            this.txtPassword.Text = "";
-            this.txtPassword.TrailingIcon = null;
             // 
             // materialButton1
             // 
@@ -146,6 +126,14 @@ namespace FB
             this.label2.TabIndex = 8;
             this.label2.Text = "Contraseña";
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(210, 372);
+            this.txtPassword.MaxLength = 45;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(284, 20);
+            this.txtPassword.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,12 +142,12 @@ namespace FB
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(699, 537);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -172,12 +160,12 @@ namespace FB
         #endregion
 
         private MaterialSkin.Controls.MaterialTextBox txtEmail;
-        private MaterialSkin.Controls.MaterialTextBox txtPassword;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }
 

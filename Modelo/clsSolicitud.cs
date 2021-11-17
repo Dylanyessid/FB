@@ -66,7 +66,7 @@ namespace FB.Modelo
             clsSesion.FechaUltimaSolicitud = Fecha;
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = solicitudConnect;
-            consulta.Parameters.Add("@documento", SqlDbType.Int).Value = clsSesion.DocumentoSesion;
+            consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = clsSesion.DocumentoSesion;
             consulta.Parameters.Add("@fecha", SqlDbType.DateTime).Value = Fecha;
             consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = clsSesion.Pais;
             consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = clsSesion.Estado;
@@ -107,7 +107,9 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = solicitudConnect;
             consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
-            consulta.CommandText = "SELECT * FROM  tblSolicitudes WHERE idSolicitud=@idSol";
+            consulta.CommandText = "SELECT idSolicitud, tblSolicitudes.numDocumentoSolicitante, fechaSolicitud, estadoSolicitud, direccionRecogida, direccionDestino, precioSolicitado, celular, aceptadaPor" +
+                " FROM tblSolicitudes INNER JOIN tblCredenciales ON tblSolicitudes.numDocumentoSolicitante = tblCredenciales.numDocumentoIdentidad " +
+                "WHERE idSolicitud = @idSol";
 
             SqlDataReader solicitud = consulta.ExecuteReader();
             DataTable dtSolicitud = new DataTable();
@@ -141,31 +143,7 @@ namespace FB.Modelo
 
         }
 
-        public bool atender()
-        {
-            SqlCommand consulta = new SqlCommand();
-            consulta.Connection = solicitudConnect;
-            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
-            
-
-            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='' where idSolicitud=@idSol";
-
-            try
-            {
-                if (consulta.ExecuteNonQuery() == 1)
-                {
-                    return true;
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-                return false;
-            }
-
-            return false;
-
-        }
+       
 
         public bool aceptarConductorSolicitud()
         {
@@ -192,6 +170,101 @@ namespace FB.Modelo
             return false;
         }
 
-        
+        public bool clienteRecogido()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Recogido?' WHERE idSolicitud = @idSol AND estadoSolicitud='Aceptada'";
+
+            try
+            {
+                
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
+
+        }
+
+        public bool confirmarRecogida()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Viajando' WHERE idSolicitud = @idSol AND estadoSolicitud='Recogido?'";
+
+            try
+            {
+
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
+        }
+
+        public bool llegarDestino()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Finalizado?' WHERE idSolicitud = @idSol AND estadoSolicitud='Viajando'";
+
+            try
+            {
+
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
+        }
+
+        public bool confirmarLlegarDestino()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
+            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Pago Pendiente' WHERE idSolicitud = @idSol AND estadoSolicitud='Finalizado?'";
+
+            try
+            {
+
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
+        }
     }
 }

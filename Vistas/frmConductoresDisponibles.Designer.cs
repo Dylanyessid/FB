@@ -160,10 +160,10 @@ namespace FB
             this.dtgConductores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(79)))));
             this.dtgConductores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgConductores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgConductores.Location = new System.Drawing.Point(38, 263);
+            this.dtgConductores.Location = new System.Drawing.Point(12, 263);
             this.dtgConductores.Name = "dtgConductores";
             this.dtgConductores.ReadOnly = true;
-            this.dtgConductores.Size = new System.Drawing.Size(781, 248);
+            this.dtgConductores.Size = new System.Drawing.Size(859, 248);
             this.dtgConductores.TabIndex = 51;
             this.dtgConductores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgConductores_CellClick);
             // 
@@ -195,7 +195,7 @@ namespace FB
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(860, 491);
+            this.ClientSize = new System.Drawing.Size(883, 491);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.dtgConductores);
             this.Controls.Add(this.label2);

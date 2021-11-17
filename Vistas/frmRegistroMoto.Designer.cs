@@ -63,10 +63,10 @@ namespace FB
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
             this.lblSegundoApellido = new System.Windows.Forms.Label();
             this.lblPrimerApellido = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblSegundoNombre = new System.Windows.Forms.Label();
             this.lblPrimerNombre = new System.Windows.Forms.Label();
             this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblMatricula = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dtpFinTecno = new System.Windows.Forms.DateTimePicker();
             this.dtpInicioTecno = new System.Windows.Forms.DateTimePicker();
@@ -201,6 +201,7 @@ namespace FB
             this.label9.TabIndex = 59;
             this.label9.Text = "Parece que no estás registrado como conductor.\r\n¡Apúntate!\r\n";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // tabMoto
             // 
@@ -233,7 +234,7 @@ namespace FB
             this.tabDetalles.Location = new System.Drawing.Point(4, 22);
             this.tabDetalles.Name = "tabDetalles";
             this.tabDetalles.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetalles.Size = new System.Drawing.Size(838, 419);
+            this.tabDetalles.Size = new System.Drawing.Size(838, 403);
             this.tabDetalles.TabIndex = 0;
             this.tabDetalles.Text = "Detalles de Moto";
             this.tabDetalles.UseVisualStyleBackColor = true;
@@ -309,10 +310,10 @@ namespace FB
             this.tabPapeles.Controls.Add(this.txtPrimerNombre);
             this.tabPapeles.Controls.Add(this.lblSegundoApellido);
             this.tabPapeles.Controls.Add(this.lblPrimerApellido);
-            this.tabPapeles.Controls.Add(this.label18);
+            this.tabPapeles.Controls.Add(this.lblSegundoNombre);
             this.tabPapeles.Controls.Add(this.lblPrimerNombre);
             this.tabPapeles.Controls.Add(this.txtMatricula);
-            this.tabPapeles.Controls.Add(this.label17);
+            this.tabPapeles.Controls.Add(this.lblMatricula);
             this.tabPapeles.Controls.Add(this.label16);
             this.tabPapeles.Controls.Add(this.dtpFinTecno);
             this.tabPapeles.Controls.Add(this.dtpInicioTecno);
@@ -355,6 +356,7 @@ namespace FB
             this.rdoSi.TabStop = true;
             this.rdoSi.Text = "Si";
             this.rdoSi.UseVisualStyleBackColor = true;
+            this.rdoSi.CheckedChanged += new System.EventHandler(this.rdoSi_CheckedChanged);
             // 
             // rdoNo
             // 
@@ -459,16 +461,16 @@ namespace FB
             this.lblPrimerApellido.TabIndex = 75;
             this.lblPrimerApellido.Text = "Primer Apellido \r\nPropietario";
             // 
-            // label18
+            // lblSegundoNombre
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(211, 218);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(204, 54);
-            this.label18.TabIndex = 74;
-            this.label18.Text = "Segundo Nombre \r\nPropietario";
+            this.lblSegundoNombre.AutoSize = true;
+            this.lblSegundoNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblSegundoNombre.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSegundoNombre.Location = new System.Drawing.Point(211, 218);
+            this.lblSegundoNombre.Name = "lblSegundoNombre";
+            this.lblSegundoNombre.Size = new System.Drawing.Size(204, 54);
+            this.lblSegundoNombre.TabIndex = 74;
+            this.lblSegundoNombre.Text = "Segundo Nombre \r\nPropietario";
             // 
             // lblPrimerNombre
             // 
@@ -489,16 +491,16 @@ namespace FB
             this.txtMatricula.Size = new System.Drawing.Size(100, 20);
             this.txtMatricula.TabIndex = 72;
             // 
-            // label17
+            // lblMatricula
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(242, 155);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(331, 27);
-            this.label17.TabIndex = 71;
-            this.label17.Text = "Número de matrícula de moto";
+            this.lblMatricula.AutoSize = true;
+            this.lblMatricula.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatricula.Font = new System.Drawing.Font("Red Hat Text Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatricula.Location = new System.Drawing.Point(242, 155);
+            this.lblMatricula.Name = "lblMatricula";
+            this.lblMatricula.Size = new System.Drawing.Size(331, 27);
+            this.lblMatricula.TabIndex = 71;
+            this.lblMatricula.Text = "Número de matrícula de moto";
             // 
             // label16
             // 
@@ -682,10 +684,10 @@ namespace FB
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.RadioButton rdoNo;
         private System.Windows.Forms.RadioButton rdoSi;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Label lblPrimerNombre;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblSegundoNombre;
         private System.Windows.Forms.Label lblPrimerApellido;
         private System.Windows.Forms.Label lblSegundoApellido;
         private System.Windows.Forms.TextBox txtSegundoApellido;

@@ -14,6 +14,7 @@ namespace FB.Vistas
 {
     public partial class frmPrincipal : Form
     {
+        DataTable dtMetodosPago;
         private clsControladorMetodoPago metodoPago;
         public frmPrincipal()
         {
@@ -22,7 +23,7 @@ namespace FB.Vistas
         void obtenerMetodosPago()
         {
             metodoPago = new clsControladorMetodoPago(clsSesion.DocumentoSesion);
-            DataTable dtMetodosPago = metodoPago.ejecutarConsultarMetodosPago();
+             dtMetodosPago = metodoPago.ejecutarConsultarMetodosPago();
            
 
             
@@ -33,8 +34,7 @@ namespace FB.Vistas
             {
                 lblAviso.Visible = true;
                 cmbMetodosPago.Visible = false;
-                btnEditarMetodoPago.Visible = false;
-                btnEliminarMetodoPago.Visible = false;
+               
             }
             else
             {
@@ -47,7 +47,6 @@ namespace FB.Vistas
                     string numTajeta = encrypt.decrypt(metodoPago["numeroTarjeta"].ToString(),key);
                     string tipo = encrypt.decrypt(metodoPago["tipoTarjeta"].ToString(), key);
                     string concepto = encrypt.decrypt(metodoPago["concepto"].ToString(), key);
-                    //MessageBox.Show(numTajeta);
                     cmbMetodosPago.Items.Add("Tarjeta de: "  +tipo + "  ||  " + concepto +"  ||  " + numTajeta);
                 }
             }
@@ -91,12 +90,27 @@ namespace FB.Vistas
 
         private void btnPedirServicio_Click(object sender, EventArgs e)
         {
-            
-            clsSesion.OfreciendoServicio = false;
-            frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
-            this.Hide();
-            ubicacion.ShowDialog();
-            this.Show();
+            if(dtMetodosPago.Rows.Count == 0)
+            {
+                DialogResult drAdvertencia = MessageBox.Show("Actualmente no tienes un método de pago registrado. Si no ingresas uno antes de pedir un servicio, deberás pagar por efectivo. Si no pagas el viaje, puedes tener sanciones en el servicio o incluso de forma penal. ¿Quieres continuar y pagar en efectivo?", "Advertencia", MessageBoxButtons.YesNo);
+                if(drAdvertencia == DialogResult.Yes)
+                {
+                    clsSesion.OfreciendoServicio = false;
+                    frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
+                    this.Hide();
+                    ubicacion.ShowDialog();
+                    this.Show();
+                }
+            }
+            else
+            {
+                clsSesion.OfreciendoServicio = false;
+                frmCambiarUbicacion ubicacion = new frmCambiarUbicacion(false);
+                this.Hide();
+                ubicacion.ShowDialog();
+                this.Show();
+            }
+          
             
         }
 
@@ -128,6 +142,21 @@ namespace FB.Vistas
         {
             linklblAutor.LinkVisited = true;
             System.Diagnostics.Process.Start("https://github.com/millan2993/countries");
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditarMetodoPago_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarMetodoPago_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

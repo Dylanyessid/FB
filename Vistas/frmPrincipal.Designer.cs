@@ -40,8 +40,6 @@ namespace FB.Vistas
             this.tabOpcionesCuenta = new System.Windows.Forms.TabPage();
             this.tabMetodosPago = new System.Windows.Forms.TabPage();
             this.lblAviso = new System.Windows.Forms.Label();
-            this.btnEliminarMetodoPago = new System.Windows.Forms.Button();
-            this.btnEditarMetodoPago = new System.Windows.Forms.Button();
             this.cmbMetodosPago = new System.Windows.Forms.ComboBox();
             this.btnAgregatMetodoPago = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,9 +48,17 @@ namespace FB.Vistas
             this.label4 = new System.Windows.Forms.Label();
             this.linklblAutor = new System.Windows.Forms.LinkLabel();
             this.linklblRepositorio = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbViajes = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabMetodosPago.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIngreso
@@ -60,7 +66,7 @@ namespace FB.Vistas
             this.lblIngreso.AutoSize = true;
             this.lblIngreso.BackColor = System.Drawing.Color.Transparent;
             this.lblIngreso.Font = new System.Drawing.Font("Red Hat Display Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngreso.Location = new System.Drawing.Point(232, 3);
+            this.lblIngreso.Location = new System.Drawing.Point(233, -4);
             this.lblIngreso.Name = "lblIngreso";
             this.lblIngreso.Size = new System.Drawing.Size(210, 85);
             this.lblIngreso.TabIndex = 7;
@@ -71,7 +77,7 @@ namespace FB.Vistas
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(196, 120);
+            this.label1.Location = new System.Drawing.Point(199, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(288, 39);
             this.label1.TabIndex = 8;
@@ -85,7 +91,7 @@ namespace FB.Vistas
             this.btnPedirServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPedirServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedirServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPedirServicio.Location = new System.Drawing.Point(99, 174);
+            this.btnPedirServicio.Location = new System.Drawing.Point(123, 247);
             this.btnPedirServicio.Name = "btnPedirServicio";
             this.btnPedirServicio.Size = new System.Drawing.Size(222, 75);
             this.btnPedirServicio.TabIndex = 48;
@@ -101,7 +107,7 @@ namespace FB.Vistas
             this.btnOfrecerServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOfrecerServicio.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfrecerServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOfrecerServicio.Location = new System.Drawing.Point(327, 174);
+            this.btnOfrecerServicio.Location = new System.Drawing.Point(368, 247);
             this.btnOfrecerServicio.Name = "btnOfrecerServicio";
             this.btnOfrecerServicio.Size = new System.Drawing.Size(222, 75);
             this.btnOfrecerServicio.TabIndex = 49;
@@ -111,13 +117,13 @@ namespace FB.Vistas
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(609, 6);
+            this.button2.Location = new System.Drawing.Point(643, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 75);
             this.button2.TabIndex = 50;
@@ -129,7 +135,8 @@ namespace FB.Vistas
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Red Hat Display", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(531, 22);
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.lblNombre.Location = new System.Drawing.Point(242, 140);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(0, 35);
             this.lblNombre.TabIndex = 51;
@@ -153,6 +160,7 @@ namespace FB.Vistas
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.btnPedirServicio);
             this.tabPage1.Controls.Add(this.btnOfrecerServicio);
+            this.tabPage1.Controls.Add(this.lblNombre);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -160,6 +168,7 @@ namespace FB.Vistas
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Menú ";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabOpcionesCuenta
             // 
@@ -175,8 +184,6 @@ namespace FB.Vistas
             // 
             this.tabMetodosPago.AutoScroll = true;
             this.tabMetodosPago.Controls.Add(this.lblAviso);
-            this.tabMetodosPago.Controls.Add(this.btnEliminarMetodoPago);
-            this.tabMetodosPago.Controls.Add(this.btnEditarMetodoPago);
             this.tabMetodosPago.Controls.Add(this.cmbMetodosPago);
             this.tabMetodosPago.Controls.Add(this.btnAgregatMetodoPago);
             this.tabMetodosPago.Controls.Add(this.label2);
@@ -198,36 +205,6 @@ namespace FB.Vistas
             this.lblAviso.Size = new System.Drawing.Size(548, 94);
             this.lblAviso.TabIndex = 55;
             this.lblAviso.Text = "No tienes actualmente ningún \r\nmétodo de pago agregado.\r\n";
-            // 
-            // btnEliminarMetodoPago
-            // 
-            this.btnEliminarMetodoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.btnEliminarMetodoPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.btnEliminarMetodoPago.FlatAppearance.BorderSize = 0;
-            this.btnEliminarMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarMetodoPago.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarMetodoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarMetodoPago.Location = new System.Drawing.Point(511, 235);
-            this.btnEliminarMetodoPago.Name = "btnEliminarMetodoPago";
-            this.btnEliminarMetodoPago.Size = new System.Drawing.Size(198, 96);
-            this.btnEliminarMetodoPago.TabIndex = 54;
-            this.btnEliminarMetodoPago.Text = "Eliminar Método de Pago Seleccionado";
-            this.btnEliminarMetodoPago.UseVisualStyleBackColor = false;
-            // 
-            // btnEditarMetodoPago
-            // 
-            this.btnEditarMetodoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.btnEditarMetodoPago.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.btnEditarMetodoPago.FlatAppearance.BorderSize = 0;
-            this.btnEditarMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarMetodoPago.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarMetodoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditarMetodoPago.Location = new System.Drawing.Point(307, 235);
-            this.btnEditarMetodoPago.Name = "btnEditarMetodoPago";
-            this.btnEditarMetodoPago.Size = new System.Drawing.Size(198, 96);
-            this.btnEditarMetodoPago.TabIndex = 53;
-            this.btnEditarMetodoPago.Text = "Editar Método de Pago Seleccionado";
-            this.btnEditarMetodoPago.UseVisualStyleBackColor = false;
             // 
             // cmbMetodosPago
             // 
@@ -251,7 +228,7 @@ namespace FB.Vistas
             this.btnAgregatMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregatMetodoPago.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregatMetodoPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregatMetodoPago.Location = new System.Drawing.Point(111, 235);
+            this.btnAgregatMetodoPago.Location = new System.Drawing.Point(89, 233);
             this.btnAgregatMetodoPago.Name = "btnAgregatMetodoPago";
             this.btnAgregatMetodoPago.Size = new System.Drawing.Size(190, 96);
             this.btnAgregatMetodoPago.TabIndex = 51;
@@ -272,6 +249,13 @@ namespace FB.Vistas
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.cmbViajes);
+            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -326,6 +310,85 @@ namespace FB.Vistas
             this.linklblRepositorio.Text = "Repositorio (GitHub)";
             this.linklblRepositorio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRepositorio_LinkClicked);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Red Hat Text", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(211, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(357, 49);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Historial de viajes:";
+            // 
+            // cmbViajes
+            // 
+            this.cmbViajes.DropDownHeight = 120;
+            this.cmbViajes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViajes.FormattingEnabled = true;
+            this.cmbViajes.IntegralHeight = false;
+            this.cmbViajes.ItemHeight = 13;
+            this.cmbViajes.Location = new System.Drawing.Point(220, 64);
+            this.cmbViajes.Name = "cmbViajes";
+            this.cmbViajes.Size = new System.Drawing.Size(336, 21);
+            this.cmbViajes.Sorted = true;
+            this.cmbViajes.TabIndex = 53;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(255, 35);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "Fecha Inicio Viaje:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(21, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(225, 35);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "Fecha Fin Viaje:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(21, 187);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(279, 35);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Nombre Conductor:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(21, 257);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(173, 35);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Placa Moto:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(21, 222);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(173, 35);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Placa Moto:";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,7 +400,6 @@ namespace FB.Vistas
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tabPrincipal);
-            this.Controls.Add(this.lblNombre);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
@@ -348,6 +410,8 @@ namespace FB.Vistas
             this.tabPage1.PerformLayout();
             this.tabMetodosPago.ResumeLayout(false);
             this.tabMetodosPago.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,12 +433,17 @@ namespace FB.Vistas
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbMetodosPago;
         private System.Windows.Forms.Label lblAviso;
-        private System.Windows.Forms.Button btnEliminarMetodoPago;
-        private System.Windows.Forms.Button btnEditarMetodoPago;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linklblAutor;
         private System.Windows.Forms.LinkLabel linklblRepositorio;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbViajes;
+        private System.Windows.Forms.Label label5;
     }
 }

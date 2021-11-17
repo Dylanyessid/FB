@@ -19,6 +19,10 @@ namespace FB.Controladores
         {
             conductor = new clsConductor();
         }
+        public clsControladorConductores(int idConductor, int idSol)
+        {
+            conductor = new clsConductor(idConductor,idSol);
+        }
         public clsControladorConductores(int idSol)
         {
             conductor = new clsConductor(idSol);
@@ -67,9 +71,9 @@ namespace FB.Controladores
             }
         }
 
-        public DataTable ejecutarConductoresActivos()
+        public DataTable ejecutarInfoConductor()
         {
-            return conductor.conductoresActivos();
+            return conductor.infoConductor();
         }
         public bool ejecutarCambiarSolicitudConductor()
         {

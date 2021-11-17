@@ -83,6 +83,73 @@ namespace FB
 
         private void frmRegistroMoto_Load(object sender, EventArgs e)
         {
+            rdoNo.Checked = true;
+        }
+
+        private void rdoSi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoSi.Checked)
+            {
+                lblCelular.Enabled = false;
+                lblCelular.Visible = false;
+                lblDocumento.Enabled = false;
+                lblDocumento.Visible = false;
+                lblPrimerApellido.Enabled = false;
+                lblPrimerApellido.Visible = false;
+                lblPrimerNombre.Enabled = false;
+                lblPrimerNombre.Visible = false;
+                lblSegundoApellido.Enabled = false;
+                lblSegundoApellido.Visible = false;
+                lblSegundoNombre.Enabled = false;
+                lblSegundoNombre.Visible = false;
+
+                txtCelular.Enabled = false;
+                txtCelular.Visible = false;
+                txtNumDocumento.Enabled = false;
+                txtNumDocumento.Visible = false;
+                txtPrimerApellido.Enabled = false;
+                txtPrimerApellido.Visible = false;
+                txtPrimerNombre.Enabled = false;
+                txtPrimerNombre.Visible = false;
+                txtSegundoApellido.Enabled = false;
+                txtSegundoApellido.Visible = false;
+                txtSegundoNombre.Enabled = false;
+                txtSegundoNombre.Visible = false;
+            }
+            else
+            {
+                lblCelular.Enabled = true;
+                lblCelular.Visible = true;
+                lblDocumento.Enabled = true;
+                lblDocumento.Visible = true;
+                lblPrimerApellido.Enabled = true;
+                lblPrimerApellido.Visible = true;
+                lblPrimerNombre.Enabled = true;
+                lblPrimerNombre.Visible = true;
+                lblSegundoApellido.Enabled = true;
+                lblSegundoApellido.Visible = true;
+                lblSegundoNombre.Enabled = true;
+                lblSegundoNombre.Visible = true;
+
+                txtCelular.Enabled = true;
+                txtCelular.Visible = true;
+                txtNumDocumento.Enabled = true;
+                txtNumDocumento.Visible = true;
+                txtPrimerApellido.Enabled = true;
+                txtPrimerApellido.Visible = true;
+                txtPrimerNombre.Enabled = true;
+                txtPrimerNombre.Visible = true;
+                txtSegundoApellido.Enabled = true;
+                txtSegundoApellido.Visible = true;
+                txtSegundoNombre.Enabled = true;
+                txtSegundoNombre.Visible = true;
+
+                
+            }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
 
         }
     }

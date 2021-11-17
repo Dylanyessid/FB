@@ -147,7 +147,7 @@ namespace FB.Modelo
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 2)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     clsSesion.DocumentoSesion = NumDocumentoIdentidad;
                     clsSesion.Ciudad = Celular;
@@ -207,7 +207,7 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
             consulta.Parameters.Add("@credencial", SqlDbType.VarChar).Value = CredencialIngreso;
-            consulta.Parameters.Add("@contraseña", SqlDbType.VarChar).Value = Contraseña;
+            consulta.Parameters.Add("@contraseña", SqlDbType.VarChar).Value = FB.secret.Encrypt.encryptPassowrd(Contraseña);
             consulta.CommandText = "select * from tblCredenciales where (emailUsuario=@credencial or celular=@credencial) and contraseña=@contraseña";
 
             SqlDataReader lista = consulta.ExecuteReader();
@@ -220,13 +220,12 @@ namespace FB.Modelo
                 clsSesion.DocumentoSesion = infoLogin.Rows[0]["numDocumentoIdentidad"].ToString();
                 clsSesion.Celular = infoLogin.Rows[0]["celular"].ToString();
 
-                consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = Convert.ToInt32(infoLogin.Rows[0]["numDocumentoIdentidad"]);
+                consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = infoLogin.Rows[0]["numDocumentoIdentidad"];
                 consulta.CommandText = "select * from tblUsuarios where numDocumentoIdentidad=@documento";
                 SqlDataReader consultaInfoUsuario = consulta.ExecuteReader();
                 DataTable infoUsuario = new DataTable();
                 infoUsuario.Load(consultaInfoUsuario);
 
-                
                 
                  clsSesion.PrimerNombre = infoUsuario.Rows[0]["primerNombreUsuario"].ToString();
                  clsSesion.SegundoNombre = infoUsuario.Rows[0]["segundoNombreUsuario"].ToString();

@@ -136,7 +136,7 @@ namespace FB.Vistas
             }
             else if (!Nuevo && clsSesion.OfreciendoServicio)
             {
-                lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual? \r\n Si es así, pulse en 'PEDIR TRANSPORTE'";
+                lblTitulo.Text = "¿Esta sigue siendo tu ubicación actual? \r\n Si es así, pulse en 'Ponerse en Servicio'";
                 btnConfirmar.Text = "Ponerse en Servicio";
                 lblUbicacion.Text = $"Última ubicación:\r\nPaís: {clsSesion.Pais}. Estado: {clsSesion.Estado}. Ciudad: {clsSesion.Ciudad}";
                 lblRecogida.Visible = false;
@@ -228,7 +228,11 @@ namespace FB.Vistas
             cmbCiudad.DataSource = dtCiudadEstado;
             cmbCiudad.ValueMember = dtCiudadEstado.Columns[0].ToString();
             cmbCiudad.DisplayMember = dtCiudadEstado.Columns[2].ToString();
-            cmbCiudad.SelectedValue = ciudadSeleccionada;
+            if (ciudadSeleccionada != null && int.TryParse(paisSelecionado, out _))
+            {
+                cmbCiudad.SelectedValue = ciudadSeleccionada;
+
+            }
         }
     
 

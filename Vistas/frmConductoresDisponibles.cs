@@ -17,18 +17,22 @@ namespace FB
     {
         string recogida;
         string destino;
+        string nombres;
+        string celular;
+        decimal calificacion;
         public frmConductoresDisponibles(string recogida, string destino)
         {
+            
+            InitializeComponent();
             this.recogida = recogida;
             this.destino = destino;
-            InitializeComponent();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             clsControladorSolicitud solicitud = new clsControladorSolicitud(clsSesion.SolicitudActual, Convert.ToInt32(txtId.Text));
             solicitud.ejecutarAceptarConductorSolicitud();
-            frmViajes formViaje = new frmViajes(recogida, destino, Convert.ToDecimal(txtPropuestaPrecio.Text), false);
+            frmViajes formViaje = new frmViajes(Convert.ToInt32(clsSesion.SolicitudActual),recogida,destino, Convert.ToDecimal(txtPropuestaPrecio.Text), false,nombres,celular,calificacion,Convert.ToInt32(txtId.Text));//Convert.ToInt32(clsSesion.SolicitudActual),recogida, destino, Convert.ToDecimal(txtPropuestaPrecio.Text), false, Convert.ToInt32(txtId.Text));
             formViaje.ShowDialog();
             this.Close();
 
@@ -81,6 +85,9 @@ namespace FB
         private void dtgConductores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtId.Text = dtgConductores.CurrentRow.Cells[1].Value.ToString();
+            nombres = dtgConductores.CurrentRow.Cells[2].Value.ToString() + " " + dtgConductores.CurrentRow.Cells[3].Value.ToString();
+            celular = dtgConductores.CurrentRow.Cells[4].Value.ToString();
+            calificacion = Convert.ToDecimal(dtgConductores.CurrentRow.Cells[5].Value);
         }
     }
 }

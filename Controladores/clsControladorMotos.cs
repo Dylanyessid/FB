@@ -51,17 +51,6 @@ namespace FB.Controladores
             }
         }
 
-        public bool ejecutarRegistrarPropietario()
-        {
-            
-            if (moto.registrarPropietarioMoto())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
     }
 }

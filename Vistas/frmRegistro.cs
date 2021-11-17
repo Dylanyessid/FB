@@ -11,7 +11,7 @@ using FB.Controladores;
 using FB.Vistas;
 using System.IO;
 using Newtonsoft.Json;
-
+using FB.secret;
 
 namespace FB
 {
@@ -123,7 +123,8 @@ namespace FB
             {
                 if(txtConfirmarPassword.Text == txtPassword.Text)
                 {
-                    clsControladorUsuarios controladorUsuarios = new clsControladorUsuarios(txtDocumentoIdentidad.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, dtpFechaNacimiento.Value, sexo, cmbPais.Text, cmbEstado.Text, cmbCiudad.Text, txtEmail.Text, txtPassword.Text, txtCelular.Text);
+                    string password = Encrypt.encryptPassowrd(txtPassword.Text);
+                    clsControladorUsuarios controladorUsuarios = new clsControladorUsuarios(txtDocumentoIdentidad.Text, txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, dtpFechaNacimiento.Value, sexo, cmbPais.Text, cmbEstado.Text, cmbCiudad.Text, txtEmail.Text, password, txtCelular.Text);
                     if (controladorUsuarios.ejecutarRegistrarUsuario())
                     {
                         

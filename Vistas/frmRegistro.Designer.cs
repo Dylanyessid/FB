@@ -383,10 +383,11 @@ namespace FB
             // 
             // txtConfirmarPassword
             // 
-            this.txtConfirmarPassword.Location = new System.Drawing.Point(394, 163);
+            this.txtConfirmarPassword.Location = new System.Drawing.Point(385, 163);
+            this.txtConfirmarPassword.MaxLength = 45;
             this.txtConfirmarPassword.Name = "txtConfirmarPassword";
             this.txtConfirmarPassword.PasswordChar = '*';
-            this.txtConfirmarPassword.Size = new System.Drawing.Size(172, 20);
+            this.txtConfirmarPassword.Size = new System.Drawing.Size(154, 20);
             this.txtConfirmarPassword.TabIndex = 29;
             // 
             // label16
@@ -414,9 +415,10 @@ namespace FB
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(66, 163);
+            this.txtPassword.MaxLength = 45;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(172, 20);
+            this.txtPassword.Size = new System.Drawing.Size(154, 20);
             this.txtPassword.TabIndex = 26;
             // 
             // label14
@@ -443,16 +445,16 @@ namespace FB
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(439, 53);
+            this.txtCelular.Location = new System.Drawing.Point(394, 53);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(100, 20);
+            this.txtCelular.Size = new System.Drawing.Size(145, 20);
             this.txtCelular.TabIndex = 1;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(114, 53);
+            this.txtEmail.Location = new System.Drawing.Point(66, 53);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(172, 20);
             this.txtEmail.TabIndex = 0;
             // 
             // btnRegistrar

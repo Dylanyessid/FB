@@ -59,7 +59,7 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = conexionMetodoPago;
             consulta.Parameters.Add("@numDocumento", SqlDbType.VarChar).Value = NumDocumentoIdentidad;
-            consulta.CommandText = "select * from tblMetodosPago WHERE numDocumentoIdentidad=@numDocumento";
+            consulta.CommandText = "select * from tblMetodosPago WHERE numDocumentoIdentidad=@numDocumento AND NOT concepto = 'Efectivo'";
 
             SqlDataReader listaMetodosPago = consulta.ExecuteReader();
             DataTable dtMetodosPago = new DataTable();

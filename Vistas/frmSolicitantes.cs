@@ -16,7 +16,8 @@ namespace FB.Vistas
     {
         DataTable info;
         DataTable estadoSolicitud;
-        string modo = "";
+
+        string modo = "", nombres, celular;
         int idSolicitd;
         public frmSolicitantes()
         {
@@ -52,7 +53,7 @@ namespace FB.Vistas
                     timerChecker.Stop();
                     timerChecker.Enabled = false;
                     MessageBox.Show("El cliente ha aceptado tu propuesta!");
-                    frmViajes frmViaje = new frmViajes(estadoSolicitud.Rows[0]["direccionRecogida"].ToString(), estadoSolicitud.Rows[0]["direccioDestino"].ToString(), Convert.ToDecimal(estadoSolicitud.Rows[0]["precioSolicitado"]), true);
+                    frmViajes frmViaje = new frmViajes(Convert.ToInt32(txtNumSolicitud.Text), estadoSolicitud.Rows[0]["direccionRecogida"].ToString(), estadoSolicitud.Rows[0]["direccionDestino"].ToString(), Convert.ToDecimal(estadoSolicitud.Rows[0]["precioSolicitado"]),true,nombres,celular, estadoSolicitud.Rows[0]["numDocumentoSolicitante"].ToString());//(Convert.ToInt32(txtNumSolicitud.Text),estadoSolicitud.Rows[0]["direccionRecogida"].ToString(), estadoSolicitud.Rows[0]["direccionDestino"].ToString(), Convert.ToDecimal(estadoSolicitud.Rows[0]["precioSolicitado"]), true);
                     frmViaje.ShowDialog();
                     this.Close();
                 }
@@ -86,6 +87,7 @@ namespace FB.Vistas
         private void dtgConductoresActivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtNumSolicitud.Text = dtgSolicitantes.CurrentRow.Cells[0].Value.ToString();
+            nombres = dtgSolicitantes.CurrentRow.Cells[2].Value.ToString() + dtgSolicitantes.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void cmbPosiblesClientes_SelectedIndexChanged(object sender, EventArgs e)
