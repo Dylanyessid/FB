@@ -57,6 +57,7 @@ namespace FB.Vistas
             lblNombre.Text = nombres;
             lblCelular.Text = celular;
             lblCalificacion.Text = calificacionPromedio.ToString();
+            grpCalificacion.Visible = false;
 
             if (!conductor)
             {
@@ -64,7 +65,7 @@ namespace FB.Vistas
             }
             else
             {
-                lblCliente.Text = "Conductor: ";
+                lblCliente.Text = "Cliente: ";
             }
             
 
@@ -164,6 +165,7 @@ namespace FB.Vistas
             }
             else
             {
+                grpCalificacion.Visible = false;
                 string estado;
                 clsControladorSolicitud controladorSolictud = new clsControladorSolicitud(solicitudActual);
                 DataTable registroSolicitud = controladorSolictud.ejecutarConsultarSolicitud();
@@ -189,6 +191,7 @@ namespace FB.Vistas
                     rdoMetodoPago.Visible = true;
                     rdoEfectivo.Checked = true;
                     grpPago.Visible = true;
+                    grpCalificacion.Visible = true;
                     timerChecker.Stop();
                     
 
@@ -221,6 +224,21 @@ namespace FB.Vistas
             cmbMetodosPago.Enabled = false;
         }
 
+        private void btnReportar_Click(object sender, EventArgs e)
+        {
+            DialogResult drAlerta = MessageBox.Show("Al reportar un problema se interrumpiría la solicitud. Si ya estás con el conductor, pídele que te baje. ", "Alerta", MessageBoxButtons.YesNo);
+            if (drAlerta == DialogResult.Yes)
+            {
+                clsControladorSolicitud controladorSolicitud = new clsControladorSolicitud(clsSesion.SolicitudActual);
+                if (controladorSolicitud.ejecutarInterrumpirSolicitud())
+                {
+                    frmReporte frmReporte = new frmReporte();
+                    this.Hide();
+                    frmReporte.ShowDialog();
+
+                }
+            }
+        }
         private void frmViajes_FormClosed(object sender, FormClosedEventArgs e)
         {
             timerChecker.Stop();

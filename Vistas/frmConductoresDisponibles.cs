@@ -61,7 +61,7 @@ namespace FB
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            clsControladorSolicitud controladorSolicitud = new clsControladorSolicitud();
+            clsControladorSolicitud controladorSolicitud = new clsControladorSolicitud(clsSesion.SolicitudActual);
             if (controladorSolicitud.ejecutarCancelarSolicitud())
             {
                 MessageBox.Show("Solicitud Cancelada con éxito");

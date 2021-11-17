@@ -55,7 +55,19 @@ namespace FB.Controladores
             }
         }
 
-        
+        public bool ejecutarInterrumpirSolicitud()
+        {
+            if (solicitud.interrumpirSoliciutd())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
 
         public bool ejecutarAceptarConductorSolicitud()
         {

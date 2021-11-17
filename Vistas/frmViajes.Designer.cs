@@ -30,7 +30,7 @@ namespace FB.Vistas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnReportar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblTituloRecogida = new System.Windows.Forms.Label();
             this.lblTituloDestino = new System.Windows.Forms.Label();
@@ -64,20 +64,21 @@ namespace FB.Vistas
             this.grpCalificacion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSiguiente
+            // btnReportar
             // 
-            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.btnSiguiente.FlatAppearance.BorderSize = 0;
-            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSiguiente.Location = new System.Drawing.Point(684, 360);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(152, 96);
-            this.btnSiguiente.TabIndex = 43;
-            this.btnSiguiente.Text = "Reportar Algún Problema";
-            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnReportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.btnReportar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnReportar.FlatAppearance.BorderSize = 0;
+            this.btnReportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportar.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReportar.Location = new System.Drawing.Point(684, 360);
+            this.btnReportar.Name = "btnReportar";
+            this.btnReportar.Size = new System.Drawing.Size(152, 96);
+            this.btnReportar.TabIndex = 43;
+            this.btnReportar.Text = "Reportar Algún Problema";
+            this.btnReportar.UseVisualStyleBackColor = false;
+            this.btnReportar.Click += new System.EventHandler(this.btnReportar_Click);
             // 
             // label5
             // 
@@ -127,10 +128,10 @@ namespace FB.Vistas
             // 
             this.lblRecogida.AutoSize = true;
             this.lblRecogida.BackColor = System.Drawing.Color.Transparent;
-            this.lblRecogida.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecogida.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecogida.Location = new System.Drawing.Point(314, 56);
             this.lblRecogida.Name = "lblRecogida";
-            this.lblRecogida.Size = new System.Drawing.Size(18, 27);
+            this.lblRecogida.Size = new System.Drawing.Size(17, 27);
             this.lblRecogida.TabIndex = 48;
             this.lblRecogida.Text = ".";
             // 
@@ -138,10 +139,10 @@ namespace FB.Vistas
             // 
             this.lblDestino.AutoSize = true;
             this.lblDestino.BackColor = System.Drawing.Color.Transparent;
-            this.lblDestino.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDestino.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDestino.Location = new System.Drawing.Point(314, 83);
             this.lblDestino.Name = "lblDestino";
-            this.lblDestino.Size = new System.Drawing.Size(18, 27);
+            this.lblDestino.Size = new System.Drawing.Size(17, 27);
             this.lblDestino.TabIndex = 49;
             this.lblDestino.Text = ".";
             // 
@@ -149,10 +150,10 @@ namespace FB.Vistas
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrecio.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.Location = new System.Drawing.Point(314, 110);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(18, 27);
+            this.lblPrecio.Size = new System.Drawing.Size(17, 27);
             this.lblPrecio.TabIndex = 50;
             this.lblPrecio.Text = ".";
             // 
@@ -291,10 +292,10 @@ namespace FB.Vistas
             // 
             this.lblCalificacion.AutoSize = true;
             this.lblCalificacion.BackColor = System.Drawing.Color.Transparent;
-            this.lblCalificacion.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalificacion.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalificacion.Location = new System.Drawing.Point(761, 120);
             this.lblCalificacion.Name = "lblCalificacion";
-            this.lblCalificacion.Size = new System.Drawing.Size(18, 27);
+            this.lblCalificacion.Size = new System.Drawing.Size(17, 27);
             this.lblCalificacion.TabIndex = 61;
             this.lblCalificacion.Text = ".";
             // 
@@ -302,10 +303,10 @@ namespace FB.Vistas
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(619, 56);
+            this.lblNombre.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(642, 56);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(18, 27);
+            this.lblNombre.Size = new System.Drawing.Size(17, 27);
             this.lblNombre.TabIndex = 62;
             this.lblNombre.Text = ".";
             // 
@@ -334,10 +335,10 @@ namespace FB.Vistas
             // 
             this.lblCelular.AutoSize = true;
             this.lblCelular.BackColor = System.Drawing.Color.Transparent;
-            this.lblCelular.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelular.Location = new System.Drawing.Point(619, 83);
+            this.lblCelular.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelular.Location = new System.Drawing.Point(630, 83);
             this.lblCelular.Name = "lblCelular";
-            this.lblCelular.Size = new System.Drawing.Size(18, 27);
+            this.lblCelular.Size = new System.Drawing.Size(17, 27);
             this.lblCelular.TabIndex = 65;
             this.lblCelular.Text = ".";
             // 
@@ -437,7 +438,7 @@ namespace FB.Vistas
             this.Controls.Add(this.lblTituloDestino);
             this.Controls.Add(this.lblTituloRecogida);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnReportar);
             this.Name = "frmViajes";
             this.Text = "frmViajes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmViajes_FormClosed);
@@ -453,7 +454,7 @@ namespace FB.Vistas
 
         #endregion
 
-        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnReportar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTituloRecogida;
         private System.Windows.Forms.Label lblTituloDestino;

@@ -85,6 +85,7 @@
     <Compile Include="Controladores\clsControladorConductores.cs" />
     <Compile Include="Controladores\clsControladorMetodoPago.cs" />
     <Compile Include="Controladores\clsControladorMotos.cs" />
+    <Compile Include="Controladores\clsControladorReportes.cs" />
     <Compile Include="Controladores\clsControladorSolicitud.cs" />
     <Compile Include="Controladores\clsControladorUsuarios.cs" />
     <Compile Include="Controladores\clsControladorViaje.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Modelo\clsConductor.cs" />
     <Compile Include="Modelo\clsMetodoPago.cs" />
     <Compile Include="Modelo\clsMoto.cs" />
+    <Compile Include="Modelo\clsReporte.cs" />
     <Compile Include="Modelo\clsSesion.cs" />
     <Compile Include="Modelo\clsSolicitud.cs" />
     <Compile Include="Modelo\clsUsuario.cs" />

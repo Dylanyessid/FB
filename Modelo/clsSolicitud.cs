@@ -119,12 +119,35 @@ namespace FB.Modelo
 
         }
 
+        public bool interrumpirSoliciutd()
+        {
+            SqlCommand consulta = new SqlCommand();
+            consulta.Connection = solicitudConnect;
+            consulta.Parameters.Add("@idSolicitud", SqlDbType.Int).Value = idSolicitud;
+            consulta.CommandText = "UPDATE  tblSolicitudes SET estadoSolicitud='Interrumpida' where idSoliciutd=@idSolicitud";
+
+            try
+            {
+                if (consulta.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                return false;
+            }
+
+            return false;
+        }
+
         public bool cancelarSolicitud()
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = solicitudConnect;
-            consulta.Parameters.Add("@fecha", SqlDbType.DateTime).Value = Fecha;
-            consulta.CommandText = "UPDATE  tblSolicitudes SET estadoSolicitud='Cancelada' where fechaSolicitud=@fecha";
+            consulta.Parameters.Add("@idSolicitud", SqlDbType.Int).Value = idSolicitud;
+            consulta.CommandText = "UPDATE  tblSolicitudes SET estadoSolicitud='Cancelada' where idSolicitud=@idSolicitud";
 
             try
             {

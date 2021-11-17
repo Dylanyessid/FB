@@ -32,11 +32,11 @@ namespace FB.Vistas
             this.lblUbicacion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtDocumento = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtDocumentoDenunciado = new MaterialSkin.Controls.MaterialTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtDescripcion = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.btnEnviarReporte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUbicacion
@@ -72,37 +72,38 @@ namespace FB.Vistas
             this.label2.TabIndex = 52;
             this.label2.Text = "Número de Documento de usuario a reportar";
             // 
-            // materialTextBox1
+            // txtDocumento
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(213, 106);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(407, 50);
-            this.materialTextBox1.TabIndex = 53;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.txtDocumento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDocumento.Depth = 0;
+            this.txtDocumento.Enabled = false;
+            this.txtDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDocumento.LeadingIcon = null;
+            this.txtDocumento.Location = new System.Drawing.Point(213, 106);
+            this.txtDocumento.MaxLength = 50;
+            this.txtDocumento.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDocumento.Multiline = false;
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(407, 50);
+            this.txtDocumento.TabIndex = 53;
+            this.txtDocumento.Text = "";
+            this.txtDocumento.TrailingIcon = null;
             // 
-            // materialTextBox2
+            // txtDocumentoDenunciado
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(213, 193);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(407, 50);
-            this.materialTextBox2.TabIndex = 54;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
+            this.txtDocumentoDenunciado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDocumentoDenunciado.Depth = 0;
+            this.txtDocumentoDenunciado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDocumentoDenunciado.LeadingIcon = null;
+            this.txtDocumentoDenunciado.Location = new System.Drawing.Point(213, 193);
+            this.txtDocumentoDenunciado.MaxLength = 50;
+            this.txtDocumentoDenunciado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDocumentoDenunciado.Multiline = false;
+            this.txtDocumentoDenunciado.Name = "txtDocumentoDenunciado";
+            this.txtDocumentoDenunciado.Size = new System.Drawing.Size(407, 50);
+            this.txtDocumentoDenunciado.TabIndex = 54;
+            this.txtDocumentoDenunciado.Text = "";
+            this.txtDocumentoDenunciado.TrailingIcon = null;
             // 
             // label3
             // 
@@ -115,34 +116,35 @@ namespace FB.Vistas
             this.label3.TabIndex = 55;
             this.label3.Text = "Descripción de reporte\r\n";
             // 
-            // materialMultiLineTextBox1
+            // txtDescripcion
             // 
-            this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialMultiLineTextBox1.Depth = 0;
-            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(116, 294);
-            this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(600, 96);
-            this.materialMultiLineTextBox1.TabIndex = 56;
-            this.materialMultiLineTextBox1.Text = "";
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Depth = 0;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtDescripcion.Location = new System.Drawing.Point(116, 294);
+            this.txtDescripcion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(600, 96);
+            this.txtDescripcion.TabIndex = 56;
+            this.txtDescripcion.Text = "";
             // 
-            // btnConfirmar
+            // btnEnviarReporte
             // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
-            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
-            this.btnConfirmar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmar.Location = new System.Drawing.Point(289, 405);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(222, 75);
-            this.btnConfirmar.TabIndex = 57;
-            this.btnConfirmar.Text = "Enviar Reporte";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnEnviarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnEnviarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
+            this.btnEnviarReporte.FlatAppearance.BorderSize = 0;
+            this.btnEnviarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarReporte.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarReporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEnviarReporte.Location = new System.Drawing.Point(289, 405);
+            this.btnEnviarReporte.Name = "btnEnviarReporte";
+            this.btnEnviarReporte.Size = new System.Drawing.Size(222, 75);
+            this.btnEnviarReporte.TabIndex = 57;
+            this.btnEnviarReporte.Text = "Enviar Reporte";
+            this.btnEnviarReporte.UseVisualStyleBackColor = false;
+            this.btnEnviarReporte.Click += new System.EventHandler(this.btnEnviarReporte_Click);
             // 
             // frmReporte
             // 
@@ -150,16 +152,17 @@ namespace FB.Vistas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 492);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.materialMultiLineTextBox1);
+            this.Controls.Add(this.btnEnviarReporte);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.materialTextBox2);
-            this.Controls.Add(this.materialTextBox1);
+            this.Controls.Add(this.txtDocumentoDenunciado);
+            this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUbicacion);
             this.Name = "frmReporte";
             this.Text = "frmReporte";
+            this.Load += new System.EventHandler(this.frmReporte_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,10 +173,10 @@ namespace FB.Vistas
         private System.Windows.Forms.Label lblUbicacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox txtDocumento;
+        private MaterialSkin.Controls.MaterialTextBox txtDocumentoDenunciado;
         private System.Windows.Forms.Label label3;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
-        private System.Windows.Forms.Button btnConfirmar;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox txtDescripcion;
+        private System.Windows.Forms.Button btnEnviarReporte;
     }
 }

@@ -30,30 +30,14 @@ namespace FB
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.lblIngreso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Depth = 0;
-            this.txtEmail.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtEmail.LeadingIcon = null;
-            this.txtEmail.Location = new System.Drawing.Point(53, 251);
-            this.txtEmail.MaxLength = 50;
-            this.txtEmail.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtEmail.Multiline = false;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(590, 50);
-            this.txtEmail.TabIndex = 2;
-            this.txtEmail.Text = "";
-            this.txtEmail.TrailingIcon = null;
             // 
             // materialButton1
             // 
@@ -109,7 +93,7 @@ namespace FB
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 196);
+            this.label1.Location = new System.Drawing.Point(166, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 39);
             this.label1.TabIndex = 7;
@@ -120,7 +104,7 @@ namespace FB
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Red Hat Display", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 317);
+            this.label2.Location = new System.Drawing.Point(261, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 39);
             this.label2.TabIndex = 8;
@@ -128,11 +112,22 @@ namespace FB
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(210, 372);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(173, 346);
             this.txtPassword.MaxLength = 45;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(284, 20);
+            this.txtPassword.PasswordChar = '⚫';
+            this.txtPassword.Size = new System.Drawing.Size(354, 29);
             this.txtPassword.TabIndex = 3;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(122, 254);
+            this.txtEmail.MaxLength = 45;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(460, 29);
+            this.txtEmail.TabIndex = 9;
             // 
             // Form1
             // 
@@ -142,13 +137,13 @@ namespace FB
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(699, 537);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.txtEmail);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -158,14 +153,13 @@ namespace FB
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialTextBox txtEmail;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }
 

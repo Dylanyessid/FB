@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FB.Controladores;
+
 
 namespace FB.Vistas
 {
@@ -15,6 +17,18 @@ namespace FB.Vistas
         public frmReporte()
         {
             InitializeComponent();
+        }
+
+        private void btnEnviarReporte_Click(object sender, EventArgs e)
+        {
+            clsControladorReportes reporte = new clsControladorReportes(txtDocumento.Text, txtDocumentoDenunciado.Text, txtDescripcion.Text);
+            reporte.ejecutarNuevoReporte();
+        }
+
+        private void frmReporte_Load(object sender, EventArgs e)
+        {
+            txtDescripcion.Text = FB.Modelo.clsSesion.DocumentoSesion;
+
         }
     }
 }

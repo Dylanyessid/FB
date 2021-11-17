@@ -69,6 +69,7 @@ namespace FB.Vistas
             this.lblPlaca = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lblCalificacion = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabMetodosPago.SuspendLayout();
@@ -252,6 +253,7 @@ namespace FB.Vistas
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.lblCalificacion);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.lblPlaca);
@@ -347,9 +349,9 @@ namespace FB.Vistas
             this.cmbViajes.FormattingEnabled = true;
             this.cmbViajes.IntegralHeight = false;
             this.cmbViajes.ItemHeight = 13;
-            this.cmbViajes.Location = new System.Drawing.Point(220, 64);
+            this.cmbViajes.Location = new System.Drawing.Point(89, 64);
             this.cmbViajes.Name = "cmbViajes";
-            this.cmbViajes.Size = new System.Drawing.Size(336, 21);
+            this.cmbViajes.Size = new System.Drawing.Size(634, 21);
             this.cmbViajes.Sorted = true;
             this.cmbViajes.TabIndex = 53;
             this.cmbViajes.SelectedIndexChanged += new System.EventHandler(this.cmbViajes_SelectedIndexChanged);
@@ -574,6 +576,17 @@ namespace FB.Vistas
             this.lblCalificacion.TabIndex = 73;
             this.lblCalificacion.Text = ".";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(195, 230);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 27);
+            this.label16.TabIndex = 74;
+            this.label16.Text = "$";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,5 +657,6 @@ namespace FB.Vistas
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblCalificacion;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }
