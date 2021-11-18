@@ -37,18 +37,14 @@ namespace FB.Modelo
             consulta.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Descripcion;
            
 
-            consulta.CommandText = "insert into tblReporteProblemas values (@documentoReportante, @documentoReportado, null) ";
+            consulta.CommandText = "insert into tblReporteProblemas values (@documentoReportante, @documentoReportado, @descripcion, null) ";
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
 
-                    consulta.CommandText = "SELECT idSolicitud from tblSolicitudes where numDocumentoSolicitante=@documento and fechaSolicitud=@fecha";
-                    SqlDataReader adaptarId = consulta.ExecuteReader();
-                    DataTable dt = new DataTable();
-                    dt.Load(adaptarId);
-                    clsSesion.SolicitudActual = Convert.ToInt32(dt.Rows[0]["idSolicitud"]);
+                   
 
                     return true;
                 }

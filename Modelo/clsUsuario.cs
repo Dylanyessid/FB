@@ -187,7 +187,7 @@ namespace FB.Modelo
             
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     clsSesion.DocumentoSesion = numDocumentoIdentidad;
                     clsSesion.Celular = celular;
@@ -238,12 +238,12 @@ namespace FB.Modelo
 
             }
 
-            //MessageBox.Show(info.Rows[0]["numDocumentoIdentidad"].ToString());
+
             return infoLogin;
 
         }
 
-        //Intentar subconsulta
+        //Comprueba si el usuario de la sesión es un conductor ya registrado
         public bool comprobarUsuarioConductor()
         {
             SqlCommand consulta = new SqlCommand();
@@ -283,7 +283,7 @@ namespace FB.Modelo
             
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     clsSesion.Estado = EstadoActual;
                     clsSesion.Pais = PaisActual;
@@ -310,7 +310,7 @@ namespace FB.Modelo
             consulta.Parameters.Add("@ciudad", SqlDbType.VarChar).Value = clsSesion.Ciudad;
             consulta.Parameters.Add("@estado", SqlDbType.VarChar).Value = clsSesion.Estado;
             consulta.Parameters.Add("@pais", SqlDbType.VarChar).Value = clsSesion.Pais;
-            consulta.CommandText = "select idSolicitud, numDocumentoSolicitante, primerNombreUsuario,primerApellidoUsuario, direccionRecogida, direccionDestino, precioSolicitado FROM usuariosSolicitando WHERE ciudadActual=@ciudad and estadoActual=@estado and paisActual=@pais";
+            consulta.CommandText = "select idSolicitud, numDocumentoSolicitante, primerNombreUsuario,primerApellidoUsuario, direccionRecogida, direccionDestino, precioSolicitado FROM usuariosSolicitando WHERE ciudadActual=@ciudad and estadoActual=@estado and paisActual=@pais ";
 
             SqlDataReader listaUsuariosSolicitando = consulta.ExecuteReader();
             DataTable infoUsuariosSolicitando = new DataTable();
@@ -328,7 +328,7 @@ namespace FB.Modelo
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }

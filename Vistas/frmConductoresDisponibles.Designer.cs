@@ -128,7 +128,7 @@ namespace FB
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(234)))), ((int)(((byte)(78)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(243)))), ((int)(((byte)(70)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -208,6 +208,7 @@ namespace FB
             this.Controls.Add(this.label1);
             this.Name = "frmConductoresDisponibles";
             this.Text = "txtPropuestaPrecio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmConductoresDisponibles_FormClosing);
             this.Load += new System.EventHandler(this.frmConductoresDisponibles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgConductores)).EndInit();
             this.ResumeLayout(false);

@@ -238,21 +238,27 @@ namespace FB.Vistas
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (Nuevo)
-            {
-                frmPrincipal principal = new frmPrincipal();
-                this.Hide();
-                principal.ShowDialog();
-
-            }
-            else if (!Nuevo && clsSesion.OfreciendoServicio == false)
+            //Si es alguien que quiere pedir un servicio:
+            if (!Nuevo && clsSesion.OfreciendoServicio == false)
             {
                 if (btnConfirmar.Text == "Pedir Transporte")
                 {
-                    frmConductoresDisponibles formConductores = new frmConductoresDisponibles(txtRecogida.Text, txtDestino.Text);
-                    this.Hide();
-                    formConductores.ShowDialog();
-                    this.Show();
+                    if(txtDestino.Text.Length < 6)
+                    {
+                        MessageBox.Show("La dirección de destino no puede ser menor a 6 caracteres");
+                    }
+                    if(txtRecogida.Text.Length < 6)
+                    {
+                        MessageBox.Show("La dirección de recogida no puede ser menor a 6 caracteres");
+                    }
+                    if(txtDestino.Text.Length >= 6 && txtDestino.Text.Length >= 6)
+                    {
+                        frmConductoresDisponibles formConductores = new frmConductoresDisponibles(txtRecogida.Text, txtDestino.Text);
+                        this.Hide();
+                        formConductores.ShowDialog();
+                        this.Show();
+                    }
+                   
                 }
                 else if (btnConfirmar.Text == "Guardar cambios de ubicación")
                 {
@@ -279,6 +285,7 @@ namespace FB.Vistas
                 }
 
             }
+            //Si se está por ofrecer servicio
             else if (clsSesion.OfreciendoServicio)
             {
                 if (btnConfirmar.Text == "Ponerse en Servicio")
@@ -307,7 +314,7 @@ namespace FB.Vistas
                     cmbEstado.Enabled = false;
                     cmbPais.Enabled = false;
 
-
+                    btnConfirmar.Text = "Ponerse en Servicio";
                 }
             }
         }

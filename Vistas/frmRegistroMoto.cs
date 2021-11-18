@@ -14,6 +14,7 @@ namespace FB
 {
     public partial class frmRegistroMoto : Form
     {
+        //Variables del formulario
         private bool propia;
         private string documentoPropietario;
         private string primerNombrePropietario;
@@ -21,6 +22,8 @@ namespace FB
         private string primerApellidoPropietario;
         private string segundoApellidoPropietario;
         private string celularPropietario;
+
+        //Constructor del formulario
         public frmRegistroMoto()
         {
             InitializeComponent();
@@ -41,7 +44,7 @@ namespace FB
             cmbColor.Items.Add("Cian");
             cmbColor.Items.Add("Magenta");
         }
-
+        //Al presionar el botón "Siguiente"
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
 
@@ -86,6 +89,7 @@ namespace FB
             rdoNo.Checked = true;
         }
 
+        //Cuando se cambia de estado el radiobuttton
         private void rdoSi_CheckedChanged(object sender, EventArgs e)
         {
             if (rdoSi.Checked)

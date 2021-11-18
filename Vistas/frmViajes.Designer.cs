@@ -60,6 +60,8 @@ namespace FB.Vistas
             this.rdo3 = new System.Windows.Forms.RadioButton();
             this.rdo2 = new System.Windows.Forms.RadioButton();
             this.rdo1 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDocumento = new System.Windows.Forms.Label();
             this.grpPago.SuspendLayout();
             this.grpCalificacion.SuspendLayout();
             this.SuspendLayout();
@@ -221,9 +223,9 @@ namespace FB.Vistas
             // cmbMetodosPago
             // 
             this.cmbMetodosPago.FormattingEnabled = true;
-            this.cmbMetodosPago.Location = new System.Drawing.Point(267, 294);
+            this.cmbMetodosPago.Location = new System.Drawing.Point(212, 294);
             this.cmbMetodosPago.Name = "cmbMetodosPago";
-            this.cmbMetodosPago.Size = new System.Drawing.Size(259, 21);
+            this.cmbMetodosPago.Size = new System.Drawing.Size(345, 21);
             this.cmbMetodosPago.TabIndex = 55;
             // 
             // btnPagarViaje
@@ -271,7 +273,7 @@ namespace FB.Vistas
             this.lblCliente.AutoSize = true;
             this.lblCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblCliente.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(521, 56);
+            this.lblCliente.Location = new System.Drawing.Point(511, 56);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(92, 27);
             this.lblCliente.TabIndex = 59;
@@ -325,7 +327,7 @@ namespace FB.Vistas
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(522, 83);
+            this.label6.Location = new System.Drawing.Point(512, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 27);
             this.label6.TabIndex = 64;
@@ -349,7 +351,7 @@ namespace FB.Vistas
             this.grpCalificacion.Controls.Add(this.rdo3);
             this.grpCalificacion.Controls.Add(this.rdo2);
             this.grpCalificacion.Controls.Add(this.rdo1);
-            this.grpCalificacion.Location = new System.Drawing.Point(555, 247);
+            this.grpCalificacion.Location = new System.Drawing.Point(597, 275);
             this.grpCalificacion.Name = "grpCalificacion";
             this.grpCalificacion.Size = new System.Drawing.Size(200, 40);
             this.grpCalificacion.TabIndex = 66;
@@ -411,12 +413,36 @@ namespace FB.Vistas
             this.rdo1.Text = "1";
             this.rdo1.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(512, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 27);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Documento :";
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.BackColor = System.Drawing.Color.Transparent;
+            this.lblDocumento.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocumento.Location = new System.Drawing.Point(665, 29);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(17, 27);
+            this.lblDocumento.TabIndex = 68;
+            this.lblDocumento.Text = ".";
+            // 
             // frmViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(838, 478);
+            this.ClientSize = new System.Drawing.Size(849, 478);
+            this.Controls.Add(this.lblDocumento);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.grpCalificacion);
             this.Controls.Add(this.lblCelular);
             this.Controls.Add(this.label6);
@@ -484,5 +510,7 @@ namespace FB.Vistas
         private System.Windows.Forms.RadioButton rdo3;
         private System.Windows.Forms.RadioButton rdo2;
         private System.Windows.Forms.RadioButton rdo1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDocumento;
     }
 }

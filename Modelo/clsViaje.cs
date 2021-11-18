@@ -84,7 +84,7 @@ namespace FB.Modelo
             }
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
 
                     MessageBox.Show("El viaje ha sido registrado exitosamente");

@@ -46,12 +46,12 @@ namespace FB
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(293, 486);
+            this.materialButton1.Location = new System.Drawing.Point(297, 432);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
             this.materialButton1.Size = new System.Drawing.Size(116, 36);
-            this.materialButton1.TabIndex = 4;
+            this.materialButton1.TabIndex = 5;
             this.materialButton1.Text = "Registrarse";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
@@ -65,12 +65,12 @@ namespace FB
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(311, 438);
+            this.materialButton2.Location = new System.Drawing.Point(311, 384);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.Size = new System.Drawing.Size(77, 36);
-            this.materialButton2.TabIndex = 5;
+            this.materialButton2.TabIndex = 4;
             this.materialButton2.Text = "Entrar";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
@@ -112,22 +112,22 @@ namespace FB
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(173, 346);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(137, 346);
             this.txtPassword.MaxLength = 45;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '⚫';
-            this.txtPassword.Size = new System.Drawing.Size(354, 29);
+            this.txtPassword.Size = new System.Drawing.Size(411, 26);
             this.txtPassword.TabIndex = 3;
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(122, 254);
             this.txtEmail.MaxLength = 45;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(460, 29);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.Size = new System.Drawing.Size(460, 26);
+            this.txtEmail.TabIndex = 2;
             // 
             // Form1
             // 
@@ -136,7 +136,7 @@ namespace FB
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(699, 537);
+            this.ClientSize = new System.Drawing.Size(699, 483);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);

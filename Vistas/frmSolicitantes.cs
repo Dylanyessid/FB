@@ -48,7 +48,7 @@ namespace FB.Vistas
                
                 if (estado=="Aceptada" && Convert.ToInt32(estadoSolicitud.Rows[0]["aceptadaPor"]) == clsSesion.IdConductor)
                 {
-                    //MessageBox.Show(estadoSolicitud.Rows[0]["aceptadaPor"].ToString());
+                   
                     
                     timerChecker.Stop();
                     timerChecker.Enabled = false;
@@ -80,6 +80,7 @@ namespace FB.Vistas
 
         private void frmSolicitantes_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             timerChecker.Stop();
             timerChecker.Enabled = false;
         }
@@ -105,8 +106,12 @@ namespace FB.Vistas
                 {
                     MessageBox.Show("Aceptaste esta solicitud");
                     modo = "Esperando Respuesta";
-                    
-                }
+
+            }
+            else
+            {
+
+            }
             
         }
     }

@@ -79,7 +79,7 @@ namespace FB.Modelo
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     
                     consulta.CommandText = "SELECT idSolicitud from tblSolicitudes where numDocumentoSolicitante=@documento and fechaSolicitud=@fecha";
@@ -119,16 +119,17 @@ namespace FB.Modelo
 
         }
 
+        //Método para interrumpir la solicitud al reportar un problema.
         public bool interrumpirSoliciutd()
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = solicitudConnect;
             consulta.Parameters.Add("@idSolicitud", SqlDbType.Int).Value = idSolicitud;
-            consulta.CommandText = "UPDATE  tblSolicitudes SET estadoSolicitud='Interrumpida' where idSoliciutd=@idSolicitud";
+            consulta.CommandText = "UPDATE  tblSolicitudes SET estadoSolicitud='Interrumpida' where idSolicitud=@idSolicitud";
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }
@@ -142,6 +143,7 @@ namespace FB.Modelo
             return false;
         }
 
+        //Método para cancelar una solicitud
         public bool cancelarSolicitud()
         {
             SqlCommand consulta = new SqlCommand();
@@ -151,7 +153,7 @@ namespace FB.Modelo
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }
@@ -167,7 +169,7 @@ namespace FB.Modelo
         }
 
        
-
+        //Método para que el cliente pueda aceptar un conductor interesado en su oferta.
         public bool aceptarConductorSolicitud()
         {
             SqlCommand consulta = new SqlCommand();
@@ -175,13 +177,17 @@ namespace FB.Modelo
             consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = IdSolicitud;
             consulta.Parameters.Add("@idConductor", SqlDbType.Int).Value = IdConductor;
 
-            consulta.CommandText = "UPDATE tblSolicitudes SET estadoSolicitud='Aceptada', aceptadaPor=@idConductor WHERE idSolicitud = @idSol;";
+            consulta.CommandText = "EXECUTE aceptarConductorSolicitud @idSol, @idConductor";
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch (Exception err)
@@ -190,7 +196,7 @@ namespace FB.Modelo
                 return false;
             }
 
-            return false;
+            
         }
 
         public bool clienteRecogido()
@@ -203,7 +209,7 @@ namespace FB.Modelo
             try
             {
                 
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }
@@ -228,7 +234,7 @@ namespace FB.Modelo
             try
             {
 
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }
@@ -252,7 +258,7 @@ namespace FB.Modelo
             try
             {
 
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }
@@ -276,7 +282,7 @@ namespace FB.Modelo
             try
             {
 
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }

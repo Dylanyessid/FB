@@ -13,6 +13,7 @@ namespace FB.Modelo
 {
     class clsConductor
     {
+        //Variables, objeto y propiedades
         private SqlConnection usersConnect = clsConexion.dbConnect();
 
         private string placaMoto;
@@ -74,7 +75,9 @@ namespace FB.Modelo
         public string SegundoApellido { get => segundoApellido; set => segundoApellido = value; }
         public string Celular { get => celular; set => celular = value; }
         public int IdConductor { get => idConductor; set => idConductor = value; }
+        
 
+        //Constructores de la clase
         public clsConductor(string numDoc, DateTime licenciaDesde, DateTime licenciaHasta)
         { 
             LicenciaDesde = licenciaDesde;
@@ -192,7 +195,7 @@ namespace FB.Modelo
             consulta.CommandText = "UPDATE tblConductores SET activo='1' where numDocumentoIdentidad=@documento" ;
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     MessageBox.Show("Te has puesto en servicio");
                     return true;
@@ -216,10 +219,10 @@ namespace FB.Modelo
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
             consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = clsSesion.DocumentoSesion;
-            consulta.CommandText = "UPDATE tblConductores SET activo='0' where numDocumentoIdentidad=@documento";
+            consulta.CommandText = "UPDATE tblConductores SET activo='0', solicitudActual=null where numDocumentoIdentidad=@documento";
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     MessageBox.Show("Has dejado de estar en servicio");
                     return true;
@@ -257,21 +260,13 @@ namespace FB.Modelo
         {
             SqlCommand consulta = new SqlCommand();
             consulta.Connection = usersConnect;
-            if (SolicitudActual > 0)
-            {
-                consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = SolicitudActual;
-
-            }
-            else
-            {
-                consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = DBNull.Value;
-            }
+            consulta.Parameters.Add("@idSol", SqlDbType.Int).Value = SolicitudActual;
             consulta.Parameters.Add("@documento", SqlDbType.VarChar).Value = clsSesion.DocumentoSesion;
-            consulta.CommandText = "UPDATE tblConductores SET solicitudActual=@idSol where numDocumentoIdentidad=@documento";
+            consulta.CommandText = "EXECUTE aceptarSolicitudUsuario @idSol,@documento";
 
             try
             {
-                if (consulta.ExecuteNonQuery() == 1)
+                if (consulta.ExecuteNonQuery() >= 1)
                 {
                     return true;
                 }

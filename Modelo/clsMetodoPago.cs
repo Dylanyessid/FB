@@ -82,7 +82,7 @@ namespace FB.Modelo
             consulta.CommandText = "INSERT INTO tblMetodosPago VALUES (@numDocumento, @numTarjeta,@vencimiento,@tipoTarjeta,@concepto,@codigoSeguridad,@codigoPostal)";
             try
             {
-                if(consulta.ExecuteNonQuery() == 1)
+                if(consulta.ExecuteNonQuery() >= 1)
                 {
                     MessageBox.Show("Método de pago agregado exitosamente");
                     return true;

@@ -25,6 +25,8 @@ namespace FB.Vistas
         DateTime horaInicioViaje;
         DataTable dtMetodosPago;
         clsControladorSolicitud controladorSolicitud;
+
+        //Constructor para el conductor
         public frmViajes(int solicitudActual, string recogida, string destino, decimal precio, bool conductor, string nombres, string celular, string documento)
         {
             InitializeComponent();
@@ -37,8 +39,10 @@ namespace FB.Vistas
             this.nombres = nombres;
             this.celular = celular;
             lblCelular.Text = celular;
+            lblDocumento.Text = documentoPasajero;
         }
-        public frmViajes(int solicitudActual, string recogida, string destino, decimal precio, bool conductor, string nombres, string celular, decimal calificacionProm, int idConductor)
+        //Constructor para el cliente
+        public frmViajes(int solicitudActual, string recogida, string destino, decimal precio, bool conductor, string nombres, string celular, string documento, decimal calificacionProm, int idConductor)
         {
             InitializeComponent();
             this.recogida = recogida;
@@ -50,6 +54,8 @@ namespace FB.Vistas
             this.celular = celular;
             this.calificacionPromedio = calificacionProm;
             this.idConductor = idConductor;
+            lblCelular.Text = celular;
+            lblDocumento.Text=documento;
         }
 
         private void frmViajes_Load(object sender, EventArgs e)
@@ -162,6 +168,11 @@ namespace FB.Vistas
                 {
                     lblEstadoViaje.Text = "Esperando Pago del Cliente";
                 }
+                else if(estado == "Pagada")
+                {
+                    MessageBox.Show("El cliente ha pagado tu servicio!");
+                    this.Close();
+                }
             }
             else
             {
@@ -206,6 +217,11 @@ namespace FB.Vistas
                     }
 
                 }
+                else if(estado == "Pagada")
+                {
+                    MessageBox.Show("Has pagado el viaje. Vuelve a viajar con nosotros en una próxima ocacsión!");
+                    this.Close();
+                }
             }
             
             
@@ -226,18 +242,23 @@ namespace FB.Vistas
 
         private void btnReportar_Click(object sender, EventArgs e)
         {
-            DialogResult drAlerta = MessageBox.Show("Al reportar un problema se interrumpiría la solicitud. Si ya estás con el conductor, pídele que te baje. ", "Alerta", MessageBoxButtons.YesNo);
-            if (drAlerta == DialogResult.Yes)
+            if (conductor)
             {
-                clsControladorSolicitud controladorSolicitud = new clsControladorSolicitud(clsSesion.SolicitudActual);
-                if (controladorSolicitud.ejecutarInterrumpirSolicitud())
-                {
-                    frmReporte frmReporte = new frmReporte();
-                    this.Hide();
-                    frmReporte.ShowDialog();
-
-                }
+                frmReporte frmReporte = new frmReporte(documentoPasajero);
+                this.Hide();
+                frmReporte.ShowDialog();
+                this.Show();
             }
+            else
+            {
+                frmReporte frmReporte = new frmReporte(lblDocumento.Text);
+                this.Hide();
+                frmReporte.ShowDialog();
+                this.Show();
+            }
+            
+            
+            
         }
         private void frmViajes_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -322,6 +343,7 @@ namespace FB.Vistas
             clsControladorViaje controladorViaje = new clsControladorViaje(solicitudActual, clsSesion.DocumentoSesion, documentoIdentidadConductor, formaPago, horaInicioViaje, DateTime.Now, calificacion, idMetodoPago);
             if (controladorViaje.ejecutarRegistrarViaje())
             {
+                this.Hide();
                 this.Close();
             }
          }

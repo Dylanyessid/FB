@@ -33,7 +33,6 @@ namespace FB.Vistas
             this.label1 = new System.Windows.Forms.Label();
             this.btnPedirServicio = new System.Windows.Forms.Button();
             this.btnOfrecerServicio = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.tabPrincipal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -43,33 +42,33 @@ namespace FB.Vistas
             this.btnAgregatMetodoPago = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblCalificacion = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblPlaca = new System.Windows.Forms.Label();
+            this.lblColor = new System.Windows.Forms.Label();
+            this.lblLinea = new System.Windows.Forms.Label();
+            this.lblModelo = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblConductor = new System.Windows.Forms.Label();
+            this.lblFechaFin = new System.Windows.Forms.Label();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbViajes = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.linklblAutor = new System.Windows.Forms.LinkLabel();
             this.linklblRepositorio = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbViajes = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.lblConductor = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.lblModelo = new System.Windows.Forms.Label();
-            this.lblLinea = new System.Windows.Forms.Label();
-            this.lblColor = new System.Windows.Forms.Label();
-            this.lblPlaca = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblCalificacion = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.tabPrincipal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabMetodosPago.SuspendLayout();
@@ -130,21 +129,6 @@ namespace FB.Vistas
             this.btnOfrecerServicio.UseVisualStyleBackColor = false;
             this.btnOfrecerServicio.Click += new System.EventHandler(this.btnOfrecerServicio_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Red Hat Display Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(643, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 75);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "Cerrar Sesión";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
@@ -171,14 +155,13 @@ namespace FB.Vistas
             // 
             this.tabPage1.Controls.Add(this.lblIngreso);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.btnPedirServicio);
             this.tabPage1.Controls.Add(this.btnOfrecerServicio);
             this.tabPage1.Controls.Add(this.lblNombre);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(823, 347);
+            this.tabPage1.Size = new System.Drawing.Size(834, 347);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Menú ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -194,7 +177,7 @@ namespace FB.Vistas
             this.tabMetodosPago.Location = new System.Drawing.Point(4, 22);
             this.tabMetodosPago.Name = "tabMetodosPago";
             this.tabMetodosPago.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMetodosPago.Size = new System.Drawing.Size(823, 347);
+            this.tabMetodosPago.Size = new System.Drawing.Size(834, 347);
             this.tabMetodosPago.TabIndex = 2;
             this.tabMetodosPago.Text = "Métodos de Pago";
             this.tabMetodosPago.UseVisualStyleBackColor = true;
@@ -285,6 +268,262 @@ namespace FB.Vistas
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(195, 230);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 27);
+            this.label16.TabIndex = 74;
+            this.label16.Text = "$";
+            // 
+            // lblCalificacion
+            // 
+            this.lblCalificacion.AutoSize = true;
+            this.lblCalificacion.BackColor = System.Drawing.Color.Transparent;
+            this.lblCalificacion.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalificacion.Location = new System.Drawing.Point(267, 261);
+            this.lblCalificacion.Name = "lblCalificacion";
+            this.lblCalificacion.Size = new System.Drawing.Size(17, 27);
+            this.lblCalificacion.TabIndex = 73;
+            this.lblCalificacion.Text = ".";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 257);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(255, 35);
+            this.label15.TabIndex = 72;
+            this.label15.Text = "Calificación Viaje:";
+            // 
+            // lblPlaca
+            // 
+            this.lblPlaca.AutoSize = true;
+            this.lblPlaca.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlaca.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaca.Location = new System.Drawing.Point(679, 269);
+            this.lblPlaca.Name = "lblPlaca";
+            this.lblPlaca.Size = new System.Drawing.Size(17, 27);
+            this.lblPlaca.TabIndex = 71;
+            this.lblPlaca.Text = ".";
+            // 
+            // lblColor
+            // 
+            this.lblColor.AutoSize = true;
+            this.lblColor.BackColor = System.Drawing.Color.Transparent;
+            this.lblColor.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColor.Location = new System.Drawing.Point(679, 232);
+            this.lblColor.Name = "lblColor";
+            this.lblColor.Size = new System.Drawing.Size(17, 27);
+            this.lblColor.TabIndex = 70;
+            this.lblColor.Text = ".";
+            // 
+            // lblLinea
+            // 
+            this.lblLinea.AutoSize = true;
+            this.lblLinea.BackColor = System.Drawing.Color.Transparent;
+            this.lblLinea.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLinea.Location = new System.Drawing.Point(681, 193);
+            this.lblLinea.Name = "lblLinea";
+            this.lblLinea.Size = new System.Drawing.Size(17, 27);
+            this.lblLinea.TabIndex = 69;
+            this.lblLinea.Text = ".";
+            // 
+            // lblModelo
+            // 
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.BackColor = System.Drawing.Color.Transparent;
+            this.lblModelo.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.Location = new System.Drawing.Point(706, 158);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(17, 27);
+            this.lblModelo.TabIndex = 68;
+            this.lblModelo.Text = ".";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.BackColor = System.Drawing.Color.Transparent;
+            this.lblMarca.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(690, 123);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(17, 27);
+            this.lblMarca.TabIndex = 67;
+            this.lblMarca.Text = ".";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrecio.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(214, 228);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(17, 27);
+            this.lblPrecio.TabIndex = 66;
+            this.lblPrecio.Text = ".";
+            // 
+            // lblConductor
+            // 
+            this.lblConductor.AutoSize = true;
+            this.lblConductor.BackColor = System.Drawing.Color.Transparent;
+            this.lblConductor.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConductor.Location = new System.Drawing.Point(195, 195);
+            this.lblConductor.Name = "lblConductor";
+            this.lblConductor.Size = new System.Drawing.Size(17, 27);
+            this.lblConductor.TabIndex = 65;
+            this.lblConductor.Text = ".";
+            // 
+            // lblFechaFin
+            // 
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.BackColor = System.Drawing.Color.Transparent;
+            this.lblFechaFin.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin.Location = new System.Drawing.Point(237, 158);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(17, 27);
+            this.lblFechaFin.TabIndex = 64;
+            this.lblFechaFin.Text = ".";
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.BackColor = System.Drawing.Color.Transparent;
+            this.lblFechaInicio.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaInicio.Location = new System.Drawing.Point(254, 121);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(17, 27);
+            this.lblFechaInicio.TabIndex = 63;
+            this.lblFechaInicio.Text = ".";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(501, 226);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(172, 35);
+            this.label14.TabIndex = 62;
+            this.label14.Text = "Color Moto:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(501, 187);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(174, 35);
+            this.label13.TabIndex = 61;
+            this.label13.Text = "Línea Moto:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(501, 261);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(173, 35);
+            this.label12.TabIndex = 60;
+            this.label12.Text = "Placa Moto:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 222);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(183, 35);
+            this.label11.TabIndex = 59;
+            this.label11.Text = "Precio Viaje:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(501, 117);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(183, 35);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Marca Moto:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(501, 152);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(199, 35);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Modelo Moto:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 187);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(165, 35);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Conductor:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(225, 35);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "Fecha Fin Viaje:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(255, 35);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "Fecha Inicio Viaje:";
+            // 
+            // cmbViajes
+            // 
+            this.cmbViajes.DropDownHeight = 120;
+            this.cmbViajes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViajes.FormattingEnabled = true;
+            this.cmbViajes.IntegralHeight = false;
+            this.cmbViajes.ItemHeight = 13;
+            this.cmbViajes.Location = new System.Drawing.Point(89, 64);
+            this.cmbViajes.Name = "cmbViajes";
+            this.cmbViajes.Size = new System.Drawing.Size(634, 21);
+            this.cmbViajes.Sorted = true;
+            this.cmbViajes.TabIndex = 53;
+            this.cmbViajes.SelectedIndexChanged += new System.EventHandler(this.cmbViajes_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Red Hat Text", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(211, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(357, 49);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Historial de viajes:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -331,262 +570,6 @@ namespace FB.Vistas
             this.linklblRepositorio.Text = "Repositorio (GitHub)";
             this.linklblRepositorio.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRepositorio_LinkClicked);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Red Hat Text", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(211, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(357, 49);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Historial de viajes:";
-            // 
-            // cmbViajes
-            // 
-            this.cmbViajes.DropDownHeight = 120;
-            this.cmbViajes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbViajes.FormattingEnabled = true;
-            this.cmbViajes.IntegralHeight = false;
-            this.cmbViajes.ItemHeight = 13;
-            this.cmbViajes.Location = new System.Drawing.Point(89, 64);
-            this.cmbViajes.Name = "cmbViajes";
-            this.cmbViajes.Size = new System.Drawing.Size(634, 21);
-            this.cmbViajes.Sorted = true;
-            this.cmbViajes.TabIndex = 53;
-            this.cmbViajes.SelectedIndexChanged += new System.EventHandler(this.cmbViajes_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 117);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(255, 35);
-            this.label6.TabIndex = 54;
-            this.label6.Text = "Fecha Inicio Viaje:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 152);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(225, 35);
-            this.label7.TabIndex = 55;
-            this.label7.Text = "Fecha Fin Viaje:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 187);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(165, 35);
-            this.label8.TabIndex = 56;
-            this.label8.Text = "Conductor:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(501, 152);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(199, 35);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "Modelo Moto:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(501, 117);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 35);
-            this.label10.TabIndex = 58;
-            this.label10.Text = "Marca Moto:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 222);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(183, 35);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "Precio Viaje:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(501, 261);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(173, 35);
-            this.label12.TabIndex = 60;
-            this.label12.Text = "Placa Moto:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(501, 187);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(174, 35);
-            this.label13.TabIndex = 61;
-            this.label13.Text = "Línea Moto:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(501, 226);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(172, 35);
-            this.label14.TabIndex = 62;
-            this.label14.Text = "Color Moto:";
-            // 
-            // lblFechaInicio
-            // 
-            this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.BackColor = System.Drawing.Color.Transparent;
-            this.lblFechaInicio.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaInicio.Location = new System.Drawing.Point(254, 121);
-            this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(17, 27);
-            this.lblFechaInicio.TabIndex = 63;
-            this.lblFechaInicio.Text = ".";
-            // 
-            // lblFechaFin
-            // 
-            this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.BackColor = System.Drawing.Color.Transparent;
-            this.lblFechaFin.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFin.Location = new System.Drawing.Point(237, 158);
-            this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(17, 27);
-            this.lblFechaFin.TabIndex = 64;
-            this.lblFechaFin.Text = ".";
-            // 
-            // lblConductor
-            // 
-            this.lblConductor.AutoSize = true;
-            this.lblConductor.BackColor = System.Drawing.Color.Transparent;
-            this.lblConductor.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConductor.Location = new System.Drawing.Point(195, 195);
-            this.lblConductor.Name = "lblConductor";
-            this.lblConductor.Size = new System.Drawing.Size(17, 27);
-            this.lblConductor.TabIndex = 65;
-            this.lblConductor.Text = ".";
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrecio.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(214, 228);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(17, 27);
-            this.lblPrecio.TabIndex = 66;
-            this.lblPrecio.Text = ".";
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.BackColor = System.Drawing.Color.Transparent;
-            this.lblMarca.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(690, 123);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(17, 27);
-            this.lblMarca.TabIndex = 67;
-            this.lblMarca.Text = ".";
-            // 
-            // lblModelo
-            // 
-            this.lblModelo.AutoSize = true;
-            this.lblModelo.BackColor = System.Drawing.Color.Transparent;
-            this.lblModelo.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModelo.Location = new System.Drawing.Point(706, 158);
-            this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(17, 27);
-            this.lblModelo.TabIndex = 68;
-            this.lblModelo.Text = ".";
-            // 
-            // lblLinea
-            // 
-            this.lblLinea.AutoSize = true;
-            this.lblLinea.BackColor = System.Drawing.Color.Transparent;
-            this.lblLinea.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLinea.Location = new System.Drawing.Point(681, 193);
-            this.lblLinea.Name = "lblLinea";
-            this.lblLinea.Size = new System.Drawing.Size(17, 27);
-            this.lblLinea.TabIndex = 69;
-            this.lblLinea.Text = ".";
-            // 
-            // lblColor
-            // 
-            this.lblColor.AutoSize = true;
-            this.lblColor.BackColor = System.Drawing.Color.Transparent;
-            this.lblColor.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColor.Location = new System.Drawing.Point(679, 232);
-            this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(17, 27);
-            this.lblColor.TabIndex = 70;
-            this.lblColor.Text = ".";
-            // 
-            // lblPlaca
-            // 
-            this.lblPlaca.AutoSize = true;
-            this.lblPlaca.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlaca.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaca.Location = new System.Drawing.Point(679, 269);
-            this.lblPlaca.Name = "lblPlaca";
-            this.lblPlaca.Size = new System.Drawing.Size(17, 27);
-            this.lblPlaca.TabIndex = 71;
-            this.lblPlaca.Text = ".";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Red Hat Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(6, 257);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(255, 35);
-            this.label15.TabIndex = 72;
-            this.label15.Text = "Calificación Viaje:";
-            // 
-            // lblCalificacion
-            // 
-            this.lblCalificacion.AutoSize = true;
-            this.lblCalificacion.BackColor = System.Drawing.Color.Transparent;
-            this.lblCalificacion.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalificacion.Location = new System.Drawing.Point(267, 261);
-            this.lblCalificacion.Name = "lblCalificacion";
-            this.lblCalificacion.Size = new System.Drawing.Size(17, 27);
-            this.lblCalificacion.TabIndex = 73;
-            this.lblCalificacion.Text = ".";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Red Hat Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(195, 230);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 27);
-            this.label16.TabIndex = 74;
-            this.label16.Text = "$";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,7 +604,6 @@ namespace FB.Vistas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPedirServicio;
         private System.Windows.Forms.Button btnOfrecerServicio;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TabControl tabPrincipal;
         private System.Windows.Forms.TabPage tabPage1;
